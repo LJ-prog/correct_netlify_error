@@ -59,7 +59,7 @@ const linksList = [
     title: 'Suivi des véhicules',
     caption: 'Utilisation',
     icon: 'bike_scooter',
-    link: '#/tableau'
+    link: '#/table'
   },
   {
     title: 'Developpeur',

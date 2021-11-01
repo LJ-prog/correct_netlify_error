@@ -1,4 +1,4 @@
-# Quasar App (MWS)
+# Quasar App (test)
 
 A Quasar Framework app
 
