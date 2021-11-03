@@ -5,7 +5,7 @@
         Line Chart
       </q-card-section>
       <q-card-section>
-        <div ref="linechart" id="lineChart" style="height: 300px;"></div>
+        <div ref="linechart" id="lineChart" style="height: 250px;"></div>
       </q-card-section>
       <q-resize-observer @resize="onResize"/>
     </q-card>

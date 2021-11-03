@@ -58,7 +58,8 @@ export default {
       downloadLink.target = '_self';
       downloadLink.download = 'GuageChart.png';
       downloadLink.click();
-    },    init() {
+    },
+    init() {
       let guageChart = document.getElementById('guageChart');
       echarts.dispose(guageChart);
       let theme = this.model ? 'dark' : 'light';

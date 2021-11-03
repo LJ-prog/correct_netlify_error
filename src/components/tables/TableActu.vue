@@ -42,22 +42,22 @@ const data3 = [
   {
     name: 'Benoît Trouvé',
     des: '26 nov 2021 | 17,62 km | 31:55',
-    avatar: "~statics/images/Benoit.JPG",
+    avatar: "statics/images/Benoit.JPG",
   },
   {
     name: 'Benoît Trouvé',
     des: '21 nov 2021 | 35,41 km | 58:20',
-    avatar: 'https://avatars3.githubusercontent.com/u/34883558?s=400&u=09455019882ac53dc69b23df570629fd84d37dd1&v=4',
+    avatar: "statics/images/Benoit.JPG",
   },
   {
     name: 'Sébastien Taliercio',
     des: '17 nov 2021 | 65,12 km | 1:52:10',
-    avatar: 'https://avatars0.githubusercontent.com/u/55240045?s=400&u=cf9bffc2bd2d8e42ca6e5abf40ddd6c1a03ce2860&v=4',
+    avatar: "statics/images/Sebastien.JPG",
   },
   {
     name: 'Benoît Trouvé',
     des: '04 nov 2021 | 30,03 km | 29:56',
-    avatar: 'https://avatars3.githubusercontent.com/u/34883558?s=400&u=09455019882ac53dc69b23df570629fd84d37dd1&v=4',
+    avatar: "statics/images/Benoit.JPG",
   }
 ];
 

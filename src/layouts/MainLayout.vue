@@ -31,11 +31,39 @@
           Demo 2021
         </q-item-label>
 
+        <q-item to="/tableau" exact>
+          <q-item-section avatar>
+            <q-icon name="manage_accounts" />
+          </q-item-section>
+
+          <q-item-section>
+            Gestion de flotte
+          </q-item-section>
+        </q-item>
+
+        <q-item to="/table" exact>
+          <q-item-section avatar>
+            <q-icon name="bike_scooter" />
+          </q-item-section>
+
+          <q-item-section>
+            Suivi des véhicules
+          </q-item-section>
+        </q-item>
+
+        <q-item-label
+          header
+        >
+          Contact Midipile
+        </q-item-label>
+
+
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
         />
+
       </q-list>
     </q-drawer>
 
@@ -49,18 +77,6 @@
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
-  {
-    title: 'Gestion de flotte',
-    caption: 'Administration',
-    icon: 'manage_accounts',
-    link: '#/tableau'
-  },
-  {
-    title: 'Suivi des véhicules',
-    caption: 'Utilisation',
-    icon: 'bike_scooter',
-    link: '#/table'
-  },
   {
     title: 'Developpeur',
     caption: 'github.com/quasarframework',

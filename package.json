@@ -1,5 +1,5 @@
 {
-  "name": "Midipile Web Services",
+  "name": "test",
   "version": "0.0.1",
   "description": "Application de gestion de flotte Midipile",
   "productName": "Midipile Web Services",
@@ -10,6 +10,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@chrisheanan/vue-gauge": "^1.2.2",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",

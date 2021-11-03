@@ -8,8 +8,8 @@ const routes = [
       { path: '/index', component: () => import('pages/Index.vue') },
       { path: '/tableau', component: () => import('pages/Tableau.vue') },
       { path: '/table', component: () => import('pages/Tables.vue') },
-      { path: '/graphe', component: () => import('pages/Graphes.vue') }
-        ]
+      { path: '/graphe', component: () => import('pages/Graphes2.vue') }
+    ]
   },
 
   // Always leave this as last one,
