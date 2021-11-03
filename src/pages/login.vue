@@ -34,12 +34,10 @@
               <div>
                 <q-btn
                   label="Entrer"
-                  to="/tableau"
+                  to="/index"
                   type="button"
                   color="primary"
-                  @click="loginNotify"
                 />
-
 
               </div>
             </q-form>
@@ -59,31 +57,10 @@ export default {
                 password: 'Admin@CRM'
             }
         },
-  methods: {
-      loginNotify(){
-        this.$q.notify({
-        message: 'Accès autorisé',
-      })
-    },
-  }
 }
 </script>
 
 <style>
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.normal_gradient {
-  background: linear-gradient(145deg, rgb(252, 252, 252) 15%, #504f4c 70%);
-}
-.dark_gradient {
-  background: linear-gradient(145deg, rgb(106, 106, 107) 15%, #111111 70%);
-}
 .login-form {
   position: absolute;
 }

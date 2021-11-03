@@ -70,6 +70,8 @@
         </template>
       </q-table>
     </q-card>
+
+    <!-- Affichage détail -->
     <q-dialog v-model="vehicule_dialog">
       <q-card class="my-card" flat bordered>
         <q-card-section>
@@ -203,6 +205,7 @@
                 data: [
                     {
                         vh_id: "Midipile 01",
+                        avatar: "statics/M1.JPG",
                         usr_id: "Benoit",
                         SOC_fixe: "90 %",
                         SOC_mobile: "46%",
@@ -213,6 +216,7 @@
                     },
                     {
                         vh_id: "Midipile 02",
+                        avatar: "statics/M2.JPG",
                         usr_id: "Vincent",
                         SOC_fixe: "75 %",
                         SOC_mobile: "76%",
@@ -223,6 +227,7 @@
                     },
                     {
                         vh_id: "Midipile 03",
+                        avatar: "statics/M3.JPG",
                         usr_id: "Célian",
                         SOC_fixe: "95 %",
                         SOC_mobile: "13 %",
@@ -233,6 +238,7 @@
                     },
                     {
                         vh_id: "Midipile 04",
+                        avatar: "statics/M4.JPG",
                         usr_id: "Ehouarn",
                         SOC_fixe: "25 %",
                         SOC_mobile: "45 %",
@@ -243,6 +249,7 @@
                     },
                     {
                         vh_id: "Midipile 05",
+                        avatar: "statics/M5.JPG",
                         usr_id: "Sébastien",
                         SOC_fixe: "69 %",
                         SOC_mobile: "86 %",
