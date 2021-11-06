@@ -45,7 +45,7 @@
           </q-item-section>
 
           <q-item-section>
-            Gestion de flotte
+            Suivi des véhicules
           </q-item-section>
         </q-item>
 
@@ -55,7 +55,7 @@
           </q-item-section>
 
           <q-item-section>
-            Suivi des véhicules
+            Mon véhicule
           </q-item-section>
         </q-item>
 
