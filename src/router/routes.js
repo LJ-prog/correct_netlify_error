@@ -8,8 +8,12 @@ const routes = [
       { path: '/index', component: () => import('pages/Index.vue') },
       { path: '/tableau', component: () => import('pages/Tableau.vue') },
       { path: '/table', component: () => import('pages/Tables.vue') },
-      { path: '/graphe', component: () => import('pages/Graphes2.vue') },
-      { path: '/graphebis', component: () => import('pages/Graphes3.vue') }    ]
+      { path: '/graphe', component: () => import('pages/Graphes.vue') },
+      { path: '/midipile01', component: () => import('pages/vehicules/Midipile01.vue') },
+      { path: '/midipile02', component: () => import('pages/vehicules/Midipile02.vue') },
+      { path: '/midipile03', component: () => import('pages/vehicules/Midipile03.vue') },
+      { path: '/midipile04', component: () => import('pages/vehicules/Midipile04.vue') },
+      { path: '/midipile05', component: () => import('pages/vehicules/Midipile05.vue') }    ]
   },
 
   // Always leave this as last one,

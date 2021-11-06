@@ -1,10 +1,14 @@
 <template>
- 
-  <q-page class="q-pa-sm">
-
+  <div>
+    <q-card>
+      <q-card-section class="text-h6">
+        apexchart bar
+      </q-card-section>
+      <q-card-section>
         <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
-
-  </q-page>
+      </q-card-section>
+    </q-card>
+  </div>
 </template>
 
 <script>
@@ -32,3 +36,6 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+</style>

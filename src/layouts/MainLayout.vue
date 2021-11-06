@@ -49,17 +49,41 @@
           </q-item-section>
         </q-item>
 
-        <q-item to="/table" exact>
-          <q-item-section avatar>
-            <q-icon name="bike_scooter" />
-          </q-item-section>
+        
+        <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/table" default-opened >
+          <q-list dense >
+            <q-item to="/midipile01" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Midipile 01 </q-item-section>                
+              <q-item-section > </q-item-section>
+            </q-item>
 
-          <q-item-section>
-            Mon véhicule
-          </q-item-section>
-        </q-item>
+            <q-item to="/midipile02" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Midipile 02 </q-item-section>
+              <q-item-section > </q-item-section>
+            </q-item>
 
-        <q-item-label header>   </q-item-label>
+            <q-item to="/midipile03" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Midipile 03 </q-item-section>
+              <q-item-section > </q-item-section>
+            </q-item>
+
+            <q-item to="/midipile04" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Midipile 04 </q-item-section>
+              <q-item-section > </q-item-section>
+            </q-item>
+
+            <q-item to="/midipile05" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Midipile 05 </q-item-section>
+              <q-item-section > </q-item-section>
+            </q-item>
+          </q-list>
+        </q-expansion-item>
+
         <q-item-label header>   </q-item-label>
 
         <q-item-label
