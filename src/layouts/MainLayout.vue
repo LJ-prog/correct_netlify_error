@@ -31,6 +31,14 @@
           Demo 2021
         </q-item-label>
 
+        <q-item to="/index" exact>
+          <q-item-section avatar>
+            <q-icon name="dashboard" />
+          </q-item-section>
+
+          <q-item-section> Accueil </q-item-section>
+        </q-item>
+
         <q-item to="/tableau" exact>
           <q-item-section avatar>
             <q-icon name="manage_accounts" />
@@ -50,6 +58,9 @@
             Suivi des véhicules
           </q-item-section>
         </q-item>
+
+        <q-item-label header>   </q-item-label>
+        <q-item-label header>   </q-item-label>
 
         <q-item-label
           header
