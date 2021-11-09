@@ -60,3 +60,10 @@ export default defineComponent({
   name: 'MesVehicules'
 })
 </script>
+
+<style lang="sass" scoped>
+.my-card
+  width: 80%
+  max-width: 400px
+
+</style>
