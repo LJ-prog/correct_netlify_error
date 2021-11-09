@@ -1,6 +1,5 @@
 <template>
-  <div class="q-pa-md items-start q-gutter-md">
-     <div class="col q-gutter-md q-col-gutter-md">
+  <div class="q-pa-md row items-start q-gutter-md">
       <q-card class="my-menu">
         <q-img src="statics/images/GestionFlotte.png">
           <div class="absolute-bottom">
@@ -31,11 +30,9 @@
           />
         </q-card-actions>
       </q-card>
-    </div>
-
-    <div class="col q-gutter-md q-col-gutter-md">
-       <q-card class="my-card">
-        <q-parallax
+ 
+      <q-card class="my-card">
+        <q-img
           src="statics/images/AccueilMidipile.jpg"
           :height="800"
         />
@@ -45,8 +42,6 @@
           <div class="text-subtitle2">par Midipile</div>
         </q-card-section>
       </q-card>
-    </div>
-
   </div>
 </template>
 
