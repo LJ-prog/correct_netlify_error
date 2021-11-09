@@ -7,8 +7,10 @@ const routes = [
     children: [
       { path: '/index', component: () => import('pages/Index.vue') },
       { path: '/tableau', component: () => import('pages/Tableau.vue') },
+      { path: '/map', component: () => import('components/map/testmap.vue') },
       { path: '/table', component: () => import('pages/Tables.vue') },
       { path: '/graphe', component: () => import('pages/Graphes.vue') },
+      { path: '/mesvehicules', component: () => import('pages/mesvehicules.vue') },
       { path: '/midipile01', component: () => import('pages/vehicules/Midipile01.vue') },
       { path: '/midipile02', component: () => import('pages/vehicules/Midipile02.vue') },
       { path: '/midipile03', component: () => import('pages/vehicules/Midipile03.vue') },

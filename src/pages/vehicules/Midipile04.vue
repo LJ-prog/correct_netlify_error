@@ -3,6 +3,12 @@
   <q-page class="q-pa-sm">
     <div class="row q-col-gutter-sm q-py-sm">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <q-img
+            src="/statics/images/M4.JPG"
+          />
+      </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <apex-chart></apex-chart>
       </div>
     </div>

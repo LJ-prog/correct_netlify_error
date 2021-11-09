@@ -15,9 +15,8 @@
           />
         </q-card-actions>
       </q-card>
-    </div>
 
-    <div class="col q-gutter-md q-col-gutter-md">
+
       <q-card class="my-menu">
         <q-img src="statics/images/AccueilMidipile.jpg">
           <div class="absolute-bottom">
@@ -61,10 +60,10 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .my-card
-  width: 100%
-  max-width: 500px
+  width: 80%
+  max-width: 400px
 
 .my-menu
-  width: 100%
-  max-width: 500px
+  width: 80%
+  max-width: 400px
 </style>

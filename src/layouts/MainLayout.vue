@@ -24,12 +24,14 @@
       show-if-above
       bordered
     >
-      <q-list>
+    <q-img src="statics/logo_valide_paysage.jpg"></q-img>
+    <q-list>
         <q-item-label
           header
         >
           Demo 2021
         </q-item-label>
+
 
         <q-item to="/index" exact>
           <q-item-section avatar>
@@ -50,7 +52,7 @@
         </q-item>
 
         
-        <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/table" default-opened >
+        <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/mesvehicules" default-opened >
           <q-list dense >
             <q-item to="/midipile01" exact>
               <q-item-section > </q-item-section>

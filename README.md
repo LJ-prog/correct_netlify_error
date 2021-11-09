@@ -1,4 +1,4 @@
-# Quasar App (test)
+# Quasar App (Midipile Web Services)
 
 A Quasar Framework app
 

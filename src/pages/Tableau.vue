@@ -153,9 +153,9 @@
                         sortable: true
                     },
                     {
-                        name: "Niveau batterie fixe",
+                        name: "Niveau batterie mobile",
                         align: "left",
-                        label: "Niveau batterie fixe",
+                        label: "Niveau batterie mobile",
                         field: "SOC_mobile",
                         sortable: true
                     },
