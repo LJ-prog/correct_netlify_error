@@ -7,7 +7,6 @@ const routes = [
     children: [
       { path: '/index', component: () => import('pages/Index.vue') },
       { path: '/tableau', component: () => import('pages/Tableau.vue') },
-      { path: '/map', component: () => import('components/map/testmap.vue') },
       { path: '/table', component: () => import('pages/Tables.vue') },
       { path: '/graphe', component: () => import('pages/Graphes.vue') },
       { path: '/mesvehicules', component: () => import('pages/mesvehicules.vue') },
@@ -17,9 +16,13 @@ const routes = [
       { path: '/midipile04', component: () => import('pages/vehicules/Midipile04.vue') },
       { path: '/midipile05', component: () => import('pages/vehicules/Midipile05.vue') },
 
+      //Composants : Charts
       { path: '/columnlabel', component: () => import('pages/charts/ColumnLabelPage.vue') },
       { path: '/basiccircle', component: () => import('pages/charts/BasicCirclePage.vue') },
-      { path: '/batteryradial', component: () => import('pages/charts/BatteryRadialPage.vue') }
+      { path: '/batteryradial', component: () => import('pages/charts/BatteryRadialPage.vue') },
+
+      //Composants : Cartes
+      { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') }
     ]
   },
 
