@@ -86,6 +86,20 @@
           </q-list>
         </q-expansion-item>
 
+        <q-separator></q-separator>
+
+        <q-expansion-item icon="grid_view" label="Composants" >
+          <q-list dense >
+            <q-item to="/columnlabel" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Colonne </q-item-section>                
+              <q-item-section > </q-item-section>
+            </q-item>
+          </q-list>
+        </q-expansion-item>
+
+        
+
         <q-item-label header>   </q-item-label>
 
         <q-item-label
