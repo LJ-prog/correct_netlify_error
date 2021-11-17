@@ -123,6 +123,10 @@
             <q-item to="iconmap" exact>
               <q-item-section > Carte avec multiple icônes </q-item-section>                
             </q-item>
+
+            <q-item to="popupmap" exact>
+              <q-item-section > Carte avec popup </q-item-section>                
+            </q-item>
           
           </q-expansion-item>
 
