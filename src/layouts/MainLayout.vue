@@ -89,26 +89,39 @@
         <q-separator></q-separator>
 
         <q-expansion-item icon="grid_view" label="Composants" >
-          <q-list dense >
-            <q-item to="columnlabel" exact>
-              <q-item-section > </q-item-section>
-              <q-item-section > Colonne </q-item-section>                
-              <q-item-section > </q-item-section>
-            </q-item>
+          <q-expansion-item
+            :header-inset-level="1"
+            icon="insights"
+            label="Charts"
+          >
+              <q-item to="columnlabel" exact>
+                <q-item-section > Colonne simple </q-item-section>                
+              </q-item>
 
-            <q-item to="basiccircle" exact>
-              <q-item-section > </q-item-section>
-              <q-item-section > Cercle simple </q-item-section>                
-              <q-item-section > </q-item-section>
-            </q-item>
+              <q-item to="basiccircle" exact>
+                <q-item-section > Cercle simple </q-item-section>                
+              </q-item>
 
-            <q-item to="batteryradial" exact>
-              <q-item-section > </q-item-section>
-              <q-item-section > Batterie (Radial) </q-item-section>                
-              <q-item-section > </q-item-section>
-            </q-item>
+              <q-item to="batteryradial" exact>
+                <q-item-section > Batterie (Radial) </q-item-section>                
+              </q-item>
 
-          </q-list>
+          </q-expansion-item>
+
+          <q-separator></q-separator>
+
+          <q-expansion-item
+            :header-inset-level="1"
+            icon="location_on"
+            label="Maps"
+          >
+
+            <q-item to="simplemap" exact>
+              <q-item-section > Carte simple </q-item-section>                
+            </q-item>
+          
+          </q-expansion-item>
+
         </q-expansion-item>
 
         
