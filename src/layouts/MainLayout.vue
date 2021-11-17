@@ -101,6 +101,13 @@
               <q-item-section > Cercle simple </q-item-section>                
               <q-item-section > </q-item-section>
             </q-item>
+
+            <q-item to="batteryradial" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Batterie (Radial) </q-item-section>                
+              <q-item-section > </q-item-section>
+            </q-item>
+
           </q-list>
         </q-expansion-item>
 

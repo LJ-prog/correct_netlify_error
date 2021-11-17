@@ -18,7 +18,8 @@ const routes = [
       { path: '/midipile05', component: () => import('pages/vehicules/Midipile05.vue') },
 
       { path: '/columnlabel', component: () => import('pages/charts/ColumnLabelPage.vue') },
-      { path: '/basiccircle', component: () => import('pages/charts/BasicCirclePage.vue') }
+      { path: '/basiccircle', component: () => import('pages/charts/BasicCirclePage.vue') },
+      { path: '/batteryradial', component: () => import('pages/charts/BatteryRadialPage.vue') }
     ]
   },
 
