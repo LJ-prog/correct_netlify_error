@@ -90,9 +90,15 @@
 
         <q-expansion-item icon="grid_view" label="Composants" >
           <q-list dense >
-            <q-item to="/columnlabel" exact>
+            <q-item to="columnlabel" exact>
               <q-item-section > </q-item-section>
               <q-item-section > Colonne </q-item-section>                
+              <q-item-section > </q-item-section>
+            </q-item>
+
+            <q-item to="basiccircle" exact>
+              <q-item-section > </q-item-section>
+              <q-item-section > Cercle simple </q-item-section>                
               <q-item-section > </q-item-section>
             </q-item>
           </q-list>
