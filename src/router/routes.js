@@ -22,7 +22,9 @@ const routes = [
       { path: '/batteryradial', component: () => import('pages/charts/BatteryRadialPage.vue') },
 
       //Composants : Cartes
-      { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') }
+      { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') },
+      { path: '/iconmap', component: () => import('pages/maps/IconMapPage.vue') },
+      { path: '/popupmap', component: () => import('pages/maps/PopupMapPage.vue') }
     ]
   },
 

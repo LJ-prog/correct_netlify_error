@@ -9,43 +9,21 @@
       </div>
       
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <chart> </chart>
-      </div> 
-
+        <apex-chart></apex-chart>
+      </div>
     </div>
   </q-page>
 </template>
 
 <script>
-import { defineComponent, defineAsyncComponent } from 'vue'
-const defgraph = [
-  {
-    type: 'bar',
-    height: '100%',
-    width: '100%',
-    options: {
-      chart: {
-        id: 'test graphe',
-        type: 'bar',
-      },
-      xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-      }
-      },
-    series: [{
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
-      }]
-  }
-  ]
+import {defineComponent, defineAsyncComponent} from 'vue';
 
 export default defineComponent({
   name: "Charts",
   components: {
-    chart: defineAsyncComponent(() => import('components/charts/ApexChart')),
+    ApexChart: defineAsyncComponent(() => import('components/charts/ApexChartRef')),
   },
 })
-
 </script>
 
 <style lang="sass" scoped>
