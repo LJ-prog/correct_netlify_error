@@ -106,6 +106,10 @@
                 <q-item-section > Batterie (Radial) </q-item-section>                
               </q-item>
 
+              <q-item to="radialbarcustom" exact>
+                <q-item-section > Jauge multiple </q-item-section>                
+              </q-item>
+
           </q-expansion-item>
 
           <q-separator></q-separator>
