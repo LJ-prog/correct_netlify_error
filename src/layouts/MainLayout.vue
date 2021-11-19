@@ -98,6 +98,10 @@
                 <q-item-section > Colonne simple </q-item-section>                
               </q-item>
 
+              <q-item to="stackedcolumn" exact>
+                <q-item-section > Colonne multiple </q-item-section>                
+              </q-item>
+
               <q-item to="basiccircle" exact>
                 <q-item-section > Cercle simple </q-item-section>                
               </q-item>
