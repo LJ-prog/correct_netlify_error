@@ -4,7 +4,7 @@
     <div class="q-pa-md row q-gutter-md">
       <div class="col">
         
-        <q-card>
+        <q-card flat bordered>
           <q-card-section>
             <global-map></global-map>
           </q-card-section>
@@ -15,9 +15,22 @@
 
     <div class="q-pa-md row q-gutter-md">
       <div class="col-4">
-        <q-card>
+        <q-card flat bordered>
           <q-card-section>
             <apex-column-label></apex-column-label>
+          </q-card-section>
+        </q-card>
+      </div>
+
+      <div class="col-4">
+        <q-card flat bordered >
+          <q-card-section>
+            <apex-column-label
+              :columnxaxiscategories="['Jan', 'Fev']"
+              :columnseriesname="Mois"
+              :columnseriesdata=[28,4]
+              :colorvalue="['#ea98be']"
+            ></apex-column-label>
           </q-card-section>
         </q-card>
       </div>

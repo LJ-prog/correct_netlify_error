@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh lpR fFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="text-primary bg-white">
         <q-btn
           flat
           dense
@@ -15,16 +15,15 @@
           Midipile Web Services
         </q-toolbar-title>
 
-        <div>MWS v{{ $q.version }}</div>
+        <div>MWS v0.1</div>
       </q-toolbar>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      bordered
     >
-    <q-img src="statics/logo_valide_paysage.jpg"></q-img>
+    <!-- <q-img src="statics/logo_valide_paysage.jpg"></q-img> -->
     <q-list>
         <q-item-label
           header
@@ -85,8 +84,6 @@
             </q-item>
           </q-list>
         </q-expansion-item>
-
-        <q-separator></q-separator>
 
         <q-expansion-item icon="grid_view" label="Composants" >
           <q-expansion-item
@@ -158,6 +155,24 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer class="bg-white text-primary">
+      <q-toolbar>
+        <q-toolbar-title>
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          </q-avatar>
+          <div>
+            <center>
+              <q-icon name="fab fa-twitter" />
+              <q-icon name="fab fa-facebook-f" />
+              <q-icon name="fab fa-linkedin-in" />
+            </center>
+          </div>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+
   </q-layout>
 </template>
 
