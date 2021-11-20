@@ -25,6 +25,9 @@ export default {
     columnseriesdata:{
       default: [0,1,2,3],
     },
+    columnborderradius: {
+      default: 10
+    },
     chartheight:{
       default: 300
     },
@@ -40,6 +43,12 @@ export default {
       options: {
         chart: {
           id: this.chartid
+        },
+        plotOptions: {
+            bar: {
+              horizontal: false,
+              borderRadius: this.columnborderradius
+            },
         },
         xaxis: {
           categories: this.columnxaxiscategories
