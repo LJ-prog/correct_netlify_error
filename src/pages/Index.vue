@@ -34,7 +34,7 @@
       <q-card class="my-card">
         <q-img
           src="statics/images/AccueilMidipile.jpg"
-          :height="800"
+          height="800"
         />
 
         <q-card-section>
