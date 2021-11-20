@@ -1,15 +1,25 @@
 <template>
   <q-page>
 
-    <div class="row" height="250px">
+    <div class="q-pa-md row q-gutter-md">
       <div class="col">
-        <global-map></global-map>
+        
+        <q-card>
+          <q-card-section>
+            <global-map></global-map>
+          </q-card-section>
+        </q-card>
+
       </div>
     </div>
 
-    <div class="row">
+    <div class="q-pa-md row q-gutter-md">
       <div class="col-4">
-        <apex-column-label></apex-column-label>
+        <q-card>
+          <q-card-section>
+            <apex-column-label></apex-column-label>
+          </q-card-section>
+        </q-card>
       </div>
     </div>
 
