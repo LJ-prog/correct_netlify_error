@@ -1,9 +1,9 @@
 <template>
   <apexchart 
-    width="500"
     type="radialBar"
     :options="options"
     :series="series"
+    :height="chartheight"
   ></apexchart>
 </template>
 
@@ -15,13 +15,33 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
+  props:{
+    circlelabel:{
+      default: ['Pourcentage']
+    },
+    circlevalue:{
+      default: [76],
+    },
+    chartheight:{
+      default: 300
+    },
+    chartid:{
+      default: 'basic-circle'
+    },
+    colorvalue:{
+      default: ["#515151"]
+    },
+    colorlabel:{
+      default: ["#7198be"]
+    }
+  },
   data () {
     return {
       options: {
         chart: {
-          id: 'basic-circle'
+          id: this.chartid
         },
-        labels: ['Pourcentage'],
+        labels: this.circlelabel,
         stroke: {
           lineCap: "round"
         },
@@ -32,9 +52,13 @@ export default {
               size: "70%"
             }
           }
+        },
+        colors: this.colorlabel,
+        fill: {
+          colors: this.colorvalue
         }
       },
-      series: [70]
+      series: this.circlevalue
     }
   }
 }

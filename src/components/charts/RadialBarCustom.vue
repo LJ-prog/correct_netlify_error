@@ -1,9 +1,9 @@
 <template>
   <apexchart 
-    width="500"
     type="radialBar"
     :options="options"
     :series="series"
+    :height="chartheight"
   ></apexchart>
 </template>
 
@@ -15,13 +15,33 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
+  props:{
+    radialchartlabel:{
+      default: ["Mes véhicules"]
+    },
+    radialarraylabels:{
+      default:['Midipile 01', 'Midipile 02', 'Midipile 03', 'Midipile 04', 'Midipile 05'] 
+    },
+    radialarrayvalues:{
+      default: [76, 67, 61, 90, 99],
+    },
+    radialarraycolors:{
+      default: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5', '#0078B5']
+    },
+    chartheight:{
+      default: 300
+    },
+    chartid:{
+      default: 'radial-custom'
+    }
+  },
   data () {
     return {
       options: {
         chart: {
-          id: 'battery-radial'
+          id: this.chartid
         },
-        colors:['#1ab7ea', '#0084ff', '#39539E', '#0077B5', '#0078B5'],
+        colors: this.radialarraycolors,
         plotOptions: {
           radialBar: {
             startAngle: -135,
@@ -38,7 +58,7 @@ export default {
             dataLabels: {
               total: {
                 show: true,
-                label: 'Mes véhicules'
+                label: this.radialchartlabel
               },
               value: {
                 fontSize: "30px",
@@ -59,9 +79,9 @@ export default {
         stroke: {
           lineCap: "round"
         },
-        labels: ['Midipile 01', 'Midipile 02', 'Midipile 03', 'Midipile 04', 'Midipile 05']
+        labels: this.radialarraylabels
       },
-      series: [76, 67, 61, 90, 99]
+      series: this.radialarrayvalues
     }
   }
 }

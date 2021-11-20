@@ -1,9 +1,9 @@
 <template>
   <apexchart
-    width="500"
     type="bar"
     :options="options"
     :series="series"
+    :height="chartheight"
   ></apexchart>
 </template>
 
@@ -15,19 +15,42 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
+  props:{
+    columnxaxiscategories:{
+      default: [0],
+    },
+    columnseriesname:{
+      default: 'Serie'
+    },
+    columnseriesdata:{
+      default: [0,1,2,3],
+    },
+    chartheight:{
+      default: 300
+    },
+    chartid:{
+      default: 'columnlabel'
+    },
+    colorvalue:{
+      default: ["#7198be"]
+    }
+  },
   data () {
     return {
       options: {
         chart: {
-          id: 'columnlabel-example'
+          id: this.chartid
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+          categories: this.columnxaxiscategories
+        },
+        fill: {
+          colors: this.colorvalue
         }
       },
       series: [{
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
+        name: this.columnseriesname,
+        data: this.columnseriesdata
       }]
     }
   }

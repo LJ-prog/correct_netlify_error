@@ -1,9 +1,9 @@
 <template>
   <apexchart 
-    width="500"
     type="radialBar"
     :options="options"
     :series="series"
+    :height="chartheight"
   ></apexchart>
 </template>
 
@@ -15,13 +15,33 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
+  props:{
+    batterylabel:{
+      default: ["Battery"]
+    },
+    batteryvalue:{
+      default: [77],
+    },
+    chartheight:{
+      default: 300
+    },
+    chartid:{
+      default: 'battery'
+    },
+    colormin:{
+      default: ["#515151"]
+    },
+    colormax:{
+      default: ["#7198be"]
+    }
+  },
   data () {
     return {
       options: {
         chart: {
-          id: 'battery-radial'
+          id: this.chartid
         },
-        colors:["#ea1515"],
+        colors: this.colormin,
         plotOptions: {
           radialBar: {
             startAngle: -135,
@@ -31,7 +51,7 @@ export default {
               size: "70%"
             },
             track: {
-              background: '#333',
+              background: '#515151',
               startAngle: -135,
               endAngle: 135,
             },
@@ -51,16 +71,16 @@ export default {
           gradient: {
             shade: "dark",
             type: "horizontal",
-            gradientToColors: ["#1cf14c"],
+            gradientToColors: this.colormax,
             stops: [0, 100]
           }
         },
         stroke: {
           lineCap: "round"
         },
-        labels: ["Battery"]
+        labels: this.batterylabel
       },
-      series: [87]
+      series: this.batteryvalue
     }
   }
 }
