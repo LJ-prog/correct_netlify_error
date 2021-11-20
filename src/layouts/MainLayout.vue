@@ -140,23 +140,6 @@
 
         </q-expansion-item>
 
-        
-
-        <q-item-label header>   </q-item-label>
-
-        <q-item-label
-          header
-        >
-          Contact Midipile
-        </q-item-label>
-
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-
       </q-list>
     </q-drawer>
 
@@ -167,40 +150,6 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Developpeur',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://gitlab.com/midipile/services_connectes'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum Midipile',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@MidipileM',
-    icon: 'rss_feed',
-    link: 'https://twitter.com/MidipileM'
-  },
-  {
-    title: 'Facebook',
-    caption: '@midipilemobility',
-    icon: 'public',
-    link: 'https://www.facebook.com/midipilemobility'
-  },
-  {
-    title: 'Midipile',
-    caption: 'Site web',
-    icon: 'language',
-    link: 'https://midipile.eu/'
-  }
-];
 
 import { defineComponent, ref } from 'vue'
 
@@ -208,14 +157,13 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    
   },
 
   setup () {
     const leftDrawerOpen = ref(false)
 
     return {
-      essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
