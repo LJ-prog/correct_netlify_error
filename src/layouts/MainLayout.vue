@@ -116,7 +116,6 @@
 
           </q-expansion-item>
 
-          <q-separator></q-separator>
 
           <q-expansion-item
             :header-inset-level="1"
@@ -134,6 +133,19 @@
 
             <q-item to="popupmap" exact>
               <q-item-section > Carte avec popup </q-item-section>                
+            </q-item>
+          
+          </q-expansion-item>
+          
+
+          <q-expansion-item
+            :header-inset-level="1"
+            icon="dashboard"
+            label="Dashboards"
+          >
+
+            <q-item to="dashboard1" exact>
+              <q-item-section > Dashboard 1 </q-item-section>                
             </q-item>
           
           </q-expansion-item>

@@ -26,7 +26,10 @@ const routes = [
       //Composants : Cartes
       { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') },
       { path: '/iconmap', component: () => import('pages/maps/IconMapPage.vue') },
-      { path: '/popupmap', component: () => import('pages/maps/PopupMapPage.vue') }
+      { path: '/popupmap', component: () => import('pages/maps/PopupMapPage.vue') },
+
+      //Dashboards
+      { path: '/dashboard1', component: () => import('pages/dashboards/Dashboard1.vue') }
     ]
   },
 
