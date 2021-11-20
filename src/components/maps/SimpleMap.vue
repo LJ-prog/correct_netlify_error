@@ -1,5 +1,9 @@
 <template>
-  <l-map style="height:80vh" :zoom=13 :center="[45.63059,0.11664]">
+  <l-map 
+    :style="stylemap"
+    :zoom="zoommap"
+    :center="centermap"
+  >
     <l-tile-layer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       layer-type="base"
@@ -18,6 +22,17 @@ export default {
     LMap,
     LTileLayer,
   },
+  props:{
+    stylemap:{
+      default: "height:35vh"
+    },
+    zoommap:{
+      default: 14
+    },
+    centermap:{
+      default: [45.63059,0.11664]
+    }
+  }, 
   data() {
     return {
       
