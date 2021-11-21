@@ -69,20 +69,8 @@ export default defineComponent({
     return {
       column,
       data3,
-      getColor(val) {
-        if (val > 70 && val <= 100) {
-          return 'green'
-        } else if (val > 50 && val <= 70) {
-          return 'blue'
-        }
-        return 'red'
-      }
     }
   },
 
 })
 </script>
-
-<style scoped>
-
-</style>

@@ -143,6 +143,14 @@
             <q-item to="tableprogress" exact>
               <q-item-section > Suivi des véhicules </q-item-section>                
             </q-item>
+
+            <q-item to="tabletripstat" exact>
+              <q-item-section > Statistique trajet </q-item-section>                
+            </q-item>
+
+            <q-item to="tableactu" exact>
+              <q-item-section > Flux d'actualité </q-item-section>                
+            </q-item>
           
           </q-expansion-item>          
 

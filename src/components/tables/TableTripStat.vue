@@ -55,20 +55,12 @@ const data3 = [
 
 
 export default defineComponent({
-  name: "TableProgress",
+  name: "TableTripStat",
   setup() {
 
     return {
       column,
       data3,
-      getColor(val) {
-        if (val > 70 && val <= 100) {
-          return 'green'
-        } else if (val > 50 && val <= 70) {
-          return 'blue'
-        }
-        return 'red'
-      }
     }
   },
 
