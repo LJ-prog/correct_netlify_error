@@ -28,6 +28,9 @@ const routes = [
       { path: '/iconmap', component: () => import('pages/maps/IconMapPage.vue') },
       { path: '/popupmap', component: () => import('pages/maps/PopupMapPage.vue') },
 
+      //Composants : Table
+      { path: '/tableprogress', component: () => import('pages/table/TableProgressPage.vue') },
+
       //Dashboards
       { path: '/dashboard1', component: () => import('pages/dashboards/Dashboard1.vue') }
     ]

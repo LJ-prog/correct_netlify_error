@@ -9,7 +9,7 @@
     <q-card-section class="q-pa-none">
       <q-table class="" :rows="data3" :columns="column" hide-bottom>
         <template v-slot:body-cell-vh_id="props">
-          <q-td :props="props" style="max-width: 100px">
+          <q-td :props="props" style="max-width: 80px">
             <q-item>
               <q-item-section>
                 <q-item-label>{{ props.row.vh_id }}</q-item-label>
@@ -37,6 +37,17 @@
             </q-item>
           </q-td>
         </template>
+        <template v-slot:body-cell-Ensoleillement="props">
+          <q-td :props="props" style="max-width: 10px">
+            <q-item>
+              <q-item-section>
+                <q-icon 
+                  style="font-size: 32px;" :name="props.row.Psolar" 
+                />
+              </q-item-section>
+            </q-item>
+          </q-td>
+        </template>
       </q-table>
     </q-card-section>
   </q-card>
@@ -48,10 +59,8 @@ import {defineComponent} from 'vue'
 const column = [
   {name: 'vh_id',  label: 'Id véhicule', field: 'vh_id',  sortable: true, align: 'left'},
   {name: 'SOC', label: 'Niveau batterie', field: 'SOC', sortable: true, align: 'left'},
-  {name: 'Ensoleillement', label: 'Ensoleillement', field: 'Psolar', sortable: true, align: 'left'},
+  {name: 'Ensoleillement', label: 'Ensoleillement', field: 'Psolar', sortable: false, align: 'left'},
   {name: 'Autonomie', label: 'Autonomie', field: 'Autonomie', sortable: true, align: 'left'},
-  // {name: 'Position', label: 'Position', field: 'Position', sortable: true, align: 'left'},
-  // {name: 'detail', label: 'Detail', field: 'detail', sortable: true, align: 'left'},
 ];
 
 const data3 = [
@@ -60,7 +69,7 @@ const data3 = [
       usr_id: "Benoit",
       SOC_fixe: 90,
       SOC_mobile: 46,
-      Psolar: "élevée",
+      Psolar: "light_mode",
       Autonomie: "160 km",
       Position: "test",
       utilisation: "en cours",
@@ -70,7 +79,7 @@ const data3 = [
       usr_id: "Vincent",
       SOC_fixe: 75,
       SOC_mobile: 76,
-      Psolar: "élevée",
+      Psolar: "light_mode",
       Autonomie: "165 km",
       Position: "test",
       utilisation: "non utilisé",
@@ -80,7 +89,7 @@ const data3 = [
       usr_id: "Célian",
       SOC_fixe: 95,
       SOC_mobile: 13,
-      Psolar: "faible",
+      Psolar: "wb_cloudy",
       Autonomie: "145 km",
       Position: "test",
       utilisation: "en cours",
@@ -90,7 +99,7 @@ const data3 = [
       usr_id: "Ehouarn",
       SOC_fixe: 25,
       SOC_mobile: 45,
-      Psolar: "moyen",
+      Psolar: "wb_cloudy",
       Autonomie: "83 km",
       Position: "test",
       utilisation: "non utilisé",
@@ -100,7 +109,7 @@ const data3 = [
       usr_id: "Sébastien",
       SOC_fixe: 69,
       SOC_mobile: 86,
-      Psolar: "élevée",
+      Psolar: "light_mode",
       Autonomie: "178 km",
       Position: "test",
       utilisation: "non utilisé",
@@ -115,20 +124,9 @@ export default defineComponent({
     return {
       column,
       data3,
-      getColor(val) {
-        if (val > 70 && val <= 100) {
-          return 'green'
-        } else if (val > 30 && val <= 70) {
-          return 'blue'
-        }
-        return 'red'
-      }
     }
   },
 
 })
 </script>
 
-<style scoped>
-
-</style>

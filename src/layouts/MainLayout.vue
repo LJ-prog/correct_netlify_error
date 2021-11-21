@@ -133,7 +133,18 @@
             </q-item>
           
           </q-expansion-item>
+
+          <q-expansion-item
+            :header-inset-level="1"
+            icon="table_chart"
+            label="Tables"
+          >
+
+            <q-item to="tableprogress" exact>
+              <q-item-section > Suivi des véhicules </q-item-section>                
+            </q-item>
           
+          </q-expansion-item>          
 
           <q-expansion-item
             :header-inset-level="1"
