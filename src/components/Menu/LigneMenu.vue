@@ -32,6 +32,11 @@ export default {
           icon:"bike_scooter",
           to:"/mesvehicules"
         },
+        {
+          label:"",
+          icon:"",
+          to:""
+        },
       ]
     }
   },

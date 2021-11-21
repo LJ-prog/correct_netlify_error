@@ -172,7 +172,10 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+        <q-space />
+        <ligne-menu></ligne-menu>
+        <q-space />
+        <router-view />
     </q-page-container>
 
     <q-footer class="bg-white text-primary">
@@ -197,13 +200,13 @@
 
 <script>
 
-import { defineComponent, ref } from 'vue'
+import { defineComponent, defineAsyncComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    
+    LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue'))
   },
 
   setup () {
