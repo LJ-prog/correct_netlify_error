@@ -1,11 +1,7 @@
 <template>
   <q-page>
     <div class="q-pa-md q-gutter-sm">
-      <q-breadcrumbs>
-        <q-breadcrumbs-el label="Accueil" icon="dashboard" to="/index" />
-        <q-breadcrumbs-el label="Suivi des véhicules" icon="manage_accounts" to="/tableau" />
-        <q-breadcrumbs-el label="Mes véhicules" icon="bike_scooter" to="/mesvehicules" />
-      </q-breadcrumbs>
+      <ligne-menu></ligne-menu>
     </div>
     <div class="q-pa-md row q-gutter-md">
       <div class="col">
@@ -47,15 +43,18 @@
 
 <script>
 
+import LigneMenu from 'components/Menu/LigneMenu.vue'
 import { defineComponent, defineAsyncComponent } from 'vue'
 
 export default defineComponent({
   name: 'PageIndex',
   components: {
     ApexColumnLabel: defineAsyncComponent(() => import('components/charts/ColumnLabel.vue')),
-    GlobalMap: defineAsyncComponent(() => import('components/maps/PopupMap.vue'))
+    GlobalMap: defineAsyncComponent(() => import('components/maps/PopupMap.vue')),
+    LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue'))
   },
   data () {
+    LigneMenu
     return {
       loading: true,
       dialog: true,
