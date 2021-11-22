@@ -40,7 +40,7 @@
           <q-item-section> Accueil </q-item-section>
         </q-item>
 
-        <q-item to="/tableau" exact>
+        <q-item to="/dashboard2" exact>
           <q-item-section avatar>
             <q-icon name="manage_accounts" />
           </q-item-section>
@@ -167,6 +167,10 @@
               <q-item-section > Dashboard 1 </q-item-section>                
             </q-item>
           
+            <q-item to="dashboard2" exact>
+              <q-item-section > Dashboard 2 </q-item-section>                
+            </q-item>
+
           </q-expansion-item>
 
         </q-expansion-item>

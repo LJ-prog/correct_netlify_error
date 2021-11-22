@@ -35,7 +35,8 @@ const routes = [
       { path: '/tableactive', component: () => import('pages/table/TableActivePage.vue') },
 
       //Dashboards
-      { path: '/dashboard1', component: () => import('pages/dashboards/Dashboard1.vue') }
+      { path: '/dashboard1', component: () => import('pages/dashboards/Dashboard1.vue') },
+      { path: '/dashboard2', component: () => import('pages/dashboards/Dashboard2.vue') }
     ]
   },
 
