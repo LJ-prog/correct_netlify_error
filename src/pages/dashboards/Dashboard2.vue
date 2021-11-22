@@ -30,6 +30,7 @@
       <div class="col-4">
         <q-card flat bordered>
           <q-card-section>
+            <div class="text-h6 text-grey-8">ECO Score</div>
             <radial-bar-custom></radial-bar-custom>
           </q-card-section>
         </q-card>

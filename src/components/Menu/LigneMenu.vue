@@ -25,7 +25,7 @@ export default {
         {
           label:"Suivi des véhicules",
           icon:"manage_accounts",
-          to:"/tableau"
+          to:"/dashboard2"
         },
         {
           label:"Mes véhicules",
