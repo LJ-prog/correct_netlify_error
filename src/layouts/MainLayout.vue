@@ -151,7 +151,10 @@
             <q-item to="tableactu" exact>
               <q-item-section > Flux d'actualité </q-item-section>                
             </q-item>
-          
+
+            <q-item to="tableactive" exact>
+              <q-item-section > Etat du parc </q-item-section>                
+            </q-item>          
           </q-expansion-item>          
 
           <q-expansion-item

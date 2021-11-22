@@ -32,6 +32,7 @@ const routes = [
       { path: '/tableprogress', component: () => import('pages/table/TableProgressPage.vue') },
       { path: '/tabletripstat', component: () => import('pages/table/TableTripStatPage.vue') },
       { path: '/tableactu', component: () => import('pages/table/TableActuPage.vue') },
+      { path: '/tableactive', component: () => import('pages/table/TableActivePage.vue') },
 
       //Dashboards
       { path: '/dashboard1', component: () => import('pages/dashboards/Dashboard1.vue') }
