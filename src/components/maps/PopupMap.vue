@@ -20,7 +20,6 @@
 
         <l-icon
           :icon-url="marker.iconurl"
-          :icon-size="iconSize"
         />
 
         <l-popup>
@@ -67,7 +66,7 @@ export default {
         {
           id:"Midipile 01",
           coordinates:[45.63059,0.11664],
-          iconurl: `/statics/images/M1.JPG`,
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
           popupcolor: "green",
           popupicon: "thumb_up",
           popuptarget: "/midipile01",
@@ -76,7 +75,7 @@ export default {
         {
           id:"Midipile 02",
           coordinates:[45.64059,0.12064],
-          iconurl: `/statics/images/M2.JPG`,
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png`,
           popupcolor: "red",
           popupicon: "warning",
           popuptarget: "/midipile02",
