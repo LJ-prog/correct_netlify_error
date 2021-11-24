@@ -1,10 +1,7 @@
 <template>
   <q-page>
-    <div class="q-pa-md q-gutter-sm">
-      <ligne-menu></ligne-menu>
-    </div>
     <div class="q-pa-md row q-gutter-md">
-      <div class="col-4">
+      <div class="col-xs-12 col-sm-4 col-md-4">
           <q-card flat bordered>
             <q-card-section>
               <table-active></table-active>
@@ -16,7 +13,7 @@
           </q-card>
         </div>
 
-      <div class="col-7">
+      <div class="col-xs-12 col-sm-7 col-md-7">
         <q-card flat bordered>
           <q-card-section>
             <table-progress></table-progress>
@@ -27,7 +24,7 @@
     </div>
 
     <div class="q-pa-md row q-gutter-md">
-      <div class="col-4">
+      <div class="col-xs-12 col-sm-4 col-md-4">
         <q-card flat bordered>
           <q-card-section>
             <div class="text-h6 text-grey-8">ECO Score</div>
@@ -37,7 +34,7 @@
       </div>
 
 
-      <div class="col-7">
+      <div class="col-xs-12 col-sm-7 col-md-7">
         <q-card flat bordered >
           <q-card-section>
             <popup-map></popup-map>
@@ -58,7 +55,6 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 export default defineComponent({
   name: 'PageIndex',
   components: {
-    LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue')),
     TableActu: defineAsyncComponent(() => import('components/tables/TableActu')),
     TableActive: defineAsyncComponent(() => import('components/tables/TableActive')),
     RadialBarCustom: defineAsyncComponent(() => import('components/charts/RadialBarCustom.vue')),

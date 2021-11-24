@@ -21,7 +21,6 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
     >
     <!-- <q-img src="statics/logo_valide_paysage.jpg"></q-img> -->
     <q-list>
@@ -179,9 +178,9 @@
     </q-drawer>
 
     <q-page-container>
-        <q-space />
-        <ligne-menu></ligne-menu>
-        <q-space />
+        <div class="q-pt-md q-pl-md">
+          <ligne-menu></ligne-menu>
+        </div>
         <router-view />
     </q-page-container>
 
