@@ -134,6 +134,10 @@
             <q-item to="popupmap" exact>
               <q-item-section > Carte avec popup </q-item-section>                
             </q-item>
+
+            <q-item to="polylinemap" exact>
+              <q-item-section > Carte avec chemin </q-item-section>                
+            </q-item>
           
           </q-expansion-item>
 
