@@ -6,9 +6,6 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '/index', component: () => import('pages/Index.vue') },
-      { path: '/tableau', component: () => import('pages/Tableau.vue') },
-      { path: '/table', component: () => import('pages/Tables.vue') },
-      { path: '/graphe', component: () => import('pages/Graphes.vue') },
       { path: '/mesvehicules', component: () => import('pages/mesvehicules.vue') },
       { path: '/midipile01', component: () => import('pages/vehicules/Midipile01.vue') },
       { path: '/midipile02', component: () => import('pages/vehicules/Midipile02.vue') },

@@ -26,7 +26,7 @@
         <q-card-actions>
           <q-btn flat
              label="Entrer"
-             to="/tableau"
+             to="/dashboard2"
           />
         </q-card-actions>
       </q-card>
