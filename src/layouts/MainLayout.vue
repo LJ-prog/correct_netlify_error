@@ -11,11 +11,15 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Midipile Web Services
+        <q-toolbar-title class="text-h4 text-grey-8">
+          Midipile Fleet Manager
         </q-toolbar-title>
 
-        <div>MWS v0.1</div>
+        <div class="q-gutter-md">
+          <q-btn flat round color="primary" icon="fab fa-twitter"></q-btn>
+          <q-btn flat round color="primary" icon="fab fa-facebook-f"></q-btn>
+          <q-btn flat round color="primary" icon="fab fa-linkedin-in"></q-btn>
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -187,14 +191,9 @@
     <q-footer class="bg-white text-primary">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
           <div>
             <center>
-              <q-icon name="fab fa-twitter" />
-              <q-icon name="fab fa-facebook-f" />
-              <q-icon name="fab fa-linkedin-in" />
+              <div class="text-overline text-grey-8">MWS v0.1 - Copyright © 2021 - <a href="https://midipile.eu" class="text-grey-8">Midipile Mobility</a></div>
             </center>
           </div>
         </q-toolbar-title>
