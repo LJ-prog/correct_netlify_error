@@ -37,33 +37,34 @@
 <script>
 import {defineComponent} from 'vue'
 
-const column = [
-  {name: 'champ', label: ' ', field: 'champ', sortable: false, align: 'left'},
-  {name: 'valeur', label: ' ', field: 'valeur', sortable: false, align: 'left'},
-];
-
-const data3 = [
-  { champ: 'Utilisateur', valeur: 'Benoît Trouvé'},
-  { champ: 'Distance', valeur: '25,62 km'},
-  { champ: 'Durée', valeur: '42:30'},
-  { champ: 'Vitesse moyenne', valeur: '36,18 km/h'},
-  { champ: 'Puissance moyenne consommée', valeur: '800 W'},
-  { champ: 'Auto-consommation', valeur: '16 %'},
-  { champ: 'SOC fixe fin de trajet', valeur: '46 %'},
-  { champ: 'SOC mobile fin de trajet', valeur: '32 %'}
-];
-
-
 export default defineComponent({
   name: "TableTripStat",
-  setup() {
-
-    return {
-      column,
-      data3,
+  props:{
+    data3def:{
+      default: [
+        { champ: 'Utilisateur', valeur: 'Benoît Trouvé'},
+        { champ: 'Distance', valeur: '25,62 km'},
+        { champ: 'Durée', valeur: '42:30'},
+        { champ: 'Vitesse moyenne', valeur: '36,18 km/h'},
+        { champ: 'Puissance moyenne consommée', valeur: '800 W'},
+        { champ: 'Auto-consommation', valeur: '16 %'},
+        { champ: 'SOC fixe fin de trajet', valeur: '46 %'},
+        { champ: 'SOC mobile fin de trajet', valeur: '32 %'}
+      ]
+    },
+    colomndef:{
+      default: [
+        {name: 'champ', label: ' ', field: 'champ', sortable: false, align: 'left'},
+        {name: 'valeur', label: ' ', field: 'valeur', sortable: false, align: 'left'},
+      ]
     }
   },
-
+  data() {
+    return {
+      column: this.colomndef,
+      data3 : this.data3def,
+    }
+  },
 })
 </script>
 

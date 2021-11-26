@@ -35,24 +35,24 @@
 <script>
 import {defineComponent} from 'vue'
 
-const ligne = [
-  {name: '', Actif: 3, Inactif: 1, Atelier: 1}
-];
-
-const colonne = [
-  {name: 'Actif', label: 'Actif', field: 'Actif', sortable: false, align: 'left'},
-  {name: 'Inactif', label: 'Inactif', field: 'Inactif', sortable: false, align: 'left'},
-  {name: 'Atelier', label: 'Atelier', field: 'Atelier', sortable: false, align: 'left'},
-];
-
-
 export default defineComponent({
   name: "TableActive",
-  setup() {
-
+  props:{
+    lignedef:{
+      default: [{name: '', Actif: 3, Inactif: 1, Atelier: 1}]
+    },
+    colonnedef:{
+      default: [
+        {name: 'Actif', label: 'Actif', field: 'Actif', sortable: false, align: 'center'},
+        {name: 'Inactif', label: 'Inactif', field: 'Inactif', sortable: false, align: 'center'},
+        {name: 'Atelier', label: 'Atelier', field: 'Atelier', sortable: false, align: 'center'},
+      ]
+    }
+  },
+  data() {
     return {
-      colonne,
-      ligne,
+      colonne: this.colonnedef,
+      ligne : this.lignedef,
     }
   },
 })

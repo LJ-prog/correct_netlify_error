@@ -56,77 +56,78 @@
 <script>
 import {defineComponent} from 'vue'
 
-const column = [
-  {name: 'vh_id',  label: 'Id véhicule', field: 'vh_id',  sortable: true, align: 'left'},
-  {name: 'SOC', label: 'Niveau batterie', field: 'SOC', sortable: true, align: 'left'},
-  {name: 'Ensoleillement', label: 'Ensoleillement', field: 'Psolar', sortable: false, align: 'left'},
-  {name: 'Autonomie', label: 'Autonomie', field: 'Autonomie', sortable: true, align: 'left'},
-];
-
-const data3 = [
-  {
-      vh_id: "Midipile 01",
-      usr_id: "Benoit",
-      SOC_fixe: 90,
-      SOC_mobile: 46,
-      Psolar: "light_mode",
-      Autonomie: "160 km",
-      Position: "test",
-      utilisation: "en cours",
-  },
-  {
-      vh_id: "Midipile 02",
-      usr_id: "Vincent",
-      SOC_fixe: 75,
-      SOC_mobile: 76,
-      Psolar: "light_mode",
-      Autonomie: "165 km",
-      Position: "test",
-      utilisation: "non utilisé",
-  },
-  {
-      vh_id: "Midipile 03",
-      usr_id: "Célian",
-      SOC_fixe: 95,
-      SOC_mobile: 13,
-      Psolar: "wb_cloudy",
-      Autonomie: "145 km",
-      Position: "test",
-      utilisation: "en cours",
-  },
-  {
-      vh_id: "Midipile 04",
-      usr_id: "Ehouarn",
-      SOC_fixe: 25,
-      SOC_mobile: 45,
-      Psolar: "wb_cloudy",
-      Autonomie: "83 km",
-      Position: "test",
-      utilisation: "non utilisé",
-  },
-  {
-      vh_id: "Midipile 05",
-      usr_id: "Sébastien",
-      SOC_fixe: 69,
-      SOC_mobile: 86,
-      Psolar: "light_mode",
-      Autonomie: "178 km",
-      Position: "test",
-      utilisation: "non utilisé",
-  }
-];
-
-
 export default defineComponent({
   name: "TableProgress",
-  setup() {
-
-    return {
-      column,
-      data3,
+  props:{
+    data3def:{
+      default: [
+        {
+            vh_id: "Midipile 01",
+            usr_id: "Benoit",
+            SOC_fixe: 90,
+            SOC_mobile: 46,
+            Psolar: "light_mode",
+            Autonomie: "160 km",
+            Position: "test",
+            utilisation: "en cours",
+        },
+        {
+            vh_id: "Midipile 02",
+            usr_id: "Vincent",
+            SOC_fixe: 75,
+            SOC_mobile: 76,
+            Psolar: "light_mode",
+            Autonomie: "165 km",
+            Position: "test",
+            utilisation: "non utilisé",
+        },
+        {
+            vh_id: "Midipile 03",
+            usr_id: "Célian",
+            SOC_fixe: 95,
+            SOC_mobile: 13,
+            Psolar: "wb_cloudy",
+            Autonomie: "145 km",
+            Position: "test",
+            utilisation: "en cours",
+        },
+        {
+            vh_id: "Midipile 04",
+            usr_id: "Ehouarn",
+            SOC_fixe: 25,
+            SOC_mobile: 45,
+            Psolar: "wb_cloudy",
+            Autonomie: "83 km",
+            Position: "test",
+            utilisation: "non utilisé",
+        },
+        {
+            vh_id: "Midipile 05",
+            usr_id: "Sébastien",
+            SOC_fixe: 69,
+            SOC_mobile: 86,
+            Psolar: "light_mode",
+            Autonomie: "178 km",
+            Position: "test",
+            utilisation: "non utilisé",
+        }
+      ]
+    },
+    colomndef:{
+      default: [
+        {name: 'vh_id',  label: 'Id véhicule', field: 'vh_id',  sortable: true, align: 'left'},
+        {name: 'SOC', label: 'Niveau batterie', field: 'SOC', sortable: true, align: 'left'},
+        {name: 'Ensoleillement', label: 'Ensoleillement', field: 'Psolar', sortable: false, align: 'left'},
+        {name: 'Autonomie', label: 'Autonomie', field: 'Autonomie', sortable: true, align: 'left'},
+      ]
     }
   },
-
+  data() {
+    return {
+      column: this.colomndef,
+      data3 : this.data3def,
+    }
+  },
 })
 </script>
 
