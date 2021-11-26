@@ -18,19 +18,19 @@ export default {
     menudefs:{
       default:[
         {
-          label:"Accueil",
+          label:"Tableau de bord",
           icon:"dashboard",
-          to:"/index"
-        },
-        {
-          label:"Suivi des véhicules",
-          icon:"manage_accounts",
           to:"/dashboard2"
         },
         {
           label:"Mes véhicules",
           icon:"bike_scooter",
           to:"/mesvehicules"
+        },
+        {
+          label:"Administration",
+          icon:"manage_accounts",
+          to:"/index"
         },
         {
           label:"",

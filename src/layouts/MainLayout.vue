@@ -34,22 +34,13 @@
           Demo 2021
         </q-item-label>
 
-
-        <q-item to="/index" exact>
+        <q-item to="/dashboard2" exact>
           <q-item-section avatar>
             <q-icon name="dashboard" />
           </q-item-section>
 
-          <q-item-section> Accueil </q-item-section>
-        </q-item>
-
-        <q-item to="/dashboard2" exact>
-          <q-item-section avatar>
-            <q-icon name="manage_accounts" />
-          </q-item-section>
-
           <q-item-section>
-            Suivi des véhicules
+            Tableau de bord
           </q-item-section>
         </q-item>
 
@@ -87,6 +78,15 @@
             </q-item>
           </q-list>
         </q-expansion-item>
+
+        <q-item to="/index" exact>
+          <q-item-section avatar>
+            <q-icon name="manage_accounts" />
+          </q-item-section>
+
+          <q-item-section> Administration </q-item-section>
+        </q-item>
+
 
         <q-expansion-item icon="grid_view" label="Composants" >
           <q-expansion-item
