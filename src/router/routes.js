@@ -20,6 +20,7 @@ const routes = [
       { path: '/batteryradial', component: () => import('pages/charts/BatteryRadialPage.vue') },
       { path: '/radialbarcustom', component: () => import('pages/charts/RadialBarCustomPage.vue') },
       { path: '/spark', component: () => import('pages/charts/SparkPage.vue') },
+      { path: '/basicline', component: () => import('pages/charts/BasicLinePage.vue') },
 
       //Composants : Cartes
       { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') },

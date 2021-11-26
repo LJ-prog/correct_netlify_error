@@ -118,6 +118,10 @@
                 <q-item-section > Indicateur Spark </q-item-section>                
               </q-item>
               
+              <q-item to="basicline" exact>
+                <q-item-section > Graphe ligne simple </q-item-section>                
+              </q-item>
+              
           </q-expansion-item>
 
 
