@@ -19,6 +19,7 @@ const routes = [
       { path: '/basiccircle', component: () => import('pages/charts/BasicCirclePage.vue') },
       { path: '/batteryradial', component: () => import('pages/charts/BatteryRadialPage.vue') },
       { path: '/radialbarcustom', component: () => import('pages/charts/RadialBarCustomPage.vue') },
+      { path: '/spark', component: () => import('pages/charts/SparkPage.vue') },
 
       //Composants : Cartes
       { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') },

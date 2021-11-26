@@ -114,6 +114,10 @@
                 <q-item-section > Jauge multiple </q-item-section>                
               </q-item>
 
+              <q-item to="spark" exact>
+                <q-item-section > Indicateur Spark </q-item-section>                
+              </q-item>
+              
           </q-expansion-item>
 
 
