@@ -33,6 +33,12 @@ export default {
     },
     colormax:{
       default: ["#7198be"]
+    },
+    linecap: {
+      default: "round"
+    },
+    dasharray: {
+      default: [0]
     }
   },
   data () {
@@ -75,9 +81,10 @@ export default {
             stops: [0, 100]
           }
         },
-        stroke: {
-          lineCap: "round"
-        },
+/*         stroke: {
+          lineCap: this.linecap,
+          dashArray: this.dasharray
+        }, */
         labels: this.batterylabel
       },
       series: this.batteryvalue

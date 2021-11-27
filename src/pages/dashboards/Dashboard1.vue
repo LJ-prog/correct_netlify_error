@@ -1,8 +1,5 @@
 <template>
   <q-page>
-    <div class="q-pa-md q-gutter-sm">
-      <ligne-menu></ligne-menu>
-    </div>
     <div class="q-pa-md row q-gutter-md">
       <div class="col">
         
@@ -43,18 +40,15 @@
 
 <script>
 
-import LigneMenu from 'components/Menu/LigneMenu.vue'
 import { defineComponent, defineAsyncComponent } from 'vue'
 
 export default defineComponent({
   name: 'PageIndex',
   components: {
     ApexColumnLabel: defineAsyncComponent(() => import('components/charts/ColumnLabel.vue')),
-    GlobalMap: defineAsyncComponent(() => import('components/maps/PopupMap.vue')),
-    LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue'))
+    GlobalMap: defineAsyncComponent(() => import('components/maps/PopupMap.vue'))
   },
   data () {
-    LigneMenu
     return {
       loading: true,
       dialog: true,
