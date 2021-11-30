@@ -1,0 +1,10 @@
+[
+"{ champ: ""Utilisateur"", valeur: ""Ehouarn""},"
+"{ champ: ""Distance"", valeur: """ 65,93 " km""},"
+"{ champ: ""Durée"", valeur: """ 2:39:7 " ""},"
+"{ champ: ""Vitesse moyenne"", valeur: """ 65,93 " km""},"
+"{ champ: ""Consommation"", valeur: """ 20 " Wh/km""},"
+"{ champ: ""Auto-consommation"", valeur: """ 18 " %""},"
+"{ champ: ""SOC fixe fin de trajet"", valeur: """ 68 " %""},"
+"{ champ: ""SOC mobile fin de trajet"", valeur: """ 19 " %"","
+]

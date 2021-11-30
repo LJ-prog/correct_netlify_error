@@ -1,0 +1,10 @@
+[
+"{ champ: ""Utilisateur"", valeur: ""Sebastien""},"
+"{ champ: ""Distance"", valeur: """ 49,58 " km""},"
+"{ champ: ""Durée"", valeur: """ 2:0:24 " ""},"
+"{ champ: ""Vitesse moyenne"", valeur: """ 49,58 " km""},"
+"{ champ: ""Consommation"", valeur: """ 21 " Wh/km""},"
+"{ champ: ""Auto-consommation"", valeur: """ 17 " %""},"
+"{ champ: ""SOC fixe fin de trajet"", valeur: """ 93 " %""},"
+"{ champ: ""SOC mobile fin de trajet"", valeur: """ 28 " %"","
+]

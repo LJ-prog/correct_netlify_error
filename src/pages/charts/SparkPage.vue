@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <div>
-      <apex-spark></apex-spark>
+      <apex-sparks></apex-spark>
     </div>
   </q-page>
 </template>

@@ -1,0 +1,10 @@
+[
+"{ champ: ""Utilisateur"", valeur: ""Benoit""},"
+"{ champ: ""Distance"", valeur: """ 96,44 " km""},"
+"{ champ: ""Durée"", valeur: """ 3:51:10 " ""},"
+"{ champ: ""Vitesse moyenne"", valeur: """ 96,44 " km""},"
+"{ champ: ""Consommation"", valeur: """ 23 " Wh/km""},"
+"{ champ: ""Auto-consommation"", valeur: """ 16 " %""},"
+"{ champ: ""SOC fixe fin de trajet"", valeur: """ 28 " %""},"
+"{ champ: ""SOC mobile fin de trajet"", valeur: """ 19 " %"","
+]

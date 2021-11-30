@@ -18,8 +18,8 @@ export default {
   props:{
     stackedseries:{
       default: [{
-            name: 'Mes Véhicules',
-            data: [44, 55, 41, 67, 22, 43, 70, 85, 82]
+            name: 'stat conso',
+            data: [22.5,23.6,23.4,23.7,22.8,23.3,22.9,23.2]
       }]
     },
     chartheight:{
