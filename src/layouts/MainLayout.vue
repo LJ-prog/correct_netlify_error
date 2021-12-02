@@ -188,6 +188,18 @@
 
           </q-expansion-item>
 
+          <q-expansion-item
+            :header-inset-level="1"
+            icon="bike_scooter"
+            label="Trajet M01"
+          >
+
+            <q-item to="01trip001" exact>
+              <q-item-section > Trajet 001 </q-item-section>                
+            </q-item>
+
+          </q-expansion-item>
+
         </q-expansion-item>
 
       </q-list>
