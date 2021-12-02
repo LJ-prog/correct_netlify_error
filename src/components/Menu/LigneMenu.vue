@@ -30,7 +30,7 @@ export default {
         {
           label:"Administration",
           icon:"manage_accounts",
-          to:"/index"
+          to:"/Administration"
         },
         {
           label:"",

@@ -79,7 +79,7 @@
           </q-list>
         </q-expansion-item>
 
-        <q-item to="/index" exact>
+        <q-item to="/Administration" exact>
           <q-item-section avatar>
             <q-icon name="manage_accounts" />
           </q-item-section>

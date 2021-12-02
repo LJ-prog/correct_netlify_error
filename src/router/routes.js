@@ -38,8 +38,11 @@ const routes = [
       { path: '/dashboard1', component: () => import('pages/dashboards/Dashboard1.vue') },
       { path: '/dashboard2', component: () => import('pages/dashboards/Dashboard2.vue') },
 
-      //Dashboards
-      { path: '/01trip001', component: () => import('pages/midipile01/trip001.vue') }
+      //Détail voyage
+      { path: '/01trip001', component: () => import('pages/midipile01/trip001.vue') },
+
+      //Administration
+      { path: '/administration', component: () => import('pages/Administration.vue') }
     ]
   },
 
