@@ -198,6 +198,10 @@
               <q-item-section > Trajet 001 </q-item-section>                
             </q-item>
 
+            <q-item to="01trip002" exact>
+              <q-item-section > Trajet 002 </q-item-section>                
+            </q-item>
+
           </q-expansion-item>
 
         </q-expansion-item>

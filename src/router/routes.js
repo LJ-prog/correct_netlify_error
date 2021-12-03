@@ -40,6 +40,7 @@ const routes = [
 
       //Détail voyage
       { path: '/01trip001', component: () => import('pages/midipile01/trip001.vue') },
+      { path: '/01trip002', component: () => import('pages/midipile01/trip002.vue') },
 
       //Administration
       { path: '/administration', component: () => import('pages/Administration.vue') }

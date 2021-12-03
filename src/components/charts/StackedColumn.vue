@@ -19,9 +19,9 @@ export default {
     stackedborderradius: {
       default: 10
     },
-    stackedxaxistype: {
+    /* stackedxaxistype: {
       default: 'datetime'
-    },
+    }, */
     stackedxaxiscategories: {
       default: [
         '01/07/2021 GMT',
