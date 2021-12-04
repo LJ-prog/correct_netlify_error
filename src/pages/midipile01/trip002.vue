@@ -12,7 +12,7 @@
         </q-card>
       </div>
      
-      <div class="col-xs-12 col-sm-5 col-md-3">
+      <div class="col-xs-12 col-sm-5 col-md-4">
         <q-card flat >
             <q-card-section>
               <table-trip-stat class="col-6"></table-trip-stat>
@@ -58,7 +58,16 @@
         
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-5">
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <apex-two-lines
+          :height=[250]
+          :linexaxiscategories=[0,5,10,15,20]
+          :lineseriesname1="['Dénivelé']"
+          :lineseriesdata1=[30,33,45,30,35]
+          :lineseriesname2="['Vitesse']"
+          :lineseriesdata2=[10,15,42,45,12]
+        ></apex-two-lines>
+
         <apex-two-lines
           :height=[250]
           :linexaxiscategories=[0,5,10,15,20]
@@ -67,10 +76,6 @@
           :lineseriesname2="['SOC mobile']"
           :lineseriesdata2=[45,44,42,45,50]
         ></apex-two-lines>
-
-        <apex-basic-line
-          :height=[250]
-        ></apex-basic-line>
       </div>
 
     </div>
@@ -80,25 +85,12 @@
 <script>
 import { defineComponent, defineAsyncComponent } from 'vue'
 
-const stackedseriestrip = [{
-  name: 'Cycliste',
-  data: [10]
-  }, {
-  name: 'Solaire',
-  data: [5]
-  }, {
-  name: 'Régénération',
-  data: [5]
-  }
-]
-
 export default defineComponent({
   name: 'PageIndex',
   components: {
     BatteryRadial: defineAsyncComponent(() => import('components/charts/BatteryRadial.vue')),
     TableTripStat: defineAsyncComponent(() => import('components/tables/TableTripStat')),
     PopupMap: defineAsyncComponent(() => import('components/maps/PopupMap.vue')),
-    ApexBasicLine: defineAsyncComponent(() => import('components/charts/BasicLine.vue')),
     ApexTwoLines: defineAsyncComponent(() => import('components/charts/TwoLines.vue')),
     ApexStackedColumn: defineAsyncComponent(() => import('components/charts/StackedColumn.vue'))
 },
@@ -106,7 +98,6 @@ export default defineComponent({
     return {
       loading: true,
       dialog: true,
-      stackedseriestrip
     }
   }
 })

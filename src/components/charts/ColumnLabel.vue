@@ -38,7 +38,7 @@ export default {
       default: ["#7198be"]
     },
     horizontal:{
-      default: 'false'
+      default: false
     }
   },
   data () {
