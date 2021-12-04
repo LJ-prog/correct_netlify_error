@@ -5,9 +5,9 @@
       <div class="col-xs-12 col-sm-6 col-md-5">
         <q-card flat bordered >
           <q-card-section>
-            <popup-map
+            <JSONSourceMap
               :stylemap="['height:40vh']"
-            ></popup-map>
+            ></JSONSourceMap>
           </q-card-section>
         </q-card>
       </div>
@@ -47,11 +47,10 @@
       </div>
 
       <div class="col-xs-10 col-sm-4 col-md-4">
-        <apex-stacked-column
+        <semi-donut
           :height=[500]
-          :stackedxaxiscategories=[0]
-          :stackedseries="[{name:'Cycliste',data:[10]}, {name:'Solaire',data:[5]},{name:'Régénération',data:[5]}]"
-        ></apex-stacked-column>
+          :donutarrayvalues=[21,12,3]
+        ></semi-donut>
       </div>
 
       <div class="col-xs-1 col-sm-1 col-md-1">
@@ -90,9 +89,9 @@ export default defineComponent({
   components: {
     BatteryRadial: defineAsyncComponent(() => import('components/charts/BatteryRadial.vue')),
     TableTripStat: defineAsyncComponent(() => import('components/tables/TableTripStat')),
-    PopupMap: defineAsyncComponent(() => import('components/maps/PopupMap.vue')),
+    JSONSourceMap: defineAsyncComponent(() => import('components/maps/JSONSourceMap.vue')),
     ApexTwoLines: defineAsyncComponent(() => import('components/charts/TwoLines.vue')),
-    ApexStackedColumn: defineAsyncComponent(() => import('components/charts/StackedColumn.vue'))
+    SemiDonut: defineAsyncComponent(() => import('components/charts/SemiDonut.vue'))
 },
   data () {
     return {
