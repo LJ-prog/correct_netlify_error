@@ -27,6 +27,7 @@ const routes = [
       { path: '/iconmap', component: () => import('pages/maps/IconMapPage.vue') },
       { path: '/popupmap', component: () => import('pages/maps/PopupMapPage.vue') },
       { path: '/polylinemap', component: () => import('pages/maps/PolylineMapPage.vue') },
+      { path: '/jsonsourcemap', component: () => import('pages/maps/JSONSourceMapPage.vue') },
 
       //Composants : Table
       { path: '/tableprogress', component: () => import('pages/table/TableProgressPage.vue') },
