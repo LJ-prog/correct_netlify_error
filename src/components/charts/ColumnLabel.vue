@@ -36,6 +36,9 @@ export default {
     },
     colorvalue:{
       default: ["#7198be"]
+    },
+    horizontal:{
+      default: false
     }
   },
   data () {
@@ -46,7 +49,7 @@ export default {
         },
         plotOptions: {
             bar: {
-              horizontal: false,
+              horizontal: this.horizontal,
               borderRadius: this.columnborderradius
             },
         },

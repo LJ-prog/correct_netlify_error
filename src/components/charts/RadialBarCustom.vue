@@ -51,7 +51,7 @@ export default {
               size: "50%"
             },
             track: {
-              background: '#333',
+              background: '#E0E0E0',
               startAngle: -135,
               endAngle: 135,
             },

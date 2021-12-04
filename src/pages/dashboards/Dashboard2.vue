@@ -27,7 +27,7 @@
       <div class="col-xs-12 col-sm-4 col-md-4">
         <q-card flat bordered>
           <q-card-section>
-            <div class="text-h6 text-grey-8">ECO Score</div>
+            <div class="text-h6 text-grey-8">Mobility ECO Score</div>
             <radial-bar-custom></radial-bar-custom>
           </q-card-section>
         </q-card>
