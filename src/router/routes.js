@@ -21,6 +21,7 @@ const routes = [
       { path: '/radialbarcustom', component: () => import('pages/charts/RadialBarCustomPage.vue') },
       { path: '/spark', component: () => import('pages/charts/SparkPage.vue') },
       { path: '/basicline', component: () => import('pages/charts/BasicLinePage.vue') },
+      { path: '/semidonut', component: () => import('pages/charts/SemiDonutPage.vue') },
 
       //Composants : Cartes
       { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') },

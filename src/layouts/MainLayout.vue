@@ -122,6 +122,10 @@
                 <q-item-section > Graphe ligne simple </q-item-section>                
               </q-item>
               
+              <q-item to="semidonut" exact>
+                <q-item-section > Semi donut </q-item-section>                
+              </q-item>
+              
           </q-expansion-item>
 
 
