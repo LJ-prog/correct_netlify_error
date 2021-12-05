@@ -66,7 +66,7 @@ export default {
                 show: true,
               },
               value: {
-                fontSize: "30px",
+                fontSize: "25px",
                 show: true
               }
             } 

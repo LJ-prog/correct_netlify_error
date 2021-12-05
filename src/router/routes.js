@@ -22,6 +22,7 @@ const routes = [
       { path: '/spark', component: () => import('pages/charts/SparkPage.vue') },
       { path: '/basicline', component: () => import('pages/charts/BasicLinePage.vue') },
       { path: '/semidonut', component: () => import('pages/charts/SemiDonutPage.vue') },
+      { path: '/jsontwolines', component: () => import('pages/charts/JSONTwoLinesPage.vue') },
 
       //Composants : Cartes
       { path: '/simplemap', component: () => import('pages/maps/SimpleMapPage.vue') },
