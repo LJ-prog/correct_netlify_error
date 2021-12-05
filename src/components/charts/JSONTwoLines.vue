@@ -83,7 +83,10 @@ export default {
           group: this.group
         },
         xaxis: {
-          categories: this.linexaxiscategories
+          categories: this.linexaxiscategories,
+          labels: {
+            hideOverlappingLabels: true,
+          }
         },
         yaxis: {
           labels: {
@@ -147,7 +150,12 @@ export default {
           }],
         this.options = {
           xaxis: {
-            categories: jsondata.temps
+            categories: jsondata.temps,
+            labels: {
+              hideOverlappingLabels: true,
+              show: false,
+              rotate: 0,
+            }
           }
         }
         this.loaded = true

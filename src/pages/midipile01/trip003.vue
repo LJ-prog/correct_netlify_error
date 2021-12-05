@@ -2,16 +2,6 @@
   <q-page>
     <div class="q-pa-md row q-gutter-md">
 
-      <div class="col-xs-12 col-sm-6 col-md-5">
-        <q-card flat bordered >
-          <q-card-section>
-            <JSONSourceMap
-              :stylemap="['height:40vh']"
-            ></JSONSourceMap>
-          </q-card-section>
-        </q-card>
-      </div>
-     
       <div class="col-xs-12 col-sm-5 col-md-4">
         <q-card flat >
             <q-card-section>
@@ -20,7 +10,7 @@
           </q-card>
         </div>
 
-      <div class="col-xs-12 col-sm-3 col-md-2">
+      <div class="col-xs-12 col-sm-3 col-md-3">
         <q-card flat >
           <q-card-section>
             <battery-radial 
@@ -48,14 +38,21 @@
 
       <div class="col-xs-10 col-sm-4 col-md-4">
         <semi-donut
-          :height=[500]
+          :height=[400]
           :donutarrayvalues=[21,12,3]
         ></semi-donut>
       </div>
 
-      <div class="col-xs-1 col-sm-1 col-md-1">
-        
+      <div class="col-xs-12 col-sm-6 col-md-5">
+        <q-card flat bordered >
+          <q-card-section>
+            <JSONSourceMap
+              :stylemap="['height:40vh']"
+            ></JSONSourceMap>
+          </q-card-section>
+        </q-card>
       </div>
+     
 
       <div class="col-xs-12 col-sm-6 col-md-6">
         <JSONTwoLines

@@ -44,8 +44,8 @@ export default {
         colors: this.donutarraycolors,
         plotOptions: {
           pie: {
-            startAngle: -90,
-            endAngle: 90,
+            startAngle: -135,
+            endAngle: 135,
             offsetY: 10,
             dataLabels: {
               total: {
