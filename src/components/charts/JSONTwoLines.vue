@@ -139,14 +139,22 @@ export default {
 
       if (jsondata != undefined) {
         this.series1 = [{
+            name: 'Dénivelé (m)',
             data: jsondata.ele,
+            colors: this.colorvalue1
           },{
+            name: 'Vitesse (km/h)',
             data: jsondata.vitesse,
+            colors: this.colorvalue2
           }],
         this.series2 = [{
+            name: 'SOC fixe (%)',
             data: jsondata.SOC_fixe,
+            colors: this.colorvalue3
           },{
+            name: 'SOC mobile (%)',
             data: jsondata.SOC_mobile,
+            colors: this.colorvalue4
           }],
         this.options = {
           xaxis: {

@@ -37,17 +37,22 @@
       </div>
 
       <div class="col-xs-10 col-sm-4 col-md-4">
-        <semi-donut
-          :height=[400]
-          :donutarrayvalues=[21,12,3]
-        ></semi-donut>
+        <div class="text-h6 text-grey-8">Répartition d'auto-production</div>
+        <q-card flat >
+          <q-card-section>
+            <semi-donut
+              :height=[400]
+              :donutarrayvalues=[21,12,3]
+            ></semi-donut>
+          </q-card-section>
+        </q-card>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-5">
         <q-card flat bordered >
           <q-card-section>
             <JSONSourceMap
-              :stylemap="['height:40vh']"
+              :stylemap="['height:35vh']"
             ></JSONSourceMap>
           </q-card-section>
         </q-card>
@@ -56,7 +61,7 @@
 
       <div class="col-xs-12 col-sm-6 col-md-6">
         <JSONTwoLines
-          :height=[250]
+          :chartheight=[200]
         ></JSONTwoLines>
 
       </div>
