@@ -11,7 +11,7 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 
 export default defineComponent({
   components:{
-    JSONTwoLines: defineAsyncComponent(() => import('components/charts/JSONTwoLines.vue'))
+    JSONTwoLines: defineAsyncComponent(() => import('src/components/charts/JSONTwoLines.vue'))
   } 
 })
 </script>

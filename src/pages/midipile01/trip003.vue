@@ -60,15 +60,8 @@
       <div class="col-xs-12 col-sm-6 col-md-6">
         <JSONTwoLines
           :height=[250]
-          :lineseriesname1="['Dénivelé']"
-          :lineseriesname2="['Vitesse']"
         ></JSONTwoLines>
 
-        <JSONTwoLinesBis
-          :height=[250]
-          :lineseriesname1="['SOC fixe']"
-          :lineseriesname2="['SOC mobile']"
-        ></JSONTwoLinesBis>
       </div>
 
     </div>
@@ -85,7 +78,6 @@ export default defineComponent({
     TableTripStat: defineAsyncComponent(() => import('components/tables/TableTripStat')),
     JSONSourceMap: defineAsyncComponent(() => import('components/maps/JSONSourceMap.vue')),
     JSONTwoLines: defineAsyncComponent(() => import('components/charts/JSONTwoLines.vue')),
-    JSONTwoLinesBis: defineAsyncComponent(() => import('components/charts/JSONTwoLines2.vue')),
     SemiDonut: defineAsyncComponent(() => import('components/charts/SemiDonut.vue'))
 },
   data () {

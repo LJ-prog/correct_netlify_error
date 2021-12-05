@@ -3,7 +3,15 @@
     v-if="loaded"
     type="line"
     :options="options"
-    :series="series"
+    :series="series1"
+    :height="chartheight"
+  ></apexchart>
+
+  <apexchart
+    v-if="loaded"
+    type="line"
+    :options="options"
+    :series="series2"
     :height="chartheight"
   ></apexchart>
 </template>
@@ -24,7 +32,7 @@ export default {
       default: "midipile01"
     },
     filename:{
-      default: "1110101110_route02.json"
+      default: "1110101107_route07.json"
     },
     linexaxiscategories:{
       default: ['sept','oct','nov','dec'],
@@ -42,7 +50,7 @@ export default {
       default: [2,3,4,5],
     },
     chartheight:{
-      default: 300
+      default: 250
     },
     chartid:{
       default: 'Line'
@@ -51,9 +59,15 @@ export default {
       default: 'social'
     },
     colorvalue1:{
-      default: ["#7198be"]
+      default: ["#292929"]
     },
     colorvalue2:{
+      default: ["#2424ff"]
+    },
+    colorvalue3:{
+      default: ["#7198be"]
+    },
+    colorvalue4:{
       default: ["#5198be"]
     },
     titletext:{
@@ -81,7 +95,7 @@ export default {
           align: 'left'
         }
       },
-      series: [{
+      series1: [{
         name: this.lineseriesname1,
         data: this.lineseriesdata1,
         colors: this.colorvalue1
@@ -89,6 +103,15 @@ export default {
         name: this.lineseriesname2,
         data: this.lineseriesdata2,
         colors: this.colorvalue2
+      }],
+      series2: [{
+        name: this.lineseriesname1,
+        data: this.lineseriesdata1,
+        colors: this.colorvalue3
+      },{
+        name: this.lineseriesname2,
+        data: this.lineseriesdata2,
+        colors: this.colorvalue4
       }]
     }
   },
@@ -112,10 +135,15 @@ export default {
       console.log(jsondata);
 
       if (jsondata != undefined) {
-        this.series = [{
-            data: jsondata.vitesse,
-          },{
+        this.series1 = [{
             data: jsondata.ele,
+          },{
+            data: jsondata.vitesse,
+          }],
+        this.series2 = [{
+            data: jsondata.SOC_fixe,
+          },{
+            data: jsondata.SOC_mobile,
           }],
         this.options = {
           xaxis: {
@@ -123,7 +151,7 @@ export default {
           }
         }
         this.loaded = true
-        console.log('Load map')
+        console.log('Load graph')
       }
     }
   },

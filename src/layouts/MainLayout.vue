@@ -125,6 +125,10 @@
               <q-item to="semidonut" exact>
                 <q-item-section > Semi donut </q-item-section>                
               </q-item>
+                      
+              <q-item to="jsontwolines" exact>
+                <q-item-section > 2 Lines </q-item-section>                
+              </q-item>
               
           </q-expansion-item>
 
