@@ -80,6 +80,33 @@ export default {
           popupicon: "warning",
           popuptarget: "/midipile02",
           popuptitle: "Midipile 02"
+        },
+        {
+          id:"Midipile 03",
+          coordinates:[45.643500, 0.150163],
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png`,
+          popupcolor: "blue",
+          popupicon: "warning",
+          popuptarget: "/midipile03",
+          popuptitle: "Midipile 03"
+        },
+        {
+          id:"Midipile 04",
+          coordinates:[45.648597, 0.171102],
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png`,
+          popupcolor: "orange",
+          popupicon: "warning",
+          popuptarget: "/midipile04",
+          popuptitle: "Midipile 04"
+        },
+        {
+          id:"Midipile 05",
+          coordinates:[ 45.664345, 0.164602],
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png`,
+          popupcolor: "black",
+          popupicon: "warning",
+          popuptarget: "/midipile05",
+          popuptitle: "Midipile 05"
         }
       ]
     }
