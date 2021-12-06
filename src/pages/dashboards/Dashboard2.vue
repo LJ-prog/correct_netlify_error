@@ -28,7 +28,9 @@
         <q-card flat bordered>
           <q-card-section>
             <div class="text-h6 text-grey-8">Mobility ECO Score</div>
-            <radial-bar-custom></radial-bar-custom>
+            <radial-bar-custom
+              :radialarrayvalues=[85,77,91,80,86]
+            ></radial-bar-custom>
           </q-card-section>
         </q-card>
       </div>

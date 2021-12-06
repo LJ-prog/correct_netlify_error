@@ -35,7 +35,7 @@
         <q-card flat >
           <q-card-section>
             <battery-radial 
-              :batteryvalue=[85]
+              :batteryvalue=[79]
               :batterylabel="['Midipile Challenge']"
               :colormin="['#103e47']"
               :colormax="['#103e47']"

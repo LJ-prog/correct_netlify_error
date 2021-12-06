@@ -22,7 +22,7 @@
         <q-card flat >
           <q-card-section>
             <battery-radial 
-              :batteryvalue=[85]
+              :batteryvalue=[86]
               :batterylabel="['Mobility ECO Score']"
               :colormin="['#1a7a30']"
               :colormax="['#1a7a30']"
@@ -35,7 +35,7 @@
         <q-card flat >
           <q-card-section>
             <battery-radial 
-              :batteryvalue=[85]
+              :batteryvalue=[77]
               :batterylabel="['Midipile Challenge']"
               :colormin="['#103e47']"
               :colormax="['#103e47']"

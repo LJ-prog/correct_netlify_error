@@ -54,10 +54,10 @@ export default {
             endAngle: 135,
             hollow: {
               margin: 15,
-              size: "70%"
+              size: "50%"
             },
             track: {
-              background: '#515151',
+              background: '#E0E0E0',
               startAngle: -135,
               endAngle: 135,
             },
