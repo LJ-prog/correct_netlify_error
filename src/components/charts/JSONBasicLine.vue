@@ -1,5 +1,6 @@
 <template>
   <apexchart
+    v-if="loaded"
     type="line"
     :options="options"
     :series="series"
@@ -16,6 +17,15 @@ export default {
     apexchart: VueApexCharts,
   },
   props:{
+    basepath:{
+      default: "bdd_json"
+    },
+    selectorname:{
+      default: "Stat"
+    },
+    filename:{
+      default: "Midipile 01_stat.json"
+    },
     linexaxiscategories:{
       default: ['sept','oct','nov','dec'],
     },
@@ -38,11 +48,12 @@ export default {
       default: ["#7198be"]
     },
     titletext:{
-      default: "Titre"
+      default: "Suivi de tendance consommation (W.h/km)"
     }
   },
   data () {
     return {
+      loaded: false,
       options: {
         chart: {
           id: this.chartid,
@@ -70,6 +81,46 @@ export default {
         data: this.lineseriesdata
       }]
     }
+  },
+  methods: {
+    getdatafromjson(basepath, selectorname, filename) {
+      const jsondatapath = basepath + '/' + selectorname + '/' + filename;
+
+      console.log('JSON path: ' + jsondatapath);
+
+      try {
+        fetch(jsondatapath)
+          .then(response => response.json())
+          .then(result => this.plotdata(result));
+      } catch (e) {
+        console.log('Error fetch JSON: ' + e);
+        return;
+      }
+    },
+    plotdata(jsondata) {
+      console.log('In extractpath');
+      console.log(jsondata);
+
+      if (jsondata != undefined) {
+        this.series = [{
+            name: 'Consommation (W.h/km)',
+            data: jsondata.stat_conso
+          }],
+        this.options = {
+          xaxis: {
+            categories: jsondata.des,
+            labels: {
+              show: false
+            }
+          }
+        }
+        this.loaded = true
+        console.log('Load graph')
+      }
+    }
+  },
+  created() {
+    this.getdatafromjson(this.basepath, this.selectorname, this.filename)
   }
 }
 </script>

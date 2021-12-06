@@ -1,8 +1,7 @@
 <template>
   <q-page padding>
     <div>
-      <apex-basic-line></apex-basic-line>
-      <apex-basic-line></apex-basic-line>
+      <JSONApexBasicLine></JSONApexBasicLine>
     </div>
   </q-page>
 </template>
@@ -13,7 +12,7 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 export default defineComponent({
   name: 'ApexCharts',
   components:{
-    ApexBasicLine: defineAsyncComponent(() => import('components/charts/BasicLine.vue'))
+    JSONApexBasicLine: defineAsyncComponent(() => import('components/charts/JSONBasicLine.vue'))
   } 
 })
 </script>

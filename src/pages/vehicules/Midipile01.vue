@@ -49,6 +49,7 @@
 
     <div class="q-pa-md row q-gutter-md">
       <div class="col-xs-12 col-sm-5 col-md-5">
+        <div class="text-h6 text-grey-8">Distance hebdomadaire</div>
         <apex-column-label
         :columnseriesname="['distance hebdomadaire']"
         :columnxaxiscategories=[40,41,42,43,44,45,46,47]
@@ -57,7 +58,8 @@
       </div>
 
       <div class="col-xs-12 col-sm-5 col-md-5">
-        <apex-basic-line></apex-basic-line>
+        <div class="text-h6 text-grey-8">Suivi de consommation (W.h/km)</div>
+        <JSONApexBasicLine></JSONApexBasicLine>
       </div>
     </div>
 
@@ -73,7 +75,7 @@ export default defineComponent({
     TableActu: defineAsyncComponent(() => import('components/tables/TableActu')),
     BatteryRadial: defineAsyncComponent(() => import('components/charts/BatteryRadial.vue')),
     ApexColumnLabel: defineAsyncComponent(() => import('components/charts/ColumnLabel.vue')),
-    ApexBasicLine: defineAsyncComponent(() => import('components/charts/BasicLine.vue'))
+    JSONApexBasicLine: defineAsyncComponent(() => import('components/charts/JSONBasicLine.vue'))
 },
   data () {
     return {
