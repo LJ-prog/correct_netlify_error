@@ -59,8 +59,9 @@
 
       <div class="col-xs-12 col-sm-5 col-md-5">
         <div class="text-h6 text-grey-8">Suivi de consommation (W.h/km)</div>
-        <JSONApexBasicLine></JSONApexBasicLine>
-      </div>
+          <JSONApexBasicLine
+            :filename="['Midipile 03_stat.json']"
+          ></JSONApexBasicLine>      </div>
     </div>
 
   </q-page>
