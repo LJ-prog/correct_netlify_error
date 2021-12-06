@@ -18,6 +18,7 @@ const routes = [
       { path: '/stackedcolumn', component: () => import('pages/charts/StackedColumnPage.vue') },
       { path: '/basiccircle', component: () => import('pages/charts/BasicCirclePage.vue') },
       { path: '/batteryradial', component: () => import('pages/charts/BatteryRadialPage.vue') },
+      { path: '/minibatteryradial', component: () => import('pages/charts/MiniBatteryRadialPage.vue') },
       { path: '/radialbarcustom', component: () => import('pages/charts/RadialBarCustomPage.vue') },
       { path: '/spark', component: () => import('pages/charts/SparkPage.vue') },
       { path: '/basicline', component: () => import('pages/charts/BasicLinePage.vue') },
@@ -40,6 +41,7 @@ const routes = [
       //Dashboards
       { path: '/dashboard1', component: () => import('pages/dashboards/Dashboard1.vue') },
       { path: '/dashboard2', component: () => import('pages/dashboards/Dashboard2.vue') },
+      { path: '/dashboard3', component: () => import('pages/dashboards/Dashboard3.vue') },
 
       //Détail voyage
       { path: '/01trip001', component: () => import('pages/midipile01/trip001.vue') },

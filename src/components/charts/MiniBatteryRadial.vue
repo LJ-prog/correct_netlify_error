@@ -17,22 +17,22 @@ export default {
   },
   props:{
     batterylabel:{
-      default: ["Battery"]
+      default: []
     },
     batteryvalue:{
       default: [77],
     },
     chartheight:{
-      default: 300
+      default: 100
     },
     chartid:{
       default: 'battery'
     },
     colormin:{
-      default: ["#515151"]
+      default: ["#A1543B"]
     },
     colormax:{
-      default: ["#7198be"]
+      default: ["#A1543B"]
     },
     linecap: {
       default: "round"
@@ -50,23 +50,23 @@ export default {
         colors: this.colormin,
         plotOptions: {
           radialBar: {
-            startAngle: -135,
-            endAngle: 135,
+            startAngle: -90,
+            endAngle: 90,
             hollow: {
-              margin: 30,
-              size: "60%"
+              margin: 10,
+              size: "25%"
             },
             track: {
               background: '#E0E0E0',
-              startAngle: -135,
-              endAngle: 135,
+              startAngle: -90,
+              endAngle: 90,
             },
             dataLabels: {
               name: {
-                show: true,
+                show: false,
               },
               value: {
-                fontSize: "25px",
+                fontSize: "15px",
                 show: true
               }
             } 
@@ -81,10 +81,9 @@ export default {
             stops: [0, 100]
           }
         },
-/*         stroke: {
-          lineCap: this.linecap,
-          dashArray: this.dasharray
-        }, */
+        stroke: {
+          dashArray: 2
+        },
         labels: this.batterylabel
       },
       series: this.batteryvalue
@@ -92,6 +91,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

@@ -110,6 +110,10 @@
                 <q-item-section > Batterie (Radial) </q-item-section>                
               </q-item>
 
+              <q-item to="minibatteryradial" exact>
+                <q-item-section > Mini Batterie (Radial) </q-item-section>                
+              </q-item>
+
               <q-item to="radialbarcustom" exact>
                 <q-item-section > Jauge multiple </q-item-section>                
               </q-item>
@@ -192,6 +196,10 @@
           
             <q-item to="dashboard2" exact>
               <q-item-section > Dashboard 2 </q-item-section>                
+            </q-item>
+          
+            <q-item to="dashboard3" exact>
+              <q-item-section > Dashboard 3 </q-item-section>                
             </q-item>
 
           </q-expansion-item>

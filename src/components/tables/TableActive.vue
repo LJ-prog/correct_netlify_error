@@ -1,31 +1,31 @@
 <template>
       <q-table 
-        class=""
+        class="text-h4"
         :rows="ligne"
         :columns="colonne"
         hide-bottom>
 
         <template v-slot:body-cell-Actif="props">
           <q-td key="name" :props="props" style="max-width: 100px">
-            <q-badge rounded color="green">
+            <q-btn class="text-h8"  rounded color="green">
               {{ props.row.Actif }}
-            </q-badge>
+            </q-btn>
           </q-td>
         </template>
 
         <template v-slot:body-cell-Inactif="props">
           <q-td key="name" :props="props" style="max-width: 100px">
-            <q-badge rounded color="orange">
+            <q-btn class="text-h8"  rounded color="orange">
               {{ props.row.Inactif }}
-            </q-badge>
+            </q-btn>
           </q-td>
         </template>
 
         <template v-slot:body-cell-Atelier="props">
           <q-td key="name" :props="props" style="max-width: 100px">
-            <q-badge rounded color="red">
+            <q-btn class="text-h8"  rounded color="red">
               {{ props.row.Atelier }}
-            </q-badge>
+            </q-btn>
           </q-td>
         </template>
 
