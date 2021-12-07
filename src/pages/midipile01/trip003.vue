@@ -13,13 +13,19 @@
       <div class="col-xs-12 col-sm-3 col-md-3">
         <q-card flat >
           <q-card-section>
-            <JSONMobilityScore></JSONMobilityScore>
+            <JSONMobilityScore
+              :selectorname="path"
+              :filename="ficjson"
+            ></JSONMobilityScore>
           </q-card-section>
         </q-card>
 
         <q-card flat >
           <q-card-section>
-            <JSONChallengeScore></JSONChallengeScore>
+            <JSONChallengeScore
+              :selectorname="path"
+              :filename="ficjson"
+            ></JSONChallengeScore>
           </q-card-section>
         </q-card>
       </div>
@@ -28,7 +34,10 @@
         <div class="text-h6 text-grey-8">Répartition d'auto-production</div>
         <q-card flat >
           <q-card-section>
-            <JSONSemiDonut></JSONSemiDonut>
+            <JSONSemiDonut
+              :selectorname="path"
+              :filename="ficjson"
+            ></JSONSemiDonut>
           </q-card-section>
         </q-card>
       </div>
@@ -38,6 +47,9 @@
           <q-card-section>
             <JSONSourceMap
               :stylemap="['height:35vh']"
+              :zoommap=[11]
+              :selectorname="path"
+              :filename="ficjson"
             ></JSONSourceMap>
           </q-card-section>
         </q-card>
@@ -47,6 +59,8 @@
       <div class="col-xs-12 col-sm-6 col-md-6">
         <JSONTwoLines
           :chartheight=[200]
+          :selectorname="path"
+          :filename="ficjson"
         ></JSONTwoLines>
 
       </div>
@@ -67,9 +81,11 @@ export default defineComponent({
     JSONSourceMap: defineAsyncComponent(() => import('components/maps/JSONSourceMap.vue')),
     JSONTwoLines: defineAsyncComponent(() => import('components/charts/JSONTwoLines.vue')),
     JSONSemiDonut: defineAsyncComponent(() => import('components/charts/JSONSemiDonut.vue'))
-},
+  },
   data () {
     return {
+      path: "midipile01",
+      ficjson: "1110101107_route14.json",
       loading: true,
       dialog: true,
     }

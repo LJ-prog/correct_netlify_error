@@ -35,6 +35,15 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: "TableTripStat",
   props:{
+    basepath:{
+      default: "bdd_json"
+    },
+    selectorname:{
+      default: "midipile01"
+    },
+    filename:{
+      default: "1110101107_route14.json"
+    },
     data3def:{
       default: [
         { champ: 'Utilisateur', valeur: 'Benoît Trouvé'},
@@ -61,9 +70,45 @@ export default defineComponent({
       data3 : this.data3def,
     }
   },
+  methods: {
+    getdatafromjson(basepath, selectorname, filename) {
+      const jsondatapath = basepath + '/' + selectorname + '/' + filename;
+
+      console.log('JSON path: ' + jsondatapath);
+
+      try {
+        fetch(jsondatapath)
+          .then(response => response.json())
+          .then(result => this.plotdata(result));
+      } catch (e) {
+        console.log('Error fetch JSON: ' + e);
+        return;
+      }
+    },
+    plotdata(jsondata) {
+      console.log('In extractpath');
+      console.log(jsondata);
+
+      if (jsondata != undefined) {
+        this.data3 = [
+          { champ: 'Utilisateur', valeur: jsondata.Midiuser},
+          { champ: 'Distance (km)', valeur: jsondata.stat_distance_km},
+          { champ: 'Durée', valeur: jsondata.duree_formatee},
+          { champ: 'Vitesse moyenne (km/h)', valeur: jsondata.stat_vmoy},
+          { champ: 'Consommation électrique (W.h/km)', valeur: jsondata.stat_conso},
+          { champ: 'Puissance moyenne consommée (W)', valeur: jsondata.stat_puissance_consommee},
+          { champ: 'Auto-consommation (%)', valeur: jsondata.stat_part_recuperation},
+          { champ: 'SOC fixe fin de trajet (%)', valeur: jsondata.stat_SOC_fixe_final},
+          { champ: 'SOC mobile fin de trajet (%)', valeur: jsondata.stat_SOC_mobile_final}
+          ]
+        
+        this.loaded = true
+        console.log('Load graph')
+      }
+    }
+  },
+  created() {
+    this.getdatafromjson(this.basepath, this.selectorname, this.filename)
+  }
 })
 </script>
-
-<style scoped>
-
-</style>
