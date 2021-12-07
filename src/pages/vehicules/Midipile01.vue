@@ -12,7 +12,9 @@
       <div class="col-xs-12 col-sm-6 col-md-3">
         <q-card flat >
             <q-card-section>
-              <table-actu></table-actu>
+              <table-actu
+              :data3def="tabdata"
+            ></table-actu>
             </q-card-section>
           </q-card>
         </div>
@@ -77,10 +79,48 @@ export default defineComponent({
     JSONApexColumnLabel: defineAsyncComponent(() => import('components/charts/JSONColumnLabel.vue')),
     JSONApexBasicLine: defineAsyncComponent(() => import('components/charts/JSONBasicLine.vue'))
 },
+  props:{
+    tabdatadef:{
+      default: [
+        {
+          name: 'Sebastien',
+          des: '28 nov 2021 | 43,50 km | 1:46:11',
+          avatar: "statics/images/Sebastien.JPG",
+          lien: "/1111128116_route18"
+        },
+        {
+          name: 'Ehouarn',
+          des: '28 nov 2021 | 53,96 km | 2:12:0',
+          avatar: "statics/images/Ehouarn.JPG",
+          lien: "/1111128107_route06"
+        },
+        {
+          name: 'Sebastien',
+          des: '27 nov 2021 | 79,52 km | 2:54:39',
+          avatar: "statics/images/Sebastien.JPG",
+          lien: "/1111127115_route15"
+        },
+        {
+          name: 'Sebastien',
+          des: '27 nov 2021 | 43,37 km | 1:43:20',
+          avatar: "statics/images/Sebastien.JPG",
+          lien: "/1111127108_route18"
+        },
+        {
+          name: 'Sebastien',
+          des: '26 nov 2021 | 43,67 km | 1:50:19',
+          avatar: "statics/images/Sebastien.JPG",
+          lien: "/1111126116_route18"
+        }
+      ]
+    },
+  },
+  
   data () {
     return {
       loading: true,
       dialog: true,
+      tabdata : this.tabdatadef
     }
   }
 })
