@@ -34,7 +34,7 @@
           Demo 2021
         </q-item-label>
 
-        <q-item to="/dashboard2" exact>
+        <q-item to="/dashboard3" exact>
           <q-item-section avatar>
             <q-icon name="dashboard" />
           </q-item-section>
