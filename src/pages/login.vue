@@ -34,7 +34,7 @@
               <div>
                 <q-btn
                   label="Entrer"
-                  to="/dashboard2"
+                  to="/dashboard3"
                   type="button"
                   color="primary"
                 />
