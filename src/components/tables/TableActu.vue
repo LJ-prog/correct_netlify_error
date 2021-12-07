@@ -10,7 +10,7 @@
       <q-table class="" :rows="data3" :columns="column" hide-bottom>
         <template v-slot:body-cell-Trip="props">
           <q-td :props="props" style="max-width: 100px">
-            <q-item>
+            <q-item :to="props.row.lien">
               <q-item-section avatar>
                 <q-avatar>
                   <img :src="props.row.avatar">
@@ -43,21 +43,25 @@ export default defineComponent({
           name: 'Benoît Trouvé',
           des: '26 nov 2021 | 17,62 km | 31:55',
           avatar: "statics/images/Benoit.JPG",
+          lien: "/5111126114_route05"
         },
         {
           name: 'Benoît Trouvé',
           des: '21 nov 2021 | 35,41 km | 58:20',
           avatar: "statics/images/Benoit.JPG",
+          lien: "/5111126114_route05"
         },
         {
           name: 'Sébastien Taliercio',
           des: '17 nov 2021 | 65,12 km | 1:52:10',
           avatar: "statics/images/Sebastien.JPG",
+          lien: "/5111126114_route05"
         },
         {
           name: 'Benoît Trouvé',
           des: '04 nov 2021 | 30,03 km | 29:56',
           avatar: "statics/images/Benoit.JPG",
+          lien: "/5111126114_route05"
         }
       ]
     },
