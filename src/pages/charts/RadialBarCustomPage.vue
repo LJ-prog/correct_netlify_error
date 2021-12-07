@@ -1,7 +1,8 @@
 <template>
   <q-page padding>
     <div>
-      <radial-bar-custom></radial-bar-custom>
+      <JSONChallengeScore></JSONChallengeScore>
+      <JSONMobilityScore></JSONMobilityScore>
     </div>
   </q-page>
 </template>
@@ -12,7 +13,8 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 export default defineComponent({
   name: 'ApexCharts',
   components:{
-    RadialBarCustom: defineAsyncComponent(() => import('components/charts/RadialBarCustom.vue'))
+    JSONChallengeScore: defineAsyncComponent(() => import('components/charts/JSONChallengeScore.vue')),
+    JSONMobilityScore: defineAsyncComponent(() => import('components/charts/JSONMobilityScore.vue'))
   } 
 })
 </script>

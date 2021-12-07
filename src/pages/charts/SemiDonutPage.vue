@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <div>
-      <semi-donut></semi-donut>
+      <JSONSemiDonut></JSONSemiDonut>
     </div>
   </q-page>
 </template>
@@ -13,7 +13,7 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 export default defineComponent({
   name: 'ApexCharts',
   components:{
-    SemiDonut: defineAsyncComponent(() => import('components/charts/SemiDonut.vue'))
+    JSONSemiDonut: defineAsyncComponent(() => import('components/charts/JSONSemiDonut.vue'))
   } 
 })
 </script>

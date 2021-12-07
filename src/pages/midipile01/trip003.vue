@@ -13,25 +13,13 @@
       <div class="col-xs-12 col-sm-3 col-md-3">
         <q-card flat >
           <q-card-section>
-            <battery-radial 
-              :batteryvalue=[73]
-              :batterylabel="['Mobility ECO Score']"
-              :colormin="['#1a7a30']"
-              :colormax="['#1a7a30']"
-              :height=[250]
-            ></battery-radial>
+            <JSONMobilityScore></JSONMobilityScore>
           </q-card-section>
         </q-card>
 
         <q-card flat >
           <q-card-section>
-            <battery-radial 
-              :batteryvalue=[64]
-              :batterylabel="['Midipile Challenge']"
-              :colormin="['#1a7a30']"
-              :colormax="['#1a7a30']"
-              :height=[250]
-            ></battery-radial>
+            <JSONChallengeScore></JSONChallengeScore>
           </q-card-section>
         </q-card>
       </div>
@@ -40,10 +28,7 @@
         <div class="text-h6 text-grey-8">Répartition d'auto-production</div>
         <q-card flat >
           <q-card-section>
-            <semi-donut
-              :height=[400]
-              :donutarrayvalues=[21,12,3]
-            ></semi-donut>
+            <JSONSemiDonut></JSONSemiDonut>
           </q-card-section>
         </q-card>
       </div>
@@ -76,11 +61,12 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 export default defineComponent({
   name: 'PageIndex',
   components: {
-    BatteryRadial: defineAsyncComponent(() => import('components/charts/BatteryRadial.vue')),
+    JSONChallengeScore: defineAsyncComponent(() => import('components/charts/JSONChallengeScore.vue')),
+    JSONMobilityScore: defineAsyncComponent(() => import('components/charts/JSONMobilityScore.vue')),
     TableTripStat: defineAsyncComponent(() => import('components/tables/TableTripStat')),
     JSONSourceMap: defineAsyncComponent(() => import('components/maps/JSONSourceMap.vue')),
     JSONTwoLines: defineAsyncComponent(() => import('components/charts/JSONTwoLines.vue')),
-    SemiDonut: defineAsyncComponent(() => import('components/charts/SemiDonut.vue'))
+    JSONSemiDonut: defineAsyncComponent(() => import('components/charts/JSONSemiDonut.vue'))
 },
   data () {
     return {
