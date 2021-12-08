@@ -42,7 +42,7 @@
             <q-card-section>
               <div class="text-h6 text-grey-8">Mobility ECO Score</div>
                 <radial-bar-custom
-                  :radialarrayvalues=[85,77,91,80,86]
+                  :radialarrayvalues=multiecoscore
                 ></radial-bar-custom>
             </q-card-section>
           </q-card>
@@ -73,7 +73,11 @@ export default defineComponent({
       dialog: true,
       basepath: 'bdd_json',
       filename: 'index.json',
+      statpath: 'Stat',
+      statsemainesuffix: '_stat_semaine.json',
+      statsuffix: '_stat.json',
       jsonactu: [],
+      multiecoscore: [],
     }
   },
   methods: {
@@ -95,11 +99,13 @@ export default defineComponent({
       console.log('In extractdashboardata');
       console.log(jsondata);
 
+      //Vehicule list
       for (const vehicule in jsondata) {
         console.log('Véhicule: ' + vehicule);
         console.log('Avatar vehicule: ' + jsondata[vehicule].avatar_vh);
         console.log('Trip size: ' + jsondata[vehicule].json.length);
 
+        //Trip list
         for (let i = (jsondata[vehicule].json.length - 5); i < jsondata[vehicule].json.length; i++) {
           let currentjsonactu = {
             name: jsondata[vehicule].usr[i],
@@ -110,7 +116,27 @@ export default defineComponent({
           
           this.jsonactu.push(currentjsonactu);
         }
+        //---
+
+        //ECOScore
+        const statvehicule = this.basepath + '/' + this.statpath + '/' + vehicule + this.statsuffix;
+        let vehiculeecoscore = 0;
+
+        console.log('Vehicule stat path: ' + statvehicule);
+
+        try {
+          fetch(statvehicule)
+            .then(response => response.json())
+            .then(result => result.MobilityECOscore[result.MobilityECOscore.length - 1])
+            .then(eco => this.multiecoscore.push(Math.round(eco)));
+        } catch (e) {
+          console.log('Error fetch JSON: ' + e);
+          return;
+        }
+
+        console.log(this.multiecoscore)
       }
+      //---
     }
   },
   created() {
