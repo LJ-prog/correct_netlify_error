@@ -77,7 +77,7 @@ export default {
           coordinates:[45.648597, 0.171102],
           iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
           popupcolor: "green",
-          popupicon: "warning",
+          popupicon: "thumb_up",
           popuptarget: "/midipile02",
           popuptitle: "Midipile 02"
         },
@@ -86,7 +86,7 @@ export default {
           coordinates:[45.643500, 0.150163],
           iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
           popupcolor: "green",
-          popupicon: "warning",
+          popupicon: "thumb_up",
           popuptarget: "/midipile03",
           popuptitle: "Midipile 03"
         },
