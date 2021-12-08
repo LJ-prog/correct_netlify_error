@@ -97,7 +97,7 @@ export default defineComponent({
         {
           name: 'Guillaume',
           des: '27 nov 2021 | 31,25 km | 1:10:0',
-          avatar: "statics/images/Guillaume",
+          avatar: "statics/images/Guillaume.JPG",
           lien: "/2111127117_route13"
         },
         {
