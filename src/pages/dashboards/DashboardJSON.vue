@@ -108,9 +108,9 @@ export default defineComponent({
         //Trip list
         for (let i = (jsondata[vehicule].json.length - 5); i < jsondata[vehicule].json.length; i++) {
           let currentjsonactu = {
-            name: jsondata[vehicule].usr[i],
+            name: vehicule,
             des: jsondata[vehicule].des[i],
-            avatar: jsondata[vehicule].avatar_usr[i],
+            avatar: jsondata[vehicule].avatar_vh,
             lien: '/' + jsondata[vehicule].json[i].slice(0, (jsondata[vehicule].json[i].length - 5))
           }
           
