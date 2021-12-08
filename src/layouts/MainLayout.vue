@@ -35,7 +35,7 @@
           Demo 2021
         </q-item-label>
 
-        <q-item to="/dashboard3" exact>
+        <q-item to="/dashboardjson" exact>
           <q-item-section avatar>
             <q-icon name="dashboard" />
           </q-item-section>
