@@ -19,6 +19,7 @@
           <q-btn flat round color="primary" icon="fab fa-twitter"></q-btn>
           <q-btn flat round color="primary" icon="fab fa-facebook-f"></q-btn>
           <q-btn flat round color="primary" icon="fab fa-linkedin-in"></q-btn>
+          <q-btn flat round color="primary" icon="bike_scooter" to="/"></q-btn>
         </div>
       </q-toolbar>
     </q-header>

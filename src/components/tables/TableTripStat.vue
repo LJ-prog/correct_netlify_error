@@ -2,9 +2,9 @@
   <q-card>
 
     <q-card-section class="q-pa-none">
-      <q-table class="" style="height: 450px" :rows="data3" :columns="column" :rows-per-page-options="[0]" hide-bottom dense>
+      <q-table class="" style="height: 450px" :rows="data3" :columns="column" :rows-per-page-options="[0]" hide-bottom dense virtual-scroll>
         <template v-slot:body-cell-champ="props">
-          <q-td :props="props" style="max-width: 50px">
+          <q-td :props="props" style="max-width: 80px" no-hover>
             <q-item>
               <q-item-section>
                 <q-item-label>{{ props.row.champ }}</q-item-label>

@@ -12,7 +12,7 @@
         </q-card>
       </div>
      
-      <div class="col-xs-12 col-sm-5 col-md-4">
+      <div class="col-xs-12 col-sm-12 col-md-4">
         <q-card flat >
             <q-card-section>
               <table-trip-stat class="col-6"></table-trip-stat>
