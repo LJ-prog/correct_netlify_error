@@ -202,6 +202,10 @@
               <q-item-section > Dashboard 3 </q-item-section>                
             </q-item>
 
+            <q-item to="dashboardjson" exact>
+              <q-item-section > Dashboard avec index JSON </q-item-section>                
+            </q-item>
+
           </q-expansion-item>
 
           <q-expansion-item
