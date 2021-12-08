@@ -20,7 +20,7 @@ export default {
         {
           label:"Tableau de bord",
           icon:"dashboard",
-          to:"/dashboard3"
+          to:"/dashboardjson"
         },
         {
           label:"Mes véhicules",
