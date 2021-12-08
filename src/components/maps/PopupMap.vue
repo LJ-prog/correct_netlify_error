@@ -74,9 +74,9 @@ export default {
         },
         {
           id:"Midipile 02",
-          coordinates:[45.64059,0.12064],
-          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png`,
-          popupcolor: "red",
+          coordinates:[45.648597, 0.171102],
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
+          popupcolor: "green",
           popupicon: "warning",
           popuptarget: "/midipile02",
           popuptitle: "Midipile 02"
@@ -84,15 +84,15 @@ export default {
         {
           id:"Midipile 03",
           coordinates:[45.643500, 0.150163],
-          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png`,
-          popupcolor: "blue",
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
+          popupcolor: "green",
           popupicon: "warning",
           popuptarget: "/midipile03",
           popuptitle: "Midipile 03"
         },
         {
           id:"Midipile 04",
-          coordinates:[45.648597, 0.171102],
+          coordinates:[45.64059,0.12064],
           iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png`,
           popupcolor: "orange",
           popupicon: "warning",
@@ -102,8 +102,8 @@ export default {
         {
           id:"Midipile 05",
           coordinates:[ 45.664345, 0.164602],
-          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png`,
-          popupcolor: "black",
+          iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png`,
+          popupcolor: "red",
           popupicon: "warning",
           popuptarget: "/midipile05",
           popuptitle: "Midipile 05"
