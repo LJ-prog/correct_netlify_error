@@ -46,7 +46,7 @@
         </q-item>
 
         
-        <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/mesvehicules" default-opened >
+        <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/mesvehicules" >
           <q-list dense >
             <q-item to="/midipile01" exact>
               <q-item-section > </q-item-section>
@@ -89,7 +89,7 @@
         </q-item>
 
 
-        <q-expansion-item icon="grid_view" label="Composants" >
+        <q-expansion-item icon="grid_view" label="Composants" v-if=debug >
           <q-expansion-item
             :header-inset-level="1"
             icon="insights"
@@ -270,6 +270,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false)
 
     return {
+      debug: false,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value

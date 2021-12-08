@@ -7,7 +7,15 @@
     </q-card-section>
     <q-separator color="white"/>
     <q-card-section class="q-pa-none">
-      <q-table class="" :rows="data3" :columns="column" hide-bottom>
+      <q-table 
+        class="" 
+        style="height: 400px"
+        :rows="data3" 
+        :columns="column" 
+        hide-bottom 
+        virtual-scroll
+        v-model:pagination="pagination"
+        :rows-per-page-options="[0]">
         <template v-slot:body-cell-Trip="props">
           <q-td :props="props" style="max-width: 100px">
             <q-item :to="props.row.lien">
