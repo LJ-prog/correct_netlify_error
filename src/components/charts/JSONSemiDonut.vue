@@ -95,7 +95,7 @@ export default {
       console.log(jsondata);
 
       if (jsondata != undefined) {
-        this.series = [jsondata.stat_tot_cycliste,jsondata.stat_tot_photo,jsondata.stat_tot_recuperation]
+        this.series = [jsondata.stat_tot_cycliste,jsondata.stat_tot_photo,jsondata.stat_tot_rege]
         this.loaded = true
         console.log('Load graph')
       }
