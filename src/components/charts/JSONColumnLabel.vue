@@ -24,7 +24,7 @@ export default {
       default: "Stat"
     },
     filename:{
-      default: "Midipile 01_stat_semaine.json"
+      default: "midipile01_stat_semaine.json"
     },
     columnxaxiscategories:{
       default: [0],

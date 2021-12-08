@@ -53,14 +53,14 @@
       <div class="col-xs-12 col-sm-5 col-md-5">
         <div class="text-h6 text-grey-8">Distance hebdomadaire</div>
           <JSONApexColumnLabel
-            :filename="['Midipile 03_stat_semaine.json']"
+            :filename="['midipile03_stat_semaine.json']"
           ></JSONApexColumnLabel>
       </div>
 
       <div class="col-xs-12 col-sm-5 col-md-5">
         <div class="text-h6 text-grey-8">Suivi de consommation (W.h/km)</div>
           <JSONApexBasicLine
-            :filename="['Midipile 03_stat.json']"
+            :filename="['midipile03_stat.json']"
           ></JSONApexBasicLine>      </div>
     </div>
 

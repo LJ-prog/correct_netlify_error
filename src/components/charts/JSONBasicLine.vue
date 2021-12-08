@@ -24,7 +24,7 @@ export default {
       default: "Stat"
     },
     filename:{
-      default: "Midipile 01_stat.json"
+      default: "midipile01_stat.json"
     },
     linexaxiscategories:{
       default: ['sept','oct','nov','dec'],
