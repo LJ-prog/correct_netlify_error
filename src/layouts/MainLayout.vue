@@ -16,7 +16,7 @@
         </q-toolbar-title>
 
         <div class="q-gutter-md">
-          <q-btn flat round color="primary" icon="fab fa-twitter"></q-btn>
+          <q-btn flat round color="primary" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
           <q-btn flat round color="primary" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
           <q-btn flat round color="primary" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
           <q-btn flat round color="primary" icon="bike_scooter" to="/"></q-btn>
@@ -245,7 +245,7 @@
         <q-toolbar-title>
           <div>
             <center>
-              <div class="text-overline text-grey-8">MWS v0.1 - Copyright © 2021 - <a href="https://midipile.eu" class="text-grey-8">Midipile Mobility</a></div>
+              <div class="text-overline text-grey-8">MWS v0.1 - Copyright © 2022 - <a href="https://midipile.eu" target="_blank" class="text-grey-8">Midipile Mobility</a></div>
             </center>
           </div>
         </q-toolbar-title>
