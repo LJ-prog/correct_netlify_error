@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <table-trip-stat class="col-6"></table-trip-stat>
 </template>

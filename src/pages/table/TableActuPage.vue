@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <table-actu class="col-6"></table-actu>
 </template>

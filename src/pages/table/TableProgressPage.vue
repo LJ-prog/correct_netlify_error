@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <table-progress class="col-6"></table-progress>
 </template>

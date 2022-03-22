@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <table-active class="col-6"></table-active>
 </template>
