@@ -8,31 +8,60 @@
           round
           icon="menu"
           aria-label="Menu"
-          @click= "toggleLeftDrawer"
+          @click= toggleLeftDrawer
         />
 
         <q-toolbar-title class="text-h4 text-grey-8">
           Midipile Fleet Manager
         </q-toolbar-title>
 
-        <div class="q-gutter-md">
+        <div class="q-pa-md q-gutter-sm">
           <q-btn flat round color="primary" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
           <q-btn flat round color="primary" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
           <q-btn flat round color="primary" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
-          <q-btn flat round color="primary" icon="bike_scooter" to="/"></q-btn>
+          <q-btn flat round color="primary" icon="bike_scooter" @click="confirm = true"/>
+
+          <!-- <q-dialog>
+            <q-card>
+              <q-card-section class="row items-center">
+                <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
+                <span class="q-ml-sm">You are currently not connected to any network.</span>
+              </q-card-section>
+
+              <q-card-actions align="right">
+                <q-btn flat label="Cancel" color="primary" v-close-popup />
+                <q-btn flat label="Turn on Wifi" color="primary" v-close-popup />
+              </q-card-actions>
+            </q-card>
+          </q-dialog> -->
+           <q-dialog v-model="alert">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6">Alert</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="OK" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
         </div>
       </q-toolbar>
     </q-header>
 
     <q-drawer
-      v-model= "leftDrawerOpen"
+      v-model= leftDrawerOpen
     >
     <!-- <q-img src="statics/logo_valide_paysage.jpg"></q-img> -->
     <q-list>
         <q-item-label
           header
         >
-          Demo 2021
+          Demo 2022
         </q-item-label>
 
         <q-item to="/dashboardjson" exact>
