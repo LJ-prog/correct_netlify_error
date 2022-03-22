@@ -17,7 +17,7 @@
 
         <div class="q-gutter-md">
           <q-btn flat round color="primary" icon="fab fa-twitter"></q-btn>
-          <q-btn flat round color="primary" icon="fab fa-facebook-f"></q-btn>
+          <q-btn flat round color="primary" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/"></q-btn>
           <q-btn flat round color="primary" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
           <q-btn flat round color="primary" icon="bike_scooter" to="/"></q-btn>
         </div>
