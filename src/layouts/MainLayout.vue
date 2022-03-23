@@ -1,19 +1,14 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated>
-<<<<<<< HEAD
       <q-toolbar class="text-white bg-primary">
-=======
-      <q-toolbar class="text-primary bg-white">
->>>>>>> d30afad54625b24170d1254509efcb8de75ff0d7
         <q-btn
           flat
           dense
           round
           icon="menu"
           aria-label="Menu"
-<<<<<<< HEAD
-          @click= toggleLeftDrawer
+          @click="toggleLeftDrawer"
         />
 
         <q-toolbar-title class="text-h4 text-white">
@@ -39,41 +34,19 @@
               </q-card-actions>
             </q-card>
           </q-dialog>
-=======
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title class="text-h4 text-grey-8">
-          Midipile Fleet Manager
-        </q-toolbar-title>
-
-        <div class="q-gutter-md">
-          <q-btn flat round color="primary" icon="fab fa-twitter"></q-btn>
-          <q-btn flat round color="primary" icon="fab fa-facebook-f"></q-btn>
-          <q-btn flat round color="primary" icon="fab fa-linkedin-in"></q-btn>
-          <q-btn flat round color="primary" icon="bike_scooter" to="/"></q-btn>
->>>>>>> d30afad54625b24170d1254509efcb8de75ff0d7
         </div>
       </q-toolbar>
     </q-header>
 
     <q-drawer
-<<<<<<< HEAD
-      v-model= leftDrawerOpen
-=======
       v-model="leftDrawerOpen"
->>>>>>> d30afad54625b24170d1254509efcb8de75ff0d7
     >
     <!-- <q-img src="statics/logo_valide_paysage.jpg"></q-img> -->
     <q-list>
         <q-item-label
           header
         >
-<<<<<<< HEAD
           Demo 2022
-=======
-          Demo 2021
->>>>>>> d30afad54625b24170d1254509efcb8de75ff0d7
         </q-item-label>
 
         <q-item to="/dashboardjson" exact>
@@ -86,20 +59,11 @@
           </q-item-section>
         </q-item>
 
-<<<<<<< HEAD
-
-=======
-
->>>>>>> d30afad54625b24170d1254509efcb8de75ff0d7
         <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/mesvehicules" >
           <q-list dense >
             <q-item to="/midipile01" exact>
               <q-item-section > </q-item-section>
-<<<<<<< HEAD
               <q-item-section > Midipile 01 </q-item-section>
-=======
-              <q-item-section > Midipile 01 </q-item-section>
->>>>>>> d30afad54625b24170d1254509efcb8de75ff0d7
               <q-item-section > </q-item-section>
             </q-item>
 
@@ -145,7 +109,6 @@
             label="Charts"
           >
               <q-item to="columnlabel" exact>
-<<<<<<< HEAD
                 <q-item-section > Colonne simple </q-item-section>
               </q-item>
 
@@ -185,47 +148,6 @@
                 <q-item-section > 2 Lines </q-item-section>
               </q-item>
 
-=======
-                <q-item-section > Colonne simple </q-item-section>
-              </q-item>
-
-              <q-item to="stackedcolumn" exact>
-                <q-item-section > Colonne multiple </q-item-section>
-              </q-item>
-
-              <q-item to="basiccircle" exact>
-                <q-item-section > Cercle simple </q-item-section>
-              </q-item>
-
-              <q-item to="batteryradial" exact>
-                <q-item-section > Batterie (Radial) </q-item-section>
-              </q-item>
-
-              <q-item to="minibatteryradial" exact>
-                <q-item-section > Mini Batterie (Radial) </q-item-section>
-              </q-item>
-
-              <q-item to="radialbarcustom" exact>
-                <q-item-section > Jauge multiple </q-item-section>
-              </q-item>
-
-              <q-item to="spark" exact>
-                <q-item-section > Indicateur Spark </q-item-section>
-              </q-item>
-
-              <q-item to="basicline" exact>
-                <q-item-section > Graphe ligne simple </q-item-section>
-              </q-item>
-
-              <q-item to="semidonut" exact>
-                <q-item-section > Semi donut </q-item-section>
-              </q-item>
-
-              <q-item to="jsontwolines" exact>
-                <q-item-section > 2 Lines </q-item-section>
-              </q-item>
-
->>>>>>> d30afad54625b24170d1254509efcb8de75ff0d7
           </q-expansion-item>
 
 
