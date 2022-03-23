@@ -2,7 +2,7 @@
   <q-page>
     <div class="q-pa-md row q-gutter-md">
       <div class="col">
-
+        
         <q-card flat bordered>
           <q-card-section>
             <global-map></global-map>

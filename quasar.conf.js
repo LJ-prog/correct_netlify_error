@@ -33,8 +33,8 @@ module.exports = configure(function (ctx) {
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
-      // 'ionicons-v4',
-      // 'mdi-v5',
+       'ionicons-v4',
+       'mdi-v6',
       'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
@@ -83,7 +83,7 @@ module.exports = configure(function (ctx) {
     // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       config: {
-        dark: false,
+        // dark: true,
       },
 
       // iconSet: 'material-icons', // Quasar icon set
@@ -101,6 +101,10 @@ module.exports = configure(function (ctx) {
       // Quasar plugins
       plugins: [
         "Dialog",
+        "Notify",
+        "Loading",
+        "Dark",
+        "LocalStorage"
       ],
     },
 

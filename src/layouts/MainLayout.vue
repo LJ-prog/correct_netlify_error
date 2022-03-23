@@ -16,6 +16,7 @@
         </q-toolbar-title>
 
         <div class="q-pa-md q-gutter-sm">
+          <toggle-dark-mode />
           <q-btn flat round color="white" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
@@ -29,8 +30,8 @@
               </q-card-section>
 
               <q-card-actions align="right">
-                <q-btn flat label="Annuler" color="primary" class="btn-hover" v-close-popup />
-                <q-btn flat label="Confirmer" color="primary" class="btn-hover" to= "/" v-close-popup />
+                <q-btn flat label="Annuler" color="primary" v-close-popup />
+                <q-btn flat label="Confirmer" color="primary" to= "/" v-close-popup />
               </q-card-actions>
             </q-card>
           </q-dialog>
@@ -253,17 +254,18 @@
         <router-view />
     </q-page-container>
 
-    <q-footer class="bg-white text-primary">
-      <q-toolbar>
-        <q-toolbar-title>
-          <div>
-            <center>
-              <div class="text-overline text-grey-8">MWS v0.1 - Copyright © 2022 - <a href="https://midipile.eu" target="_blank" class="text-grey-8">Midipile Mobility</a></div>
-            </center>
-          </div>
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer>
+      <!--v-bind:style= "[$q.dark==false ? {backgroundColor: 'white'} : {backgroundColor: '#121212'}]" -->
+    <!-- footer part -->
+    <q-toolbar>
+      <q-toolbar-title>
+        <div>
+          <center>
+            <div class="text-overline text-grey-8">MWS v0.1 - Copyright © 2022 - <a href="https://midipile.eu" target="_blank" class="text-grey-8">Midipile Mobility</a></div>
+          </center>
+        </div>
+      </q-toolbar-title>
+    </q-toolbar>
+
 
   </q-layout>
 </template>
@@ -272,16 +274,29 @@
 
 import { defineComponent, defineAsyncComponent, ref } from 'vue'
 
+
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue'))
+    LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue')),
+    ToggleDarkMode: defineAsyncComponent(() => import ('components/ToggleDarkMode.vue'))
   },
 
   setup () {
-    const leftDrawerOpen = ref(false)
+    const leftDrawerOpen = ref(false);
+    // const $q = useQuasar();
 
+    // // get status
+    // console.log($q.dark.isActive) // true, false
+
+    // // get configured status
+    // console.log($q.dark.mode) // "auto", true, false
+
+    // set status
+    // $q.dark.set(false) // or false or "auto"
+    // // toggle
+    // $q.dark.toggle()
     return {
       debug: false,
       leftDrawerOpen,
@@ -293,14 +308,20 @@ export default defineComponent({
       prompt: ref(false),
       address: ref('')
     }
-  }
+  },
+  // methods: {
+  //   DarkMode: function (){
+  //     var element = document.body;
+  //     element.classList.toggle("dark-mode");
+  //   }
+
+  // }
 })
 </script>
 
-<style>
+<style scoped>
 
-.btn-hover:hover {
-  background-color: #946204;
-}
-
+/* .back-white {
+  background-color: white;
+} */
 </style>
