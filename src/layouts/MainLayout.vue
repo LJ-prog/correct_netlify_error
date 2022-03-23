@@ -300,7 +300,7 @@ export default defineComponent({
 <style>
 
 .btn-hover:hover {
-  background-color: red;
+  background-color: #946204;
 }
 
 </style>
