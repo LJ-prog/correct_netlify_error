@@ -24,7 +24,7 @@
           <q-dialog v-model="confirm">
             <q-card>
               <q-card-section class="row items-center">
-                <q-avatar icon="warning" color="primary" size="4rem" text-color="white" />
+                <q-avatar icon="warning" color="primary" size="4rem" text-color="blue" />
                 <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnectez ?</span>
               </q-card-section>
 
