@@ -9,7 +9,7 @@
           </q-card-section>
         </q-card>
       </div>
-     
+
       <div class="col-xs-12 col-sm-5 col-md-3">
         <q-card flat >
             <q-card-section>
@@ -22,7 +22,7 @@
       <div class="col-xs-12 col-sm-4 col-md-3">
         <q-card flat >
           <q-card-section>
-            <battery-radial 
+            <battery-radial
               :batteryvalue=[85]
               :batterylabel="['Mobility ECO Score']"
               :colormin="['#1a7a30']"

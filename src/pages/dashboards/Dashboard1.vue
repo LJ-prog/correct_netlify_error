@@ -2,7 +2,7 @@
   <q-page>
     <div class="q-pa-md row q-gutter-md">
       <div class="col">
-        
+
         <q-card flat bordered>
           <q-card-section>
             <global-map></global-map>
@@ -26,8 +26,8 @@
           <q-card-section>
             <apex-column-label
               :columnxaxiscategories="['Jan', 'Fev']"
-              :columnseriesname="['Mois']"
-              :columnseriesdata="[28,4]"
+              :columnseriesname="Mois"
+              :columnseriesdata=[28,4]
               :colorvalue="['#ea98be']"
             ></apex-column-label>
           </q-card-section>
