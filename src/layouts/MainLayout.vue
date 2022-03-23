@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated>
-      <q-toolbar class="text-primary bg-white">
+      <q-toolbar class="text-white bg-primary">
         <q-btn
           flat
           dense
@@ -11,44 +11,29 @@
           @click= toggleLeftDrawer
         />
 
-        <q-toolbar-title class="text-h4 text-grey-8">
+        <q-toolbar-title class="text-h4 text-white">
           Midipile Fleet Manager
         </q-toolbar-title>
 
         <div class="q-pa-md q-gutter-sm">
-          <q-btn flat round color="primary" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
-          <q-btn flat round color="primary" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
-          <q-btn flat round color="primary" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
-          <q-btn flat round color="primary" icon="bike_scooter" @click="confirm = true"/>
+          <q-btn flat round color="white" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
+          <q-btn flat round color="white" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
+          <q-btn flat round color="white" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
+          <q-btn flat round color="white" icon="bike_scooter" @click="confirm = true"/>
 
-          <!-- <q-dialog>
+          <q-dialog v-model="confirm">
             <q-card>
               <q-card-section class="row items-center">
-                <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
-                <span class="q-ml-sm">You are currently not connected to any network.</span>
+                <q-avatar icon="warning" color="primary" size="4rem" text-color="white" />
+                <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnectez ?</span>
               </q-card-section>
 
               <q-card-actions align="right">
-                <q-btn flat label="Cancel" color="primary" v-close-popup />
-                <q-btn flat label="Turn on Wifi" color="primary" v-close-popup />
+                <q-btn flat label="Annuler" color="primary" v-close-popup />
+                <q-btn flat label="Confirmer" color="primary" to= "/" v-close-popup />
               </q-card-actions>
             </q-card>
-          </q-dialog> -->
-           <q-dialog v-model="alert">
-      <q-card>
-        <q-card-section>
-          <div class="text-h6">Alert</div>
-        </q-card-section>
-
-        <q-card-section class="q-pt-none">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
+          </q-dialog>
         </div>
       </q-toolbar>
     </q-header>
@@ -269,7 +254,7 @@
         <router-view />
     </q-page-container>
 
-    <q-footer class="bg-white text-primary">
+    <q-footer>
       <q-toolbar>
         <q-toolbar-title>
           <div>
@@ -303,7 +288,11 @@ export default defineComponent({
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      },
+      alert: ref(false),
+      confirm: ref(false),
+      prompt: ref(false),
+      address: ref('')
     }
   }
 })
