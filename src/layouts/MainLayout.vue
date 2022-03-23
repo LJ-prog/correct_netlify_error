@@ -24,13 +24,13 @@
           <q-dialog v-model="confirm">
             <q-card>
               <q-card-section class="row items-center">
-                <q-avatar icon="warning" color="primary" size="4rem" text-color="blue" />
+                <q-avatar icon="warning" color="primary" size="4rem" text-color="white" />
                 <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnectez ?</span>
               </q-card-section>
 
               <q-card-actions align="right">
-                <q-btn flat label="Annuler" color="primary" v-close-popup />
-                <q-btn flat label="Confirmer" color="primary" to= "/" v-close-popup />
+                <q-btn flat label="Annuler" color="primary" class="btn-hover" v-close-popup />
+                <q-btn flat label="Confirmer" color="primary" class="btn-hover" to= "/" v-close-popup />
               </q-card-actions>
             </q-card>
           </q-dialog>
@@ -296,3 +296,11 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+
+.btn-hover:hover {
+  background-color: red;
+}
+
+</style>
