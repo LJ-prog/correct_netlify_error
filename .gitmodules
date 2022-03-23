@@ -1,0 +1,3 @@
+[submodule "dist"]
+    path = dist
+    url = https://github.com/Lucas-JAOUEN/Midipile_Web_Services.git
