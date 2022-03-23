@@ -21,7 +21,7 @@ export default defineComponent({
     watch(darkMode, (darkMode) => {
       // console.log('darkMode', darkMode);
       $q.dark.set(darkMode)
-      $q.localStorage.set('darkMode', darkMode)
+      $q.localStorage.set('darkMode', darkMode )
     })
 
     onMounted(() => {
