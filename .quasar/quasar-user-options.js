@@ -15,4 +15,4 @@
 import {Dialog,Notify,Loading,Dark,LocalStorage} from 'quasar'
 
 
-export default { config: {},plugins: {Dialog,Notify,Loading,Dark,LocalStorage} }
+export default { config: {"dark":"auto"},plugins: {Dialog,Notify,Loading,Dark,LocalStorage} }
