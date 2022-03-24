@@ -46,9 +46,9 @@
         </div>
 
         <div class="q-py-md q-gutter-sm" v-if="$q.platform.is.mobile">
+          <toggle-dark-mode />
           <q-btn flat round color="white">
             <img src="~assets/follow-34x34px.png" />
-            <toggle-dark-mode />
             <q-menu>
               <div class="row no-wrap q-pa-md" style="padding-bottom: 4px">
                 <div class="line align-center">
@@ -384,7 +384,7 @@ export default defineComponent({
 
 .ma-logo-mobile {
   margin-left: 10px;
-  margin-right: 38%;
+  margin-right: 35%;
 }
 
 .ma-logo {
