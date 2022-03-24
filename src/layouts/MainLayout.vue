@@ -10,10 +10,18 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
+        <!-- <q-item to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home">
+          <img src="~assets/LOGO-MIDIPILE-MOBILITY-3-409px.png">
+        </q-item> -->
 
-        <q-toolbar-title class="text-h4 text-white">
+        <q-toolbar-title class="text-h4 text-white" v-if="$q.platform.is.desktop">
           Midipile Fleet Manager
         </q-toolbar-title>
+
+        <q-item class="ma-logo-mobile" to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px" v-if="$q.platform.is.mobile">
+          <img src="~assets/logoM-38x25px.png">
+        </q-item>
+
 
         <div class="q-pa-md q-gutter-sm" v-if="$q.platform.is.desktop">
           <toggle-dark-mode />
@@ -37,8 +45,10 @@
           </q-dialog>
         </div>
 
-        <div class="q-pa-md q-gutter-sm" v-if="$q.platform.is.mobile">
-          <q-btn flat round color="white" icon="mdi-account-group">
+        <div class="q-py-md q-gutter-sm" v-if="$q.platform.is.mobile">
+          <q-btn flat round color="white">
+            <img src="~assets/follow-34x34px.png" />
+            <toggle-dark-mode />
             <q-menu>
               <div class="row no-wrap q-pa-md" style="padding-bottom: 4px">
                 <div class="line align-center">
@@ -67,7 +77,7 @@
               </div>
             </q-menu>
           </q-btn>
-          <toggle-dark-mode />
+
 
           <q-dialog v-model="confirm">
             <q-card>
@@ -371,4 +381,14 @@ export default defineComponent({
 /* .back-white {
   background-color: white;
 } */
+
+.ma-logo-mobile {
+  margin-left: 10px;
+  margin-right: 38%;
+}
+
+.ma-logo {
+  margin-left: 10px;
+}
+
 </style>
