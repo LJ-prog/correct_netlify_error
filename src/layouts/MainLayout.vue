@@ -43,9 +43,9 @@
               <div class="row no-wrap q-pa-md" style="padding-bottom: 4px">
                 <div class="line align-center">
                   <div class="text-h6 q-mb-md">Suivez-nous :</div>
-                  <q-btn flat round color="white" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
-                  <q-btn flat round color="white" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
-                  <q-btn flat round color="white" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
+                  <q-btn flat round color="primary" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
+                  <q-btn flat round color="primary" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
+                  <q-btn flat round color="primary" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
                 </div>
 
                 <q-separator vertical inset class="q-mx-lg" />
@@ -58,7 +58,7 @@
                   <div class="text-subtitle1 q-mt-md q-mb-xs">Admin</div>
 
                   <q-btn
-                    flat round color="white"
+                    flat round color="primary"
                     icon="mdi-power"
                     @click="confirm = true"
                   />
