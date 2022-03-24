@@ -15,7 +15,7 @@
           Midipile Fleet Manager
         </q-toolbar-title>
 
-        <div class="q-pa-md q-gutter-sm">
+        <div class="q-pa-md q-gutter-sm" v-if="$q.platform.is.desktop">
           <toggle-dark-mode />
           <q-btn flat round color="white" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
