@@ -20,7 +20,54 @@
           <q-btn flat round color="white" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
-          <q-btn flat round color="white" icon="bike_scooter" @click="confirm = true"/>
+          <q-btn flat round color="white" icon="mdi-power" @click="confirm = true"/>
+
+          <q-dialog v-model="confirm">
+            <q-card>
+              <q-card-section class="row items-center">
+                <q-avatar icon="warning" color="primary" size="4rem" text-color="white" />
+                <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnectez ?</span>
+              </q-card-section>
+
+              <q-card-actions align="right">
+                <q-btn flat label="Annuler" color="primary" v-close-popup />
+                <q-btn flat label="Confirmer" color="primary" to= "/" v-close-popup />
+              </q-card-actions>
+            </q-card>
+          </q-dialog>
+        </div>
+
+        <div class="q-pa-md q-gutter-sm" v-if="$q.platform.is.mobile">
+          <q-btn flat round color="white" icon="mdi-account-group">
+            <q-menu>
+              <div class="row no-wrap q-pa-md" style="padding-bottom: 4px">
+                <div class="line align-center">
+                  <div class="text-h6 q-mb-md">Suivez-nous :</div>
+                  <q-btn flat round color="white" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
+                  <q-btn flat round color="white" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
+                  <q-btn flat round color="white" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
+                </div>
+
+                <q-separator vertical inset class="q-mx-lg" />
+
+                <div class="column items-center">
+                  <q-avatar size="36px">
+                    <img src="https://cdn.quasar.dev/img/avatar4.jpg">
+                  </q-avatar>
+
+                  <div class="text-subtitle1 q-mt-md q-mb-xs">Admin</div>
+
+                  <q-btn
+                    flat round color="white"
+                    icon="mdi-power"
+                    @click="confirm = true"
+                  />
+
+                </div>
+              </div>
+            </q-menu>
+          </q-btn>
+          <toggle-dark-mode />
 
           <q-dialog v-model="confirm">
             <q-card>
