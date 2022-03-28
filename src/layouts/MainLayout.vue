@@ -18,9 +18,9 @@
           Midipile Fleet Manager
         </q-toolbar-title>
 
-        <q-item class="ma-logo-mobile" to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px" v-if="$q.platform.is.mobile">
-          <img src="~assets/logoM-38x25px.png">
-        </q-item>
+        <q-toolbar-title class="ma-logo-mobile" to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px;" v-if="$q.platform.is.mobile">
+          <img src="~assets/logo3.svg">
+        </q-toolbar-title>
 
 
         <div class="q-pa-md q-gutter-sm" v-if="$q.platform.is.desktop">
@@ -48,7 +48,7 @@
         <div class="q-py-md q-gutter-sm" v-if="$q.platform.is.mobile">
           <toggle-dark-mode />
           <q-btn flat round color="white">
-            <img src="~assets/follow-34x34px.png" />
+            <img src="~assets/followGood.svg" />
             <q-menu>
               <div class="row no-wrap q-pa-md" style="padding-bottom: 4px">
                 <div class="line align-center">
@@ -329,7 +329,7 @@
 
 <script>
 
-import { defineComponent, defineAsyncComponent, ref } from 'vue'
+import { defineComponent, defineAsyncComponent, ref } from 'vue';
 
 
 export default defineComponent({
@@ -337,7 +337,7 @@ export default defineComponent({
 
   components: {
     LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue')),
-    ToggleDarkMode: defineAsyncComponent(() => import ('components/ToggleDarkMode.vue'))
+    ToggleDarkMode: defineAsyncComponent(() => import ('components/ToggleDarkMode.vue')),
   },
 
   setup () {
@@ -366,6 +366,12 @@ export default defineComponent({
       address: ref('')
     }
   },
+
+  // data(){
+  //   return {
+  //     socialMediaSvg: require('./assets/follow-34x34px.svg')
+  //   }
+  // }
   // methods: {
   //   DarkMode: function (){
   //     var element = document.body;
