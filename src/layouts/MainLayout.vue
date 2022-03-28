@@ -48,7 +48,7 @@
         <div class="q-py-md q-gutter-sm" v-if="$q.platform.is.mobile">
           <toggle-dark-mode />
           <q-btn flat round color="white">
-            <img src="~assets/followGood.svg" />
+            <img src="~assets/followThisOne.svg" />
             <q-menu>
               <div class="row no-wrap q-pa-md" style="padding-bottom: 4px">
                 <div class="line align-center">
