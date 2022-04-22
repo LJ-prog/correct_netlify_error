@@ -27,6 +27,7 @@
           <toggle-dark-mode />
           <q-btn flat round color="white" icon="fab fa-twitter" href="https://twitter.com/midipilem" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-facebook-f" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
+          <q-btn flat round color="white" icon="fab fa-instagram" href="https://www.instagram.com/midipilemobility/" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="mdi-power" @click="confirm = true"/>
 
