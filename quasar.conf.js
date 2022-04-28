@@ -138,15 +138,15 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
-      workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
-      workboxOptions: {}, // only for GenerateSW
+      //workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
+      //workboxOptions: {}, // only for GenerateSW
 
       // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
       // if using workbox in InjectManifest mode
-      chainWebpackCustomSW (chain) {
-        chain.plugin('eslint-webpack-plugin')
-          .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
-      },
+      // chainWebpackCustomSW (chain) {
+      //   chain.plugin('eslint-webpack-plugin')
+      //     .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
+      // },
 
       manifest: {
         name: `Midipile Web Services`,
