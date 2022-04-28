@@ -140,7 +140,7 @@ module.exports = configure(function (ctx) {
     pwa: {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {
-        exclude: [/\.map$/, /_redirects/],
+        // exclude: [/\.map$/, /_redirects/],
       }, // only for 'GenerateSW'
 
       // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
