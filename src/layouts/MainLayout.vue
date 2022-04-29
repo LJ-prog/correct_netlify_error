@@ -121,6 +121,64 @@
 
         <div class="q-py-md q-gutter-sm" v-if="$q.platform.is.mobile">
           <toggle-dark-mode />
+          <q-btn flat round color="white" icon="mdi-bell-badge">
+            <q-menu
+              transition-show="scale"
+              transition-hide="scale"
+            >
+              <q-list class="shadow-2 rounded-borders" style="min-width: 100px; padding-top: 1.5%; padding-bottom: 1%;" bordered>
+                <q-item clickable v-ripple>
+                  <q-item-section avatar thumbnail>
+                    <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
+                  </q-item-section>
+                  <q-item-section class="row justify-center">
+                    <q-item-label class="truncateToolongText" title="Le véhicule n°15 vient de démarrer. Il part vers le centre d'Angoulême.">Le véhicule n°15 vient de démarrer. Il part vers le centre d'Angoulême.</q-item-label>
+                    <q-item-label caption lines="1"> Catégorie : Géofencing</q-item-label>
+                  </q-item-section>
+                  <q-item-section side top>
+                    <q-item-label caption>Il y a 5 min</q-item-label>
+                    <q-icon name="mdi-clock" color="grey" />
+                  </q-item-section>
+                </q-item>
+                <q-separator spaced inset="item-thumbnail" style="margin-left:9.3%"/>
+
+                <q-item clickable v-ripple>
+                  <q-item-section avatar thumbnail>
+                    <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
+                  </q-item-section>
+                  <q-item-section class="row justify-center">
+                    <q-item-label class="truncateToolongText" title="Le véhicule N°3 est en mouvement.">Le véhicule N°3 est en mouvement.</q-item-label>
+                    <q-item-label caption lines="1"> Catégorie : Géofencing</q-item-label>
+                  </q-item-section>
+                  <q-item-section side top>
+                    <q-item-label caption>Il y a 5 min</q-item-label>
+                    <q-icon name="mdi-clock" color="grey" />
+                  </q-item-section>
+                </q-item>
+                <q-separator spaced inset="item-thumbnail" style="margin-left:9.3%"/>
+
+                <q-item clickable v-ripple>
+                  <q-item-section avatar thumbnail>
+                    <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
+                  </q-item-section>
+                  <q-item-section class="row justify-center">
+                    <q-item-label class="truncateToolongText" title="Le D'click N°6 a une anomalie batterie. Un technicien se rend sur place.">Le D'click N°6 a une anomalie batterie. Un technicien se rend sur place.</q-item-label>
+                    <q-item-label caption lines="1"> Catégorie : Maintenance</q-item-label>
+                  </q-item-section>
+                  <q-item-section side top>
+                    <q-item-label caption>Il y a 5 min</q-item-label>
+                    <q-icon name="img:statics/wrench-clock.svg" class="filter-grey"/>
+                  </q-item-section>
+                </q-item>
+                <q-separator spaced inset="item-thumbnail" style="margin-left:9.3%"/>
+
+                <q-btn style="left:33%; margin-top:1.2%; margin-bottom:1.2%" unelevated rounded color="primary" label="VOIR LES NOTIFICATIONS" to="/seenotifications"  thumbnail />
+
+
+
+              </q-list>
+            </q-menu>
+          </q-btn>
           <q-btn flat round color="white">
             <img src="~assets/followThisOne.svg" />
             <q-menu>
