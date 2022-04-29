@@ -18,7 +18,7 @@
           Midipile Fleet Manager
         </q-toolbar-title>
 
-        <q-toolbar-title class="ma-logo-mobile" to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px;" v-if="$q.platform.is.mobile">
+        <q-toolbar-title class="ma-logo-mobile" to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px; margin-right: 0px;" v-if="$q.platform.is.mobile">
           <img src="~assets/logo3.svg">
         </q-toolbar-title>
 
