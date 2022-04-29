@@ -92,7 +92,11 @@ const routes = [
       { path: '/5111128114_route13', component: () => import('pages/trip/5111128114_route13.vue') },
 
       //Administration
-      { path: '/administration', component: () => import('pages/Administration.vue') }
+      { path: '/administration', component: () => import('pages/Administration.vue') },
+      //Notification
+      { path: '/seenotifications', component: () => import('pages/SeeNotifications.vue') },
+      { path: '/addalerts', component: () => import('pages/AddAlerts.vue') }
+
     ]
   },
 
