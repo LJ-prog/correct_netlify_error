@@ -7,19 +7,34 @@ import { useQuasar } from 'quasar';
 
 export default defineComponent({
   name: 'Midipile Web Services',
-  setup () {
-      // const $q = useQuasar()
 
-      // // calling here; equivalent to when component is created
-      // $q.dark.set('auto')
-  },
-  // methods: {
-  //   DarkMode: function (){
-  //     var element = document.body;
-  //     element.classList.toggle("dark-mode");
-  //   }
+//   setup () {
+//     const validate = ref(false)
+//     const $q = useQuasar()
 
-  // }
+//     $q.localStorage.set('validate', validate)
+//     const value = $q.localStorage.getItem(key)
+
+//     $q.sessionStorage.set(key, value)
+
+
+//     watch(validate, (validate) => {
+//         // console.log('validate', validate);
+//         $q.localStorage.set('validate', validate )
+//       })
+
+//     onMounted(() => {
+//       const validateIsActive = $q.localStorage.getItem('validate')
+//       const otherValue = $q.sessionStorage.getItem(key)
+//       if(validateIsActive){
+//         validate.value = true;
+//       }
+//     })
+
+//     return {
+//       validate
+//     }
+// }
 
 })
 </script>
