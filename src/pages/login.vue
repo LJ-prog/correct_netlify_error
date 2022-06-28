@@ -9,7 +9,7 @@
           "
         >
           <q-img
-            src="/statics/images/midipile.jpg"
+            src="/statics/images/midipile-min1920X1200.jpeg"
           />
 
           <q-card-section>
