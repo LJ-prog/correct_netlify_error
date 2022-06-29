@@ -135,19 +135,20 @@ export default {
 <style scoped>
 
 .time {
-  position: absolute;
+  /* position: absolute;
   left: 220px;
-  top: 0px;
+  top: 0px; */
   margin-top: 0px;
   margin-bottom : 0px;
   text-transform: lowercase;
+  margin-left: auto;
 }
 .address {
   margin: 0px;
 }
 
-span.q-btn {
+/* span.q-btn {
   margin-top: 18px;
-}
+} */
 
 </style>
