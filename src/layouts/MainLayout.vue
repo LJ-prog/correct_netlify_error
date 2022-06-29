@@ -14,12 +14,17 @@
           <img src="~assets/LOGO-MIDIPILE-MOBILITY-3-409px.png">
         </q-item> -->
 
-        <q-toolbar-title class="text-h4 text-white" v-if="$q.platform.is.desktop">
-          Midipile Fleet Manager
+        <q-toolbar-title class="text-h4 text-white" id="link" v-if="$q.platform.is.desktop">
+          <a href="/dashboardjson">
+          <!-- <q-btn class="text-h4 text-white" id="titleLink" to="/dashboardjson">Midipile Fleet Manager</q-btn> -->
+            Midipile Fleet Manager
+          </a>
         </q-toolbar-title>
 
-        <q-toolbar-title class="ma-logo-mobile" to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px; margin-right: 0px;" v-if="$q.platform.is.mobile">
-          <img src="~assets/logo3.svg">
+        <q-toolbar-title class="ma-logo-mobile" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px; margin-right: 0px;" v-if="$q.platform.is.mobile">
+          <a href="/dashboardjson">
+          <img src="~assets/logo3.svg" />
+          </a>
         </q-toolbar-title>
 
 
@@ -87,7 +92,7 @@
               </q-list>
             </q-menu>
           </q-btn>
-          <q-btn flat round color="white" icon="mdi-power">
+          <q-btn flat round color="white" icon="mdi-exit-to-app">
             <q-menu
               transition-show="jump-down"
               transition-hide="jump-up"
@@ -538,6 +543,16 @@ export default defineComponent({
 
 .filter-grey {
   filter: invert(72%) sepia(14%) saturate(0%) hue-rotate(236deg) brightness(85%) contrast(92%);
+}
+
+#titleLink::before {
+  box-shadow: none;
+}
+
+#link a {
+  text-decoration: none;
+  color: white;
+
 }
 
 </style>
