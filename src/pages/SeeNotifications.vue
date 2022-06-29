@@ -233,9 +233,13 @@ export default defineComponent({
       if (this.editedIndex > -1) {
         Object.assign(this.data[this.editedIndex], this.editedItem);
       }
+      else if (this.editedItem.name !== "" && this.editedItem.notif !== "")
+      {
+        this.data.push(this.editedItem);
+      }
       else if (this.editedItem.name !== "" || this.editedItem.notif !== "")
       {
-        confirm("Êtes-vous sûr de vouloir valider ?") &&
+        confirm("Êtes-vous sûr de vouloir valider en laissant un champ vide?") &&
         this.data.push(this.editedItem);
       }
       else if(this.editedItem.name === "" && this.editedItem.notif === "")
@@ -247,7 +251,7 @@ export default defineComponent({
     },
     deleteItem(item) {
       const index = this.data.indexOf(item);
-      confirm("Are you sure you want to delete this item ?") &&
+      confirm("Êtes-vous sûr de vouloir supprimer cette alerte ?") &&
         this.data.splice(index, 1);
       console.log('====>', this.data)
       // For save data when we delete a row but not good for the moment.
