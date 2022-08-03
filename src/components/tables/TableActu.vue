@@ -1,18 +1,18 @@
 <template>
   <q-card>
     <q-card-section>
-      <div class="text-h6 text-grey-8">
+      <div class="text-h6">
         Flux d'actualités
       </div>
     </q-card-section>
     <q-separator color="white"/>
     <q-card-section class="q-pa-none">
-      <q-table 
-        class="" 
+      <q-table
+        class=""
         style="height: 400px"
-        :rows="data3" 
-        :columns="column" 
-        hide-bottom 
+        :rows="data3"
+        :columns="column"
+        hide-bottom
         virtual-scroll
         v-model:pagination="pagination"
         :rows-per-page-options="[0]">

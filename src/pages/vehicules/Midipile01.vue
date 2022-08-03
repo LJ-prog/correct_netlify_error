@@ -1,65 +1,55 @@
 <template>
   <q-page>
-    <div class="q-pa-md row q-gutter-md">
+    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '60px', 'margin-bottom' : '0px' } : {}">
 
-      <div class="col-xs-12 col-sm-5 col-md-3">
-        <div class="text-h4 text-grey-8">Midipile 01</div>
+      <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+        <div class="text-h4" style="padding-bottom:16px">Midipile 01</div>
         <q-card class="my-card">
           <q-img src="/statics/images/M1.JPG"/>
         </q-card>
       </div>
-      
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <q-card flat >
-            <q-card-section>
-              <table-actu
+
+      <div class="col-xs-12 col-sm-6 col-md-3" id="marginTable" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+              <table-actu id="borderTable"
               :data3def="tabdata"
             ></table-actu>
-            </q-card-section>
-          </q-card>
         </div>
 
 
-      <div class="col-xs-12 col-sm-5 col-md-2">
-        <q-card flat >
-          <q-card-section>
-            <battery-radial 
+      <div class="col-xs-12 col-sm-5 col-md-2" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+            <battery-radial id="borderTable"
               :batteryvalue=[85]
               :batterylabel="['Mobility ECO Score']"
               :colormin="['#1a7a30']"
               :colormax="['#1a7a30']"
+              style="padding-bottom: 26px"
             ></battery-radial>
-          </q-card-section>
-        </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-2">
-        <q-card flat >
-          <q-card-section>
-            <battery-radial 
+      <div class="col-xs-12 col-sm-5 col-md-2" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+            <battery-radial id="borderTable"
               :batteryvalue=[79]
               :batterylabel="['Midipile Challenge']"
               :colormin="['#103e47']"
               :colormax="['#103e47']"
+              style="padding-bottom: 26px"
             ></battery-radial>
-          </q-card-section>
-        </q-card>
 
       </div>
 
     </div>
 
-    <div class="q-pa-md row q-gutter-md">
-      <div class="col-xs-12 col-sm-5 col-md-5">
-        <div class="text-h6 text-grey-8">Distance hebdomadaire</div>
-          <JSONApexColumnLabel
+    <div class="q-pa-md row q-gutter-md"  v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
+      <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-top': '0px', 'margin-left': '0px' } : {}">
+        <div class="text-h6" style="padding: 16px">Distance hebdomadaire</div>
+          <JSONApexColumnLabel id="borderTable"
             :filename="['midipile01_stat_semaine.json']"
           ></JSONApexColumnLabel>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-5">
-        <div class="text-h6 text-grey-8">Suivi de consommation (W.h/km)</div>
-          <JSONApexBasicLine
+      <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-top': '48px', 'margin-left': '0px' } : {}">
+        <div class="text-h6" style="padding: 16px">Suivi de consommation (W.h/km)</div>
+          <JSONApexBasicLine id="borderTable"
             :filename="['midipile01_stat.json']"
           ></JSONApexBasicLine>
       </div>
@@ -115,7 +105,7 @@ export default defineComponent({
       ]
     },
   },
-  
+
   data () {
     return {
       loading: true,
@@ -125,3 +115,11 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+
+#marginTable {
+  margin-left:2%;
+}
+
+</style>

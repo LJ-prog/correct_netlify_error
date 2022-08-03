@@ -1,16 +1,16 @@
 <template>
 
-  <q-page padding>
-    <q-card style="width: 100%">
-      <div class="row justify-center">
-        <h4 > Mes alertes </h4>
+  <q-page padding style="min-height: 730px;">
+    <q-card style="width: 100%" v-bind:style="$q.screen.lt.sm ? {'margin-top': '30%', 'margin-bottom' : '20px'} : {}">
+      <div class="row justify-center" v-bind:style="$q.screen.lt.sm ? {'padding-top': '0px'} : {'padding-top' : '0px'}">
+        <h4 v-bind:style="$q.screen.lt.sm ? {'margin': '5%'} : {}" style="text-align:center"> Mes alertes </h4>
       </div>
-      <q-item style="padding-bottom:5%;">
+      <!-- <q-item>
         <q-item-section class="col">
-          <div class="flex flex-center">
-            <q-btn style="width:200px;" rounded color="primary" label="Ajouter une alerte" @click="show_dialog = true"/>
-          </div>
-        </q-item-section>
+          <div class="flex flex-center"> -->
+            <!-- <q-btn style="width:200px;" rounded color="primary" label="Ajouter une alerte" @click="show_dialog = true"/> -->
+          <!-- </div>
+        </q-item-section> -->
 
       <!-- <q-item-section class="col">
         <div class="flex flex-center">
@@ -22,7 +22,7 @@
         <q-btn style="width:200px;"  rounded color="primary" label="Modifier une alerte" to="/addalerts"/>
         </div>
       </q-item-section> -->
-      </q-item>
+      <!-- </q-item> -->
       <q-separator/>
 
 <!--     <q-card-section>
@@ -32,9 +32,9 @@
     </q-card-section>
     <q-separator color="white"/>
  -->
-      <div id="q-app">
+      <div id="q-app" style="padding-top: 2%; padding-bottom: 2%">
         <div class="q-pa-sm q-gutter-sm">
-          <q-table :rows="data" :columns="columns" row-key="name" selection="simple" v-model:selected="selected">
+          <q-table :rows="data" :columns="columns" row-key="name" selection="simple" v-model:selected="selected" id="borderTable">
 
             <template v-slot:top>
               <div class="q-pa-sm q-gutter-sm">
@@ -58,7 +58,7 @@
                     </q-card-section>
 
                     <q-card-actions align="right">
-                      <q-btn flat label="OK" color="primary" @click="addRow" style="invisible: hidden"></q-btn>
+                      <q-btn flat label="OK" color="primary" type="submit" @click="addRow" style="invisible: hidden"></q-btn>
                     </q-card-actions>
                   </q-card>
                 </q-dialog>
@@ -71,15 +71,15 @@
                 <q-tr :props="props">
                   <q-td key="id_vh" id="inputName" :props="props">
                     {{ props.row.name }}
-                    <q-popup-edit v-model="props.row.name">
+                    <!-- <q-popup-edit v-model="props.row.name">
                       <q-input v-model="props.row.name" dense autofocus counter ></q-input>
-                    </q-popup-edit>
+                    </q-popup-edit> -->
                   </q-td>
                   <q-td key="notif" :props="props">
                     {{ props.row.notif }}
-                    <q-popup-edit v-model="props.row.notif">
+                    <!-- <q-popup-edit v-model="props.row.notif">
                       <q-input dense autofocus counter v-model="props.row.notif"></q-input>
-                    </q-popup-edit>
+                    </q-popup-edit> -->
                   </q-td>
                   <q-td v-model="validate" id="inputName" key="state" :props="props">
                     <q-toggle
@@ -316,12 +316,12 @@ export default defineComponent({
           field: "state",
           align: "center"
         },
-        {
-          name: "actions",
-          label: "Actions",
-          field: "actions",
-          align: "center"
-        }
+        // {
+        //   name: "actions",
+        //   label: "Actions",
+        //   field: "actions",
+        //   align: "center"
+        // }
       ],
       data: [
         {
@@ -344,26 +344,26 @@ export default defineComponent({
           name: "Midipile 05",
           notif: "Le véhicule est immobile suite à une erreur critique sur la GAP."
         },
-        {
-          name: "Midipile 06",
-          notif: "Le pourcentage batterie du véhicule a atteint un seuil critique."
-        },
-        {
-          name: "Midipile 07",
-          notif: "Le moteur droit s'est arrêté momentanément !"
-        },
-        {
-          name: "Midipile 08",
-          notif: "La recharge batterie rencontre un problème."
-        },
-        {
-          name: "Midipile 09",
-          notif: "Les panneaux solaires dysfonctionnent."
-        },
-        {
-          name: "Midipile 10",
-          notif: "Le véhicule censé être arrêté est en déplacement."
-        }
+        // {
+        //   name: "Midipile 06",
+        //   notif: "Le pourcentage batterie du véhicule a atteint un seuil critique."
+        // },
+        // {
+        //   name: "Midipile 07",
+        //   notif: "Le moteur droit s'est arrêté momentanément !"
+        // },
+        // {
+        //   name: "Midipile 08",
+        //   notif: "La recharge batterie rencontre un problème."
+        // },
+        // {
+        //   name: "Midipile 09",
+        //   notif: "Les panneaux solaires dysfonctionnent."
+        // },
+        // {
+        //   name: "Midipile 10",
+        //   notif: "Le véhicule censé être arrêté est en déplacement."
+        // }
       ],
     };
   }

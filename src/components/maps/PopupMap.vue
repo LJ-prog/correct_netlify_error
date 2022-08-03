@@ -1,8 +1,13 @@
 <template>
+  <div class="map">
   <l-map
+    ref="map"
     :style="stylemap"
     :zoom="zoommap"
     :center="centermap"
+    :use-global-leaflet="true"
+    @ready="mapReady"
+    class="responsive"
   >
     <l-tile-layer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -27,8 +32,10 @@
             :color="marker.popupcolor"
             :icon="marker.popupicon"
             :to="marker.popuptarget">
-              <b style="margin-left: 10px">{{ marker.popuptitle}}</b>
-              <p class="status" style="font-size: 12px"> {{ marker.popupstatus}}</p>
+              <center>
+              <b style="margin-left: 10px; margin-bottom: 0px; margin-top: 0px">{{ marker.popuptitle}}</b>
+              <p class="status" style="font-size: 12px; margin-bottom: 0px; margin-top: 0px"> {{ marker.popupstatus}}</p>
+              </center>
               <p class ="time" style="font-size: 11px">
                 <span>
                   <q-icon color="white" name="mdi-clock"/>
@@ -40,7 +47,7 @@
                   {{marker.popupautonomy}}
                 </span>
               </p>
-              <p class ="address" style="font-size: 12px">{{marker.popupaddress}}</p>
+              <p class ="address" style="font-size: 12px"> {{marker.popupaddress}} </p>
           </q-btn>
         </l-popup>
 
@@ -49,12 +56,16 @@
     </template>
 
   </l-map>
+  </div>
 </template>
 
 <script>
 
 import "leaflet/dist/leaflet.css"
 import { LMap, LTileLayer, LMarker, LIcon, LPopup } from "@vue-leaflet/vue-leaflet";
+import L from "leaflet";
+import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
+import 'leaflet-fullscreen/dist/Leaflet.fullscreen';
 
 export default {
   components: {
@@ -66,13 +77,13 @@ export default {
   },
   props:{
     stylemap:{
-      default: "height:35vh"
+      default: "height:68vh"
     },
     zoommap:{
       default: 14
     },
     centermap:{
-      default: [45.63059,0.11664]
+      default: [45.648597, 0.171102]
     },
     markers:{
       default:[
@@ -83,7 +94,7 @@ export default {
           popuptimecount: "il y a 5 min",
           iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
           popupcolor: "green",
-          popupicon: "thumb_up",
+          popupicon: "",
           popuptarget: "/midipile01",
           popuptitle: "Midipile 01",
           popupstatus: "Actif",
@@ -96,7 +107,7 @@ export default {
           popuptimecount: "il y a 5 min",
           iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
           popupcolor: "green",
-          popupicon: "thumb_up",
+          popupicon: "",
           popuptarget: "/midipile02",
           popuptitle: "Midipile 02",
           popupstatus: "Actif",
@@ -109,7 +120,7 @@ export default {
           popuptimecount: "il y a 5 min",
           iconurl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
           popupcolor: "green",
-          popupicon: "thumb_up",
+          popupicon: "",
           popuptarget: "/midipile03",
           popuptitle: "Midipile 03",
           popupstatus: "Actif",
@@ -150,6 +161,14 @@ export default {
       iconHeight: 55,
     };
   },
+  methods: {
+    mapReady() {
+      const map = this.$refs.map.leafletObject;
+      const fullscreenControl = new L.Control.Fullscreen({position: "topright",});
+      fullscreenControl.addTo(map);
+    },
+  },
+
   computed: {
     iconSize() {
       return [this.iconWidth, this.iconHeight];
@@ -169,13 +188,19 @@ export default {
   text-transform: lowercase;
   margin-left: auto;
 }
+
+.status {
+  margin-left: auto;
+}
+
+/* .status::before {
+  content: "\a";
+  white-space: pre;
+} */
+
 .address {
   margin: 0px;
 }
-
-/* span.q-btn {
-  margin-top: 18px;
-} */
 
 p span {
   display: block;
@@ -190,5 +215,6 @@ i.q-icon.text-white.mdi.mdi-clock:before {
   font-size: 15px;
   margin-bottom: 2px;
 }
+
 
 </style>

@@ -1,12 +1,25 @@
 
 const routes = [
-  { path: '/', component: () => import('pages/login.vue') },
+  { path: '/',
+    component: () => import('layouts/LoginLayout.vue'),
+    children: [
+      { path: '', name: 'loginDefault', component: () => import('pages/login.vue') },
+      { path: 'login', name: 'login', component: () => import('pages/login.vue') },
+      { path: 'register', name: 'register', component: () => import('pages/Register.vue') },
+      { path: 'email-confirmation', name: 'email-confirmation', component: () => import('pages/EmailConfirmation.vue') },
+      { path: 'forgot-password', name: 'forgot-password', component: () => import('pages/ForgotPassword.vue') },
+      { path: 'reset-password', name: 'reset-password', component: () => import('pages/ResetPassword.vue') },
+      { path: 'validate-registration', name: 'validate-registration', component: () => import('src/pages/RegistrationValidation.vue') },
+    ]
+
+  },
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '/index', component: () => import('pages/Index.vue') },
-      { path: '/mesvehicules', component: () => import('pages/mesvehicules.vue') },
+      { path: '/mesvehiculestab', component: () => import('src/pages/mesvehiculesTab.vue') },
+      { path: '/mesvehicules', component: () => import('src/pages/mesvehiculesCard.vue') },
       { path: '/midipile01', component: () => import('pages/vehicules/Midipile01.vue') },
       { path: '/midipile02', component: () => import('pages/vehicules/Midipile02.vue') },
       { path: '/midipile03', component: () => import('pages/vehicules/Midipile03.vue') },
@@ -43,6 +56,7 @@ const routes = [
       { path: '/dashboard2', component: () => import('pages/dashboards/Dashboard2.vue') },
       { path: '/dashboard3', component: () => import('pages/dashboards/Dashboard3.vue') },
       { path: '/dashboardjson', component: () => import('pages/dashboards/DashboardJSON.vue') },
+      { path: '/dashboardevol1', component: () => import('pages/dashboards/DashboardEvol1.vue') },
 
       //Détail voyage
       { path: '/01trip001', component: () => import('pages/midipile01/trip001.vue') },
@@ -95,9 +109,13 @@ const routes = [
       { path: '/administration', component: () => import('pages/Administration.vue') },
       //Notification
       { path: '/seenotifications', component: () => import('pages/SeeNotifications.vue') },
-      { path: '/addalerts', component: () => import('pages/AddAlerts.vue') }
+      { path: '/addalerts', component: () => import('pages/AddAlerts.vue') },
+      { path: '/profile', component: () => import('pages/Profile.vue') }
 
-    ]
+    ],
+    meta: {
+      requiresAuth: true
+    }
   },
 
   // Always leave this as last one,

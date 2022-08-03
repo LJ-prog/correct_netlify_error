@@ -35,8 +35,7 @@
         <q-card flat >
           <q-card-section>
             <JSONSemiDonut
-              :selectorname="path"
-              :filename="ficjson"
+
             ></JSONSemiDonut>
           </q-card-section>
         </q-card>
@@ -54,7 +53,7 @@
           </q-card-section>
         </q-card>
       </div>
-     
+
 
       <div class="col-xs-12 col-sm-6 col-md-6">
         <JSONTwoLines

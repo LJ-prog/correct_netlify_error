@@ -1,8 +1,8 @@
 <template>
-  <q-page>
-    <div class="q-pa-md row q-gutter-md">
-      <div class="col-xs-12 col-sm-5 col-md-3">
-        <q-card class="my-card">
+  <q-page style="margin-bottom: 25px">
+    <div style="justify-content:  center" class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '66px' } : {}">
+      <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+        <q-card class="my-card" id="containerBorder">
           <q-card-section>
             <q-img src="statics/images/AccueilMidipile.jpg"></q-img>
           </q-card-section>
@@ -14,8 +14,8 @@
         </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-3">
-        <q-card class="my-card">
+      <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+        <q-card class="my-card" id="containerBorder">
           <q-card-section>
             <q-img src="statics/images/renouveau.jpg"></q-img>
           </q-card-section>
@@ -27,8 +27,8 @@
         </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-3">
-        <q-card class="my-card">
+      <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+        <q-card class="my-card" id="containerBorder">
           <q-card-section>
             <q-img src="statics/images/carte.JPG"></q-img>
           </q-card-section>
@@ -40,8 +40,8 @@
         </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-3">
-        <q-card class="my-card">
+      <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+        <q-card class="my-card" id="containerBorder">
           <q-card-section>
             <q-img src="statics/images/troubleshooting.jpg"></q-img>
           </q-card-section>
@@ -53,8 +53,8 @@
         </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-3">
-        <q-card class="my-card">
+      <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+        <q-card class="my-card" id="containerBorder">
           <q-card-section>
             <q-img src="statics/images/Rechange.jpeg"></q-img>
           </q-card-section>
@@ -66,8 +66,8 @@
         </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-3">
-        <q-card class="my-card">
+      <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+        <q-card class="my-card" id="containerBorder">
           <q-card-section>
             <q-img src="statics/images/assurance.jpg"></q-img>
           </q-card-section>
@@ -90,3 +90,16 @@ export default defineComponent({
   name: 'Administration'
 })
 </script>
+
+<style scoped>
+
+/* #centered-element{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    width: 2020px;
+} */
+
+
+
+</style>

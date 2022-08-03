@@ -30,7 +30,7 @@
           />
         </q-card-actions>
       </q-card>
- 
+
       <q-card class="my-card">
         <q-img
           src="statics/images/AccueilMidipile.jpg"
@@ -53,12 +53,32 @@ export default defineComponent({
 })
 </script>
 
-<style lang="sass" scoped>
-.my-card
-  width: 80%
-  max-width: 400px
+<style scoped>
+.my-card {
+  width: 80%;
+  max-width: 400px;
+}
 
-.my-menu
-  width: 80%
-  max-width: 400px
+
+.my-menu {
+  width: 80%;
+  max-width: 400px;
+}
+
 </style>
+
+<!-- <template>
+  <q-page class="">
+     <h1>This is Landing Page!! You are NOT authenticated!</h1>
+     <router-link class="absolute-center" to="/login">Login</router-link>
+  </q-page>
+</template>
+
+<style>
+</style>
+
+<script>
+export default {
+  name: 'PageIndex'
+}
+</script> -->

@@ -10,9 +10,11 @@
  * Boot files are your "main.js"
  **/
 
+import lang from 'quasar/lang/fr'
+
 
 
 import {Dialog,Notify,Loading,Dark,LocalStorage,SessionStorage} from 'quasar'
 
 
-export default { config: {"dark":"auto"},plugins: {Dialog,Notify,Loading,Dark,LocalStorage,SessionStorage} }
+export default { config: {},lang,plugins: {Dialog,Notify,Loading,Dark,LocalStorage,SessionStorage} }

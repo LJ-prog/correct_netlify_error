@@ -124,6 +124,8 @@ createQuasarApp(createApp, quasarUserOptions)
   .then(app => {
     return Promise.all([
       
+      import(/* webpackMode: "eager" */ 'boot/supabase'),
+      
       import(/* webpackMode: "eager" */ 'boot/i18n'),
       
       import(/* webpackMode: "eager" */ 'boot/axios')

@@ -1,15 +1,17 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh Lpr fFf">
     <q-header elevated>
-      <q-toolbar class="text-white bg-primary">
+      <q-toolbar class="text-white bg-primary"
+      id="switchColor">
         <q-btn
           flat
           dense
           round
           icon="menu"
           aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+          @click="drawer = !drawer"
+          v-if="$q.platform.is.desktop"
+          />
         <!-- <q-item to="/dashboardjson" exact title = "DRIVING THE SHIFT" rel="home">
           <img src="~assets/LOGO-MIDIPILE-MOBILITY-3-409px.png">
         </q-item> -->
@@ -35,7 +37,7 @@
           <q-btn flat round color="white" icon="fab fa-instagram" href="https://www.instagram.com/midipilemobility/" target="_blank"></q-btn>
           <q-btn flat round color="white" icon="fab fa-linkedin-in" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn> -->
           <q-btn flat round color="white">
-            <img src="~assets/administrateur-24px.svg" class="changeColor"/>
+            <img src="~assets/phone-24px.svg" class="changeColor"/>
             <q-menu
               transition-show="jump-down"
               transition-hide="jump-up"
@@ -158,7 +160,7 @@
                   <q-btn
                     flat round color="primary"
                     icon="mdi-power"
-                    @click="confirm = true"
+                    @click="handleLogout"
                   />
 
                 </div>
@@ -182,11 +184,11 @@
             </q-menu>
           </q-btn> -->
 
-          <q-dialog v-model="confirm">
+          <!-- <q-dialog v-model="confirm">
             <q-card>
               <q-card-section class="row items-center">
                 <q-avatar icon="warning" color="primary" size="4rem" text-color="white" />
-                <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnectez ?</span>
+                <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnecter ?</span>
               </q-card-section>
 
               <q-card-actions align="right">
@@ -194,7 +196,7 @@
                 <q-btn flat label="Confirmer" color="primary" to= "/" v-close-popup />
               </q-card-actions>
             </q-card>
-          </q-dialog>
+          </q-dialog> -->
 
           <q-dialog v-model="pop">
             <q-card id="card">
@@ -204,40 +206,19 @@
 
               </q-card-section>
               <q-card-section class="row justify-center">
-                <div class="text-h7 q-mb-md" style="margin-left: 2px; margin-top: 6.5px;">
-                    {{ NumberPhoneAssist }}
+                <div class="text-h7 q-mb-md" style="margin-left: 2px; margin-top: 6.5px; margin-bottom: 6.5px;">
+                    {{ NumberPhoneAssist }}<br/>
+                    <span id="msg" v-if="show">Copié !</span>
                 </div>
                 <div class="q-ml-sm" id="numPhoneAssist">
-                    <q-btn aria-label="Copier le lien" color="primary">
-                      <span class="btn btn-info text-white copy-btn ml-auto" @click="setShow"  @click.stop.prevent="copyNumberPhone">
+                    <q-btn label="Copier" color="primary" @click="setShow"  @click.stop.prevent="copyNumberPhone">
+                      <!-- <span class="btn btn-info text-white copy-btn ml-auto" @click="setShow"  @click.stop.prevent="copyNumberPhone">
                       Copier
-                    </span>
+                    </span> -->
                     <input type="hidden" id="testing-code" :value="NumberPhoneAssist">
                     </q-btn>
                 </div>
               </q-card-section>
-
-
-
-              <!-- <q-card-actions align="right"> -->
-                <!-- <q-btn flat label="Copier" color="primary" id="testing-code" class="copy-btn ml-auto" v-clipboard:copy="NumberPhoneAssist"
-                  v-clipboard:success="handleCopyStatus(true)"
-                  v-clipboard:error="handleCopyStatus(false)"
-                /> -->
-                <!-- <q-card-section>
-                  <span class="btn btn-info text-white copy-btn ml-auto" @click="setShow"  @click.stop.prevent="copyNumberPhone">
-                    Copier
-                  </span>
-                  <input type="hidden" id="testing-code" :value="NumberPhoneAssist">
-                </q-card-section> -->
-
-                <q-card-section id="msg">
-                  <span v-if="show">Copié !</span>
-                </q-card-section>
-                <!-- <p v-if="copySucceeded === false">Press CTRL+C to copy.</p> -->
-                <!-- <p v-if="copySucceeded === true">Copied!</p>
-                <p v-if="copySucceeded === false">Press CTRL+C to copy.</p> -->
-              <!-- </q-card-actions> -->
             </q-card>
 
           </q-dialog>
@@ -362,7 +343,7 @@
                   <q-btn
                     flat round color="primary"
                     icon="mdi-power"
-                    @click="confirm = true"
+                    @click="handleLogout"
                   />
 
                 </div>
@@ -371,11 +352,11 @@
           </q-btn>
 
 
-          <q-dialog v-model="confirm">
+          <!-- <q-dialog v-model="handleLogout">
             <q-card>
               <q-card-section class="row items-center">
                 <q-avatar icon="warning" color="primary" size="4rem" text-color="white" />
-                <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnectez ?</span>
+                <span class="q-ml-sm">Êtes-vous sûr de vouloir vous déconnecter ?</span>
               </q-card-section>
 
               <q-card-actions align="right">
@@ -383,15 +364,16 @@
                 <q-btn flat label="Confirmer" color="primary" to= "/" v-close-popup />
               </q-card-actions>
             </q-card>
-          </q-dialog>
+          </q-dialog> -->
         </div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
+    <!-- <q-drawer
       v-model="leftDrawerOpen"
+      v-if="$q.platform.is.desktop"
     >
-    <!-- <q-img src="statics/logo_valide_paysage.jpg"></q-img> -->
+    // <q-img src="statics/logo_valide_paysage.jpg"></q-img>
     <q-list>
         <q-item-label
           header
@@ -409,7 +391,7 @@
           </q-item-section>
         </q-item>
 
-        <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/mesvehicules" >
+        <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/mesvehiculestab" >
           <q-list dense >
             <q-item to="/midipile01" exact>
               <q-item-section > </q-item-section>
@@ -540,7 +522,7 @@
             </q-item>
 
             <q-item to="tableactu" exact>
-              <q-item-section > Flux d'actualité </q-item-section>
+              <q-item-section > Flux d'actualités </q-item-section>
             </q-item>
 
             <q-item to="tableactive" exact>
@@ -594,35 +576,171 @@
         </q-expansion-item>
 
       </q-list>
-    </q-drawer>
+    </q-drawer> -->
 
-    <q-page-container>
-        <div class="q-pt-md q-pl-md">
-          <ligne-menu></ligne-menu>
-        </div>
+    <q-drawer
+        v-model="drawer"
+        show-if-above
+        v-if="$q.platform.is.desktop"
+
+        :mini="miniState"
+        @mouseover="miniState = false"
+        @mouseout="miniState = true"
+
+        :width="250"
+        :breakpoint="500"
+        bordered
+        class="bg-grey-3"
+
+      > <!-- v-bind:style= "[$q.dark==false ? {backgroundColor: 'white'} : {backgroundColor: '#121212'}]" -->
+        <q-scroll-area class="fit">
+          <q-list padding>
+            <!-- <q-item-label
+              header
+            >
+              Demo 2022
+            </q-item-label> -->
+            <q-item to="/dashboardevol1" v-ripple>
+              <q-item-section avatar>
+                <q-icon name="dashboard"/>
+              </q-item-section>
+
+              <q-item-section>
+                Tableau de bord
+              </q-item-section>
+            </q-item>
+
+
+            <!-- <q-expansion-item icon="bike_scooter" label="Mes véhicules" to="/mesvehiculestab" v-ripple >
+              <q-list dense >
+                <q-item to="/midipile01" v-ripple exact>
+                  <q-item-section > </q-item-section>
+                  <q-item-section > Midipile 01 </q-item-section>
+                  <q-item-section > </q-item-section>
+                </q-item>
+
+                <q-item to="/midipile02" exact>
+                  <q-item-section > </q-item-section>
+                  <q-item-section > Midipile 02 </q-item-section>
+                  <q-item-section > </q-item-section>
+                </q-item>
+
+                <q-item to="/midipile03" exact>
+                  <q-item-section > </q-item-section>
+                  <q-item-section > Midipile 03 </q-item-section>
+                  <q-item-section > </q-item-section>
+                </q-item>
+
+                <q-item to="/midipile04" exact>
+                  <q-item-section > </q-item-section>
+                  <q-item-section > Midipile 04 </q-item-section>
+                  <q-item-section > </q-item-section>
+                </q-item>
+
+                <q-item to="/midipile05" exact>
+                  <q-item-section > </q-item-section>
+                  <q-item-section > Midipile 05 </q-item-section>
+                  <q-item-section > </q-item-section>
+                </q-item>
+              </q-list>
+            </q-expansion-item> -->
+
+            <q-item to="/mesvehiculestab" v-ripple>
+              <q-item-section avatar>
+                <q-icon name="bike_scooter"/>
+              </q-item-section>
+
+              <q-item-section>
+                Mes véhicules
+              </q-item-section>
+            </q-item>
+
+            <q-item to="/Administration" v-ripple>
+              <q-item-section avatar>
+                <q-icon name="manage_accounts"/>
+              </q-item-section>
+
+              <q-item-section>
+                Administration
+              </q-item-section>
+            </q-item>
+
+            <q-item to="/dashboardjson" v-ripple>
+              <q-item-section avatar>
+                <q-icon name="mdi-swap-horizontal"/>
+              </q-item-section>
+
+              <q-item-section>
+                Alternative
+              </q-item-section>
+            </q-item>
+
+            <!-- <q-separator />
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="drafts" />
+              </q-item-section>
+
+              <q-item-section>
+                Drafts
+              </q-item-section>
+            </q-item> -->
+          </q-list>
+        </q-scroll-area>
+      </q-drawer>
+
+
+
+    <q-page-container v-bind:style="$q.screen.lt.sm ? {'padding-top': '0px', 'padding-bottom' : '0px' } : {'padding-top': '82px'}">
+        <!-- <div class="q-pt-md q-pl-md">
+          <ligne-menu v-if="$q.platform.is.desktop"></ligne-menu>
+        </div> -->
         <router-view />
     </q-page-container>
 
+
+
       <!--v-bind:style= "[$q.dark==false ? {backgroundColor: 'white'} : {backgroundColor: '#121212'}]" -->
     <!-- footer part -->
-    <q-toolbar>
-      <q-toolbar-title>
-        <div>
-          <center>
-            <div class="text-overline text-grey-8">MWS v0.1 - Copyright © 2022 - <a href="https://midipile.eu" target="_blank" class="text-grey-8">Midipile Mobility</a></div>
-          </center>
-        </div>
+    <!-- <q-footer style="display: none;"> -->
+    <q-toolbar v-bind:style="$q.screen.lt.sm ? {'margin-bottom': '21.5%'} : {}">
+      <q-toolbar-title align="center">
+            <div class="text-overline" id="footer" >MWS v0.1 - Copyright © 2022 - </div>
+            <a href="https://midipile.eu" target="_blank" id="footer">
+              <img src="statics/logo_valide_paysage.svg" style="width:150px; height:50px;"/>
+            </a>
+
       </q-toolbar-title>
     </q-toolbar>
 
 
+    <!-- </q-footer> -->
+    <q-footer v-if="$q.platform.is.mobile">
+    <div>
+      <q-tabs
+        v-model="tab"
+        class="bg-primary text-white shadow-2"
+        id="tabs"
+      >
+        <q-route-tab name="dashboard" label="Accueil" icon="dashboard" to="/dashboardevol1" />
+        <q-route-tab name="mesvehicules" label="Véhicules" icon="bike_scooter" to="/mesvehiculestab" />
+        <q-route-tab name="admin" label="Admin" icon="manage_accounts" to="/Administration" />
+        <q-route-tab name="evol" label="Switch" icon="mdi-swap-horizontal" to="/dashboardjson" />
+
+      </q-tabs>
+    </div>
+    </q-footer>
   </q-layout>
 </template>
 
 <script>
 
-import { defineComponent, defineAsyncComponent, ref } from 'vue';
-import { copyToClipboard } from 'quasar';
+import { defineComponent, defineAsyncComponent, ref, onMounted } from 'vue'
+import useAuthUser from 'src/composables/UseAuthUser'
+import useApi from 'src/composables/UseApi'
+import { useRouter } from 'vue-router'
+import { useQuasar } from 'quasar'
 
 // copyToClipboard('some text')
 //   .then(() => {
@@ -636,14 +754,40 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue')),
+    // LigneMenu: defineAsyncComponent(() => import('components/Menu/LigneMenu.vue')),
     ToggleDarkMode: defineAsyncComponent(() => import ('components/ToggleDarkMode.vue')),
   },
 
 
   setup () {
-    const leftDrawerOpen = ref(false);
-    // const $q = useQuasar();
+    // const leftDrawerOpen = ref(false)
+    const $q = useQuasar()
+    const router = useRouter()
+    const { logout } = useAuthUser()
+    const { getBrand } = useApi()
+
+    onMounted(() => {
+      getBrand()
+    })
+
+    const handleLogout = async () => {
+      $q.dialog({
+        title: 'Déconnexion',
+        message: 'Êtes-vous sûr de vouloir vous déconnecter ?',
+        ok: 'Valider',
+        cancel: 'Annuler',
+        color: 'primary',
+        focus: 'ok',
+        persistent: true,
+      }).onOk(async () => {
+        await logout()
+        router.replace({ name: 'login' })
+      })//.then(() => {
+      //     this.$q.notify('Vous êtes déconnecté')
+      //   }).catch(() => {
+      //     this.$q.notify('Disagreed...')
+      //   })
+    }
 
     // // get status
     // console.log($q.dark.isActive) // true, false
@@ -657,17 +801,37 @@ export default defineComponent({
     // $q.dark.toggle()
     return {
       debug: false,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      },
+      // leftDrawerOpen,
+      // toggleLeftDrawer () {
+      //   leftDrawerOpen.value = !leftDrawerOpen.value
+      // },
       alert: ref(false),
-      confirm: ref(false),
+      // confirm: ref(false),
       pop: ref(false),
       // copySucceeded: ref(false),
+      // show: ref(false),
       prompt: ref(false),
       address: ref(''),
-      // show: ref(false),
+      handleLogout,
+      tab: ref('mails'),
+      drawer: ref(false),
+      miniState: ref(true),
+      // contentStyle: {
+      //   backgroundColor: 'rgba(0,0,0,0.02)',
+      //   color: '#555'
+      // },
+      // contentActiveStyle: {
+      //   backgroundColor: '#eee',
+      //   color: 'black'
+      // },
+      //  thumbStyle: {
+      //   right: '2px',
+      //   borderRadius: '5px',
+      //   backgroundColor: '#027be3',
+      //   width: '5px',
+      //   opacity: '0.75'
+      // }
+
 
     }
   },
@@ -680,11 +844,7 @@ export default defineComponent({
   },
   methods: {
 
-    // handleCopyStatus(status) {
-    //   this.copySucceeded = status
-    // }
-
-    copyNumberPhone () { // marche
+    copyNumberPhone () {
       let NumberPhoneAssistToCopy = document.querySelector('#testing-code')
       NumberPhoneAssistToCopy.setAttribute('type', 'text')
       NumberPhoneAssistToCopy.select()
@@ -704,6 +864,7 @@ export default defineComponent({
       window.getSelection().removeAllRanges()
     },
 
+
     // setTimeout((){
     //   const box = document.getElementById('box');
 
@@ -717,43 +878,20 @@ export default defineComponent({
     setShow() {
       let msg = document.getElementById('msg');
       this.show = true;
-      msg.style.display = "revert";
+      // msg.style.display = "revert";
       setTimeout(() => {
         this.show = false;
         // 👇️ removes element from DOM
         msg.style.display = "none";
-      }, 2000);
+      }, 1000);
 
     },
 
-
-    // copy(elem){
-    //   if($(elem).text()){
-    //     var dummy = document.createElement("textarea");
-    //       document.body.appendChild(dummy);
-    //       dummy.value = $(elem).text();
-    //       dummy.select();
-    //       document.execCommand("copy");
-    //       document.body.removeChild(dummy);
-    //   }else{
-    //     input  = $(elem).val();
-    //     elem.select();//Select the text in the input element
-    //     document.execCommand('copy');//copy it
-    //   }
-
-    //   $(elem).next().text('text copied');
-
-    //   setTimeout(function(){$(elem).next().text('');}, 2000);
-    // }
   },
 })
 </script>
 
 <style>
-
-/* .back-white {
-  background-color: white;
-} */
 
 .ma-logo-mobile {
   margin-left: 10px;
@@ -791,13 +929,17 @@ export default defineComponent({
 
 .linkProfile {
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
 
 .linkProfile:hover {
   text-decoration: underline;
   color: #7198be;
 }
+
+/* .q-card.q-card--dark.q-dark.q-dialog-plugin.q-dialog-plugin--dark.q-dark {
+  text-align: center;
+} */
 
 .changeColor {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(72deg) brightness(104%) contrast(103%);
@@ -808,6 +950,60 @@ export default defineComponent({
 }
 
 #msg {
+  /* display: none; */
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+/* #tabs {
+  background-color: inherit !important;
+} */
+
+#footer {
+  /* background-color: inherit !important; */
+  color: #515151;
+}
+
+/* .q-focusable
+{
+	  background: white;
+} */
+
+.q-scrollarea--dark {
+  background-color: #515151; /*#424242*/
+}
+
+/* .q-table__card {
+  box-shadow: none;
+  border: solid;
+} */
+/* .q-card__section.q-card__section--vert {
+  // box-shadow: 0 1px 5px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%);
+  border:solid 2px #41403E;
+} */
+
+/* body.body--dark #switchColor {
+  background-color: #7198be !important;
+}
+
+body.body--dark a.q-item.q-item-type.row.no-wrap.q-item--dark.q-router-link--exact-active.q-router-link--active.q-item--clickable.q-link.cursor-pointer.q-focusable.q-hoverable {
+  color: #7198be !important;
+}
+
+body.body--dark .q-tab.relative-position.self-stretch.flex.flex-center.text-center.q-tab--active.text-primary.q-focusable.q-hoverable.cursor-pointer.customTab {
+  color: #7198be !important;
+}
+
+body.body--dark .q-tab__indicator.absolute-bottom.text-primary {
+  color:#7198be !important;
+}
+
+body.body--dark .q-tab.relative-position.self-stretch.flex.flex-center.text-center.q-tab--active.text-primary.q-focusable.q-hoverable.cursor-pointer {
+  color: #7198be !important;
+} */
+
+.leaflet-popup-close-button {
   display: none;
 }
+
 </style>

@@ -1,8 +1,8 @@
 <template>
   <q-page>
-    <div class="q-pa-md row q-gutter-md">
+    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '0px' } : {}">
 
-      <div class="col-xs-12 col-sm-12 col-md-7">
+      <div class="col-xs-12 col-sm-12 col-md-7" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
         <q-card flat  >
             <q-card-section>
               <table-active></table-active>
@@ -16,7 +16,7 @@
         </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-12 col-md-4">
+      <div class="col-xs-12 col-sm-12 col-md-4" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
         <q-card flat >
           <q-card-section>
             <table-actu
@@ -27,8 +27,8 @@
       </div>
     </div>
 
-    <div class="q-pa-md row q-gutter-md">
-      <div class="col-xs-12 col-sm-12 col-md-7">
+    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '0px' } : {}">
+      <div class="col-xs-12 col-sm-12 col-md-7" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
         <q-card flat >
           <q-card-section>
             <table-progress></table-progress>
@@ -36,7 +36,7 @@
         </q-card>
       </div>
 
-      <div class="col-xs-12 col-sm-12 col-md-4">
+      <div class="col-xs-12 col-sm-12 col-md-4" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
           <q-card flat >
             <q-card-section>
               <div class="text-h6 text-grey-8">Mobility ECO Score</div>

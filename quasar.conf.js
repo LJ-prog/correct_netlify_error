@@ -22,6 +22,7 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli/boot-files
     boot: [
+      'supabase',
       'i18n',
       'axios'
     ],
@@ -83,11 +84,21 @@ module.exports = configure(function (ctx) {
     // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       config: {
-         dark: 'auto',
+        // dark: 'auto',
+        // brand: {
+        //   primary: '#0B7AE8',
+        //   secondary: '#515151',
+        //   accent: '#A1543B',
+        //   dark: '#1d1d1d',
+        //   positive: '#1a7a30', //#21BA45
+        //   negative: '#7a2b34', //#C10015
+        //   info: '#103e47',
+        //   warning: '#946204'
+        // }
       },
 
       // iconSet: 'material-icons', // Quasar icon set
-      // lang: 'en-US', // Quasar language pack
+       lang: 'fr', // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact
       // (like functional components as one of the examples),

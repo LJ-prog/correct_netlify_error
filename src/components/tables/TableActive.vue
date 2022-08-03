@@ -1,30 +1,30 @@
 <template>
-      <q-table 
+      <q-table
         class="text-h4"
         :rows="ligne"
         :columns="colonne"
         hide-bottom>
 
-        <template v-slot:body-cell-Actif="props">
+        <template v-slot:body-cell-Fonctionnel="props">
           <q-td key="name" :props="props" style="max-width: 100px">
-            <q-btn class="text-h8"  rounded color="green">
-              {{ props.row.Actif }}
+            <q-btn class="text-h8" id="noHover" rounded color="green">
+              {{ props.row.Fonctionnel }}
             </q-btn>
           </q-td>
         </template>
 
-        <template v-slot:body-cell-Inactif="props">
+        <template v-slot:body-cell-Probleme="props">
           <q-td key="name" :props="props" style="max-width: 100px">
-            <q-btn class="text-h8"  rounded color="orange">
-              {{ props.row.Inactif }}
+            <q-btn class="text-h8" id="noHover" rounded color="orange">
+              {{ props.row.Probleme }}
             </q-btn>
           </q-td>
         </template>
 
-        <template v-slot:body-cell-Atelier="props">
+        <template v-slot:body-cell-Panne="props">
           <q-td key="name" :props="props" style="max-width: 100px">
-            <q-btn class="text-h8"  rounded color="red">
-              {{ props.row.Atelier }}
+            <q-btn class="text-h8" id="noHover" rounded color="red">
+              {{ props.row.Panne }}
             </q-btn>
           </q-td>
         </template>
@@ -39,13 +39,13 @@ export default defineComponent({
   name: "TableActive",
   props:{
     lignedef:{
-      default: [{name: '', Actif: 3, Inactif: 1, Atelier: 1}]
+      default: [{name: '', Fonctionnel: 3, Probleme: 1, Panne: 1}]
     },
     colonnedef:{
       default: [
-        {name: 'Actif', label: 'Actif', field: 'Actif', sortable: false, align: 'center'},
-        {name: 'Inactif', label: 'Inactif', field: 'Inactif', sortable: false, align: 'center'},
-        {name: 'Atelier', label: 'Atelier', field: 'Atelier', sortable: false, align: 'center'},
+        {name: 'Fonctionnel', label: 'Fonctionnel', field: 'Fonctionnel', sortable: false, align: 'center'},
+        {name: 'Probleme', label: 'Probleme', field: 'Problème', sortable: false, align: 'center'},
+        {name: 'Panne', label: 'Panne', field: 'Panne', sortable: false, align: 'center'},
       ]
     }
   },
@@ -57,3 +57,11 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+
+#noHover {
+  pointer-events: none;
+}
+
+</style>

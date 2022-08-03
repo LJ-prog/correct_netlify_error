@@ -1,8 +1,8 @@
 <template>
   <q-page>
-    <div class="q-pa-md row q-gutter-md">
-      <div class="col">
-        
+    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '0px' } : {}">
+      <div class="col" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+
         <q-card flat bordered>
           <q-card-section>
             <global-map></global-map>
@@ -12,8 +12,8 @@
       </div>
     </div>
 
-    <div class="q-pa-md row q-gutter-md">
-      <div class="col-4">
+    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '0px' } : {}">
+      <div class="col-4" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
         <q-card flat bordered>
           <q-card-section>
             <apex-column-label></apex-column-label>
@@ -21,7 +21,7 @@
         </q-card>
       </div>
 
-      <div class="col-4">
+      <div class="col-4" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
         <q-card flat bordered >
           <q-card-section>
             <apex-column-label
