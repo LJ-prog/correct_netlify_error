@@ -45,21 +45,14 @@ import createQuasarApp from './app.js'
 import quasarUserOptions from './quasar-user-options.js'
 
 
-import 'app/src-pwa/register-service-worker'
 
 
 
 
-
-console.info('[Quasar] Running PWA.')
-console.info('[Quasar] PWA: Use devtools > Application > "Bypass for network" to not break Hot Module Replacement while developing.')
+console.info('[Quasar] Running SPA.')
 
 
 
-// Needed only for iOS PWAs
-if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream && window.navigator.standalone) {
-  import(/* webpackChunkName: "fastclick"  */ '@quasar/fastclick')
-}
 
 
 const publicPath = `/`
@@ -130,6 +123,23 @@ createQuasarApp(createApp, quasarUserOptions)
 
   .then(app => {
     return Promise.all([
+      
+      import(/* webpackMode: "eager" */ 'boot/supabase'),
+      
+      import(/* webpackMode: "eager" */ 'boot/i18n'),
+      
+      import(/* webpackMode: "eager" */ 'boot/axios')
+      
+    ]).then(bootFiles => {
+      const boot = bootFiles
+        .map(entry => entry.default)
+        .filter(entry => typeof entry === 'function')
+
+      start(app, boot)
+    })
+  })
+
+[
       
       import(/* webpackMode: "eager" */ 'boot/supabase'),
       

@@ -163,7 +163,7 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Midipile Web Services`,
+        name: `Midipile Fleet Manager`,
         short_name: `Midipile App`,
         description: `Gestion de flotte Midipile`,
         display: 'standalone',
