@@ -24,7 +24,7 @@
         </q-toolbar-title>
 
         <q-toolbar-title class="ma-logo-mobile" id="linkLogo" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px; margin-right: 0px;" v-if="$q.platform.is.mobile">
-          <a href="/dashboardjson">
+          <a href="/dashboardevol1">
           <img src="~assets/logo3.svg" />
           </a>
         </q-toolbar-title>
@@ -78,14 +78,15 @@
             <q-menu
               transition-show="scale"
               transition-hide="scale"
+
             >
               <q-list class="shadow-2 rounded-borders" style="min-width: 100px; padding-top: 1.5%; padding-bottom: 1%;" bordered>
-                <q-item clickable v-ripple>
+                <q-item>
                   <q-item-section avatar thumbnail>
                     <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
                   </q-item-section>
                   <q-item-section>
-                    <q-item-label lines="1" title="Le véhicule n°15 vient de démarrer. Il part vers le centre d'Angoulême.">Le véhicule n°15 vient de démarrer. Il part vers le centre d'Angoulême.</q-item-label>
+                    <q-item-label lines="1" title="Le véhicule N°1 est arrêté dans une zone inhabituelle.">Le véhicule N°1 est arrêté dans une zone inhabituelle.</q-item-label>
                     <q-item-label caption lines="1"> Catégorie : Géofencing</q-item-label>
                   </q-item-section>
                   <q-item-section side top>
@@ -95,12 +96,12 @@
                 </q-item>
                 <q-separator spaced inset="item-thumbnail" style="margin-left:9.3%"/>
 
-                <q-item clickable v-ripple>
+                <q-item>
                   <q-item-section avatar thumbnail>
                     <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
                   </q-item-section>
                   <q-item-section>
-                    <q-item-label lines="1" title="Le véhicule N°3 est en mouvement.">Le véhicule N°3 est en mouvement.</q-item-label>
+                    <q-item-label lines="1" title="Le véhicule N°3 à une erreur critique batterie.">Le véhicule N°3 à une erreur critique batterie.</q-item-label>
                     <q-item-label caption lines="1"> Catégorie : Géofencing</q-item-label>
                   </q-item-section>
                   <q-item-section side top>
@@ -110,12 +111,12 @@
                 </q-item>
                 <q-separator spaced inset="item-thumbnail" style="margin-left:9.3%"/>
 
-                <q-item clickable v-ripple>
+                <q-item>
                   <q-item-section avatar thumbnail>
                     <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
                   </q-item-section>
                   <q-item-section>
-                    <q-item-label lines="1" title="Le D'click N°6 a une anomalie batterie. Un technicien se rend sur place.">Le D'click N°6 a une anomalie batterie. Un technicien se rend sur place.</q-item-label>
+                    <q-item-label lines="1" title="Le véhicule N°5 est immobile suite à une erreur critique sur la GAP.">Le véhicule N°5 est immobile suite à une erreur critique sur la GAP.</q-item-label>
                     <q-item-label caption lines="1"> Catégorie : Maintenance</q-item-label>
                   </q-item-section>
                   <q-item-section side top>
@@ -263,12 +264,12 @@
               transition-hide="scale"
             >
               <q-list class="shadow-2 rounded-borders" style="min-width: 100px; padding-top: 1.5%; padding-bottom: 1%;" bordered>
-                <q-item clickable v-ripple>
+                <q-item><!-- clickable v-ripple pour avoir hover au clique + avoir la main en hover-->
                   <q-item-section avatar thumbnail>
                     <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
                   </q-item-section>
                   <q-item-section>
-                    <q-item-label lines="1" title="Le véhicule n°15 vient de démarrer. Il part vers le centre d'Angoulême.">Le véhicule n°15 vient de démarrer. Il part vers le centre d'Angoulême.</q-item-label>
+                    <q-item-label lines="1" title="Le véhicule N°1 est arrêté dans une zone inhabituelle.">Le véhicule N°1 est arrêté dans une zone inhabituelle.</q-item-label>
                     <q-item-label caption lines="1"> Catégorie : Géofencing</q-item-label>
                   </q-item-section>
                   <q-item-section side top>
@@ -278,12 +279,12 @@
                 </q-item>
                 <q-separator spaced inset="item-thumbnail" style="margin-left:9.3%"/>
 
-                <q-item clickable v-ripple>
+                <q-item>
                   <q-item-section avatar thumbnail>
                     <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
                   </q-item-section>
                   <q-item-section class="ellipsis-2-lines">
-                    <q-item-label lines="1" title="Le véhicule N°3 est en mouvement.">Le véhicule N°3 est en mouvement.</q-item-label>
+                    <q-item-label lines="1" title="Le véhicule N°3 à une erreur critique batterie.">Le véhicule N°3 à une erreur critique batterie.</q-item-label>
                     <q-item-label caption lines="1"> Catégorie : Géofencing</q-item-label>
                   </q-item-section>
                   <q-item-section side top>
@@ -293,12 +294,12 @@
                 </q-item>
                 <q-separator spaced inset="item-thumbnail" style="margin-left:9.3%"/>
 
-                <q-item clickable v-ripple>
+                <q-item>
                   <q-item-section avatar thumbnail>
                     <q-icon style="left: 40%" color="primary" name="mdi-bell-ring"/>
                   </q-item-section>
                   <q-item-section class="ellipsis-2-lines">
-                    <q-item-label lines="1" title="Le D'click N°6 a une anomalie batterie. Un technicien se rend sur place.">Le D'click N°6 a une anomalie batterie. Un technicien se rend sur place.</q-item-label>
+                    <q-item-label lines="1" title="Le véhicule N°5 est immobile suite à une erreur critique sur la GAP.">Le véhicule N°5 est immobile suite à une erreur critique sur la GAP.</q-item-label>
                     <q-item-label caption lines="1"> Catégorie : Maintenance</q-item-label>
                   </q-item-section>
                   <q-item-section side top>
