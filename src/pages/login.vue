@@ -228,6 +228,10 @@ body.body--dark #wave {
   /* max-width: 65%; */
 }
 
+body.body--dark #waveMobile {
+  filter: invert(40%) sepia(83%) saturate(3137%) hue-rotate(197deg) brightness(98%) contrast(55%);
+}
+
 .avatar {
   vertical-align: middle;
   width: 80%;

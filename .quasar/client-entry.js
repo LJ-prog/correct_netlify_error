@@ -139,20 +139,3 @@ createQuasarApp(createApp, quasarUserOptions)
     })
   })
 
-[
-      
-      import(/* webpackMode: "eager" */ 'boot/supabase'),
-      
-      import(/* webpackMode: "eager" */ 'boot/i18n'),
-      
-      import(/* webpackMode: "eager" */ 'boot/axios')
-      
-    ]).then(bootFiles => {
-      const boot = bootFiles
-        .map(entry => entry.default)
-        .filter(entry => typeof entry === 'function')
-
-      start(app, boot)
-    })
-  })
-
