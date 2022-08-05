@@ -63,11 +63,12 @@
             class="full-width"
             rounded
             type="submit"
+            style="color: inherit !important"
           />
 
           <q-btn
             label="Retour"
-            color="secondary"
+            color="inherit"
             class="full-width"
             rounded
             flat

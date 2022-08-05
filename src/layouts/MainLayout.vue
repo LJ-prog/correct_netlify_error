@@ -649,7 +649,7 @@
 
             <q-item to="/mesvehiculestab" v-ripple>
               <q-item-section avatar>
-                <q-icon name="bike_scooter"/>
+                <q-icon name="mdi-bicycle-cargo"/><!--name="img:icons/derVisu2-transparent.png"-->
               </q-item-section>
 
               <q-item-section>

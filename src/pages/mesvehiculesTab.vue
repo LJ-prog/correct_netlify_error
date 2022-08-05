@@ -342,7 +342,7 @@ export default defineComponent({
       options: [
         {
           name: 'option1',
-          label: 'Actif',
+          label: 'Marche',
           value: '1',
 
         },

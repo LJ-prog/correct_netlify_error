@@ -1,5 +1,8 @@
 <template>
-  <q-layout>
+  <div class="q-pa-md" align="right" style="padding-bottom: 0px">
+    <toggle-dark-mode/>
+  </div>
+  <q-page>
     <img src="~assets/waveWhiteMode.png" class="responsive" id="wave" alt="login-wave" v-if="$q.platform.is.desktop">
     <img src="~assets/waveWhiteMode.png" class="responsive" id="waveMobile" alt="login-wave" v-if="$q.platform.is.mobile">
     <div class="row" style="height: 90vh">
@@ -8,7 +11,7 @@
       </div>
       <div v-bind:class="{'justify-center': $q.screen.md || $q.screen.sm ||$q.screen.xs}"
           class="col-12 col-md-6 flex content-center">
-        <q-card v-bind:style="$q.screen.lt.sm ? {'width': '80%', 'margin-top': '38%', 'margin-bottom': '10%'} : {'width': '50%'}" id="cardLogin">
+        <q-card v-bind:style="$q.screen.lt.sm ? {'width': '80%', 'margin-top': '10%', 'margin-bottom': '10%'} : {'width': '50%'}" id="cardLogin">
           <q-card-section>
             <q-avatar size="103px" class="absolute-center shadow-10" id="avatarBack">
               <q-img src="~assets/LOGO-midipile3.svg" alt="avatar" class="avatar"/>
@@ -46,10 +49,10 @@
                 </template>
               </q-input>
               <div>
-                <q-btn class="full-width" color="primary"  label="Entrer" type="submit" rounded></q-btn><!--style="background-color: #6287C3"-->
+                <q-btn class="full-width" color="primary"  label="Entrer" type="submit" rounded style="color: inherit !important"></q-btn><!--style="background-color: #6287C3"-->
                 <div class="text-center q-mt-sm q-gutter-lg">
-                  <router-link id="autoDark" :to="{ name: 'forgot-password'}">Mot de passe oublié ?</router-link>
-                  <router-link id="autoDark" :to="{ name: 'register'}">Créer un compte</router-link>
+                  <router-link id="autoDark" :to="{ name: 'forgot-password'}">Mot de passe oublié ?</router-link><!--target="_blank"-->
+                  <router-link id="autoDark" :to="{ name: 'register'}">Créer un compte</router-link> <!--target="_blank"-->
                 </div>
               </div>
             </q-form>
@@ -60,11 +63,11 @@
         </div>
       </div>
     </div>
-  </q-layout>
+  </q-page>
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, defineAsyncComponent, ref, onMounted } from 'vue'
 import useAuthUser from 'src/composables/UseAuthUser'
 import useNotify from 'src/composables/UseNotify'
 import { useRouter } from 'vue-router'
@@ -156,10 +159,14 @@ export default defineComponent({
 //   mounted () {
 //     $q = useQuasar()
 //   }
+components: {
+    ToggleDarkMode: defineAsyncComponent(() => import ('components/ToggleDarkMode.vue')),
+  },
+
 setup () {
     const router = useRouter()
 
-    const { login, isLoggedIn } = useAuthUser()
+    const { login, isLoggedIn, user } = useAuthUser()
 
     const { notifyError, notifySuccess } = useNotify()
 
@@ -181,22 +188,24 @@ setup () {
         notifySuccess('Connecté avec succès !')
         router.push('/dashboardevol1')
       } catch (error) {
-        // if(!user.value) {
-        //   notifyError("Veuillez confirmer votre email.")
-        // }
-        // else {
-        //   notifyError()
-        // }
-        notifyError()
-
+      //   if(user) {
+      //     notifyError("Confirmer votre email")
+      //   }
+      //   else {
+      //   notifySuccess('Connecté avec succès !')
+      //   router.push('/dashboardevol1')
+      // }
+      // notifyError()
+        notifyError(error.message)
       }
+
     }
 
     return {
       isPwd: ref(true),
       form,
       handleLogin,
-      // user
+      user
     }
   }
 })
@@ -270,7 +279,9 @@ body.body--dark #waveMobile {
   text-decoration: underline;
 } */
 
-
+.q-page {
+  min-height: auto !important;
+}
 
 
 </style>

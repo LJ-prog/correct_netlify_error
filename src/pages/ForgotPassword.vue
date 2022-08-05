@@ -40,9 +40,9 @@
                 <!-- <q-input label="Mot de passe" type="password" v-model="login.default.password">
                 </q-input> -->
                 <div>
-                  <q-btn class="full-width" color="primary" label="Envoyer" type="submit" rounded></q-btn>
+                  <q-btn class="full-width" color="primary" label="Envoyer" type="submit" rounded style="color: inherit !important"></q-btn>
                   <div class="text-center q-mt-sm q-gutter-lg">
-                    <p>Ou revenez à l'écran <router-link :to="{ name: 'login' }" id="autoDark"> de connexion. </router-link> </p>
+                    <p>Ou revenez à l'écran de <router-link :to="{ name: 'login' }" id="autoDark"> connexion. </router-link> </p>
                     <!-- <router-link class="text-white" to="/login"></router-link> -->
                     <!-- <router-link class="text-white" to="/login">Criar conta</router-link> -->
                   </div>
@@ -136,12 +136,13 @@ export default defineComponent({
 
 #autoDark {
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: underline;
   color: inherit;
 }
 
 #autoDark:hover {
-  text-decoration: underline;
+  color: var(--q-primary);
+
 }
 
 main.q-page.q-layout-padding {
