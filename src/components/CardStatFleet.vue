@@ -4,12 +4,14 @@
   <q-card-section class="vertical-center">
     {{$props.datadef}}
   </q-card-section>
-  <!-- <q-icon class="absolute all-pointer-events" size="15px" name="info" style="top: 4px; left: 50px;" align="right" v-if="$q.platform.is.mobile">
+  <q-icon class="absolute all-pointer-events" size="15px" name="info" style="top: 4px; left: 50px;" align="right" v-if="$q.platform.is.mobile" @click="setShow">
+    <div>
     <q-tooltip class="bg-primary" v-model="showing" >
       {{$props.infodef}}
     </q-tooltip>
-  </q-icon> -->
-  <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 120px" align="right" @click="setShow">
+    </div>
+  </q-icon>
+  <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 120px" align="right" v-if="$q.platform.is.desktop" @click="setShow">
     <div>
     <q-tooltip class="bg-primary" v-model="showing">
       {{$props.infodef}}
