@@ -4,24 +4,26 @@
   <q-card-section class="vertical-center">
     {{$props.datadef}}
   </q-card-section>
-  <q-icon class="absolute all-pointer-events" size="15px" name="info" v-if="$q.platform.is.mobile" style="top: 4px; left: 50px;" align="right">
-    <q-tooltip class="bg-primary">
+  <!-- <q-icon class="absolute all-pointer-events" size="15px" name="info" style="top: 4px; left: 50px;" align="right" v-if="$q.platform.is.mobile">
+    <q-tooltip class="bg-primary" v-model="showing" >
+      {{$props.infodef}}
+    </q-tooltip>
+  </q-icon> -->
+  <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 120px" align="right" @click="setShow">
+    <div>
+    <q-tooltip class="bg-primary" v-model="showing">
       {{$props.infodef}}
       <!-- (<q-icon name="keyboard_arrow_down"/>) -->
     </q-tooltip>
-  </q-icon>
-  <q-icon class="absolute all-pointer-events" size="20px" name="info" v-if="$q.platform.is.desktop" style="top: 8px; left: 120px" align="right">
-    <q-tooltip class="bg-primary">
-      {{$props.infodef}}
-      <!-- (<q-icon name="keyboard_arrow_down"/>) -->
-    </q-tooltip>
+    </div>
+
   </q-icon>
 </q-card>
 
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import {defineComponent, ref} from 'vue'
 
 export default defineComponent({
   name: 'CardStatFleet',
@@ -33,10 +35,28 @@ export default defineComponent({
       default: ""
     }
   },
+  setup() {
+    return {
+      showing: ref(false)
+    }
+  },
   data () {
     return {
       data : this.datadef,
+
     }
+  },
+  methods: {
+    setShow() {
+      this.showing = true;
+      // msg.style.display = "revert";
+      setTimeout(() => {
+        this.showing = false;
+        // // 👇️ removes element from DOM
+        // pop.style.display = "none";
+      }, 1000);
+
+    },
   }
 })
 </script>
