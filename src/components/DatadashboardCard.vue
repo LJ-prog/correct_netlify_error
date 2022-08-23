@@ -13,11 +13,25 @@
         {{$props.unitydef}}
     </q-card-section>
 
-    <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px; justify-content: right" align="right">
+    <!-- <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px; justify-content: right" align="right">
       <q-tooltip class="bg-primary">
         {{$props.infodef}}
       </q-tooltip>
-    </q-icon>
+    </q-icon> -->
+
+    <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px; justify-content: right" align="right" v-if="$q.platform.is.mobile" @click="setShow">
+    <q-tooltip class="bg-primary" v-model="showing" >
+      {{$props.infodef}}
+    </q-tooltip>
+
+  </q-icon>
+  <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px" align="right" v-if="$q.platform.is.desktop">
+    <q-tooltip class="bg-primary">
+      {{$props.infodef}}
+      <!-- (<q-icon name="keyboard_arrow_down"/>) -->
+    </q-tooltip>
+
+  </q-icon>
 
   </q-card>
 
@@ -54,11 +68,28 @@ export default defineComponent({
     //     {name: 'DataAut', label: '3h', field: 'Autonomie', sortable: false, align: 'center'},
     //     {name: 'DataKm', label: '300 km', field: 'Kilométrage', sortable: false, align: 'center'},
   },
+  setup() {
+    return {
+      showing: ref(false)
+    }
+  },
   data () {
     return {
       title: this.titledef,
       data : this.datadef,
     }
+  },
+  methods: {
+    setShow() {
+      this.showing = true;
+      // msg.style.display = "revert";
+      setTimeout(() => {
+        this.showing = false;
+        // // 👇️ removes element from DOM
+        // pop.style.display = "none";
+      }, 1000);
+
+    },
   }
 })
 </script>
