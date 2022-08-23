@@ -20,9 +20,11 @@
     </q-icon> -->
 
     <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px; justify-content: right" align="right" v-if="$q.platform.is.mobile" @click="setShow">
+    <div>
     <q-tooltip class="bg-primary" v-model="showing" >
       {{$props.infodef}}
     </q-tooltip>
+    </div>
 
   </q-icon>
   <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px" align="right" v-if="$q.platform.is.desktop">
