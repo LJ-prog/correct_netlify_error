@@ -20,27 +20,27 @@
     </q-icon> -->
 
     <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px; justify-content: right" align="right" v-if="$q.platform.is.mobile" @click="setShow">
-    <div>
-    <q-tooltip class="bg-primary" v-model="showing" >
-      {{$props.infodef}}
-    </q-tooltip>
-    </div>
+      <div>
+      <q-tooltip class="bg-primary" v-model="showing" >
+        {{$props.infodef}}
+      </q-tooltip>
+      </div>
+    </q-icon>
 
-  </q-icon>
-  <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px" align="right" v-if="$q.platform.is.desktop">
-    <q-tooltip class="bg-primary">
-      {{$props.infodef}}
-      <!-- (<q-icon name="keyboard_arrow_down"/>) -->
-    </q-tooltip>
+    <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px" align="right" v-if="$q.platform.is.desktop">
+      <q-tooltip class="bg-primary">
+        {{$props.infodef}}
+        <!-- (<q-icon name="keyboard_arrow_down"/>) -->
+      </q-tooltip>
 
-  </q-icon>
+    </q-icon>
 
   </q-card>
 
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import {defineComponent, ref} from 'vue'
 
 export default defineComponent({
   name: 'DatadashboardCard',
