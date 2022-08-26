@@ -5,10 +5,12 @@
     :options="options"
     :series="series"
     :height="chartheight"
+    mode='dark'
   ></apexchart>
 </template>
 
 <script>
+import { Dark } from 'quasar';
 import VueApexCharts from "vue3-apexcharts";
 
 export default {
@@ -121,4 +123,52 @@ export default {
 </script>
 
 <style>
+
+/* .apexcharts-menu-item.exportSVG {
+  color: var(grey);
+}
+
+.apexcharts-menu-item.exportPNG {
+  color: var(grey);
+}
+
+.apexcharts-menu-item.exportCSV {
+  color: var(grey);
+} */
+
+.apexcharts-menu.apexcharts-menu-open {
+  background-color: var(--q-dark);
+}
+
+.apexcharts-menu-item.exportSVG:hover {
+  background-color: grey !important;
+}
+
+.apexcharts-menu-item.exportPNG:hover {
+  background-color: grey !important;
+}
+.apexcharts-menu-item.exportCSV:hover {
+  background-color: grey !important;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  background-color: var(--q-dark) !important;
+}
+
+.apexcharts-tooltip-title{
+  background-color: var(--q-dark) !important;
+}
+
+.apexcharts-tooltip-series-group {
+  background-color: var(--q-dark) !important;
+}
+
+.apexcharts-xaxistooltip.apexcharts-xaxistooltip-bottom.apexcharts-theme-light {
+  background-color: var(--q-dark) !important;
+}
+
+.apexcharts-xaxistooltip-text {
+  color: var(--q-textcolor) !important;
+}
+
 </style>

@@ -229,7 +229,7 @@
         <div class="q-py-md q-gutter-sm" v-if="$q.platform.is.mobile">
           <toggle-dark-mode />
           <q-btn flat round color="white">
-            <img src="~assets/administrateur-24px.svg" class="changeColor"/>
+            <img src="~assets/phone-24px.svg" class="changeColor"/>
             <q-menu
               transition-show="jump-down"
               transition-hide="jump-up"
@@ -667,6 +667,16 @@
               </q-item-section>
             </q-item>
 
+            <q-item to="/calendar" v-ripple>
+              <q-item-section avatar>
+                <q-icon name="mdi-calendar"/>
+              </q-item-section>
+
+              <q-item-section>
+                Calendrier
+              </q-item-section>
+            </q-item>
+
             <q-item to="/dashboardjson" v-ripple>
               <q-item-section avatar>
                 <q-icon name="mdi-swap-horizontal"/>
@@ -728,7 +738,8 @@
         <q-route-tab name="dashboard" label="Accueil" icon="dashboard" to="dashboardevol1" />
         <q-route-tab name="mesvehicules" label="Véhicules" icon="bike_scooter" to="/mesvehiculestab" />
         <q-route-tab name="admin" label="Admin" icon="manage_accounts" to="/Administration" />
-        <q-route-tab name="evol" label="Switch" icon="mdi-swap-horizontal" to="/dashboardjson" />
+        <q-route-tab name="calendar" label="Calendrier" icon="mdi-calendar" to="/calendar" />
+        <!-- <q-route-tab name="evol" label="Switch" icon="mdi-swap-horizontal" to="/dashboardjson" /> -->
 
       </q-tabs>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <apexchart 
+  <apexchart
     v-if="loaded"
     type="donut"
     :options="options"
@@ -30,7 +30,7 @@ export default {
       default: ["Postes d'auto-production"]
     },
     donutarraylabels:{
-      default:['Cycliste', 'Solaire', 'Régénération'] 
+      default:['Cycliste', 'Solaire', 'Régénération']
     },
     donutarrayvalues:{
       default: [11,8,4],
@@ -67,8 +67,8 @@ export default {
                 fontSize: "30px",
                 show: true
               }
-            } 
-          } 
+            }
+          }
         },
         labels: this.donutarraylabels
       },
@@ -108,4 +108,9 @@ export default {
 </script>
 
 <style>
+
+.apexcharts-legend-text {
+  color: var(--q-textcolor) !important;
+}
+
 </style>

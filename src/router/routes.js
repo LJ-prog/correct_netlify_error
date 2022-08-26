@@ -22,10 +22,14 @@ const routes = [
       { path: '/mesvehicules', component: () => import('src/pages/mesvehiculesCard.vue') },
       { path: '/midipile01', component: () => import('src/pages/vehicules/Midipile01.vue') },
       { path: '/oldmidipile01', component: () => import('src/pages/vehicules/OldMidipile01.vue') },
-      { path: '/midipile02', component: () => import('pages/vehicules/Midipile02.vue') },
-      { path: '/midipile03', component: () => import('pages/vehicules/Midipile03.vue') },
-      { path: '/midipile04', component: () => import('pages/vehicules/Midipile04.vue') },
-      { path: '/midipile05', component: () => import('pages/vehicules/Midipile05.vue') },
+      { path: '/midipile02', component: () => import('src/pages/vehicules/Midipile02.vue') },
+      { path: '/oldmidipile02', component: () => import('src/pages/vehicules/OldMidipile02.vue') },
+      { path: '/midipile03', component: () => import('src/pages/vehicules/Midipile03.vue') },
+      { path: '/oldmidipile03', component: () => import('src/pages/vehicules/OldMidipile03.vue') },
+      { path: '/midipile04', component: () => import('src/pages/vehicules/Midipile04.vue') },
+      { path: '/oldmidipile04', component: () => import('src/pages/vehicules/OldMidipile04.vue') },
+      { path: '/midipile05', component: () => import('src/pages/vehicules/Midipile05.vue') },
+      { path: '/oldmidipile05', component: () => import('src/pages/vehicules/OldMidipile05.vue') },
 
       //Composants : Charts
       { path: '/columnlabel', component: () => import('pages/charts/ColumnLabelPage.vue') },
@@ -111,7 +115,11 @@ const routes = [
       //Notification
       { path: '/seenotifications', component: () => import('pages/SeeNotifications.vue') },
       { path: '/addalerts', component: () => import('pages/AddAlerts.vue') },
-      { path: '/profile', component: () => import('pages/Profile.vue') }
+      { path: '/profile', component: () => import('pages/Profile.vue') },
+
+      // Calendar
+      { path: '/calendar', component: () => import('pages/Calendar.vue') }
+
 
     ],
     meta: {

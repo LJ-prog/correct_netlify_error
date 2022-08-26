@@ -1,28 +1,74 @@
 <template>
   <q-page>
     <div class="q-pa-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '60px', 'margin-bottom' : '0px' } : {}">
+
       <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}" v-if="$q.platform.is.desktop">
         <!-- <q-card class="my-card">
           <q-img src="/statics/images/M1.JPG"/>
         </q-card> -->
         <q-item class="responsive" style="padding-right:0px; padding-left:0px;" v-if="$q.platform.is.desktop">
-          <q-item-section>
-            <div class="text-h4">Midipile 03</div>
-            <h4 class="text-h4" align="left" id="titleMdp" style="padding-left: 20px; margin-top: 20px; "> Conducteur : {{ user.user_metadata.firstname }}</h4>
+          <q-item-section style="justify-content: unset">
+            <div class="text-h4">Midipile 01</div>
+            <h4 class="text-h4" align="left" id="titleMdp" style="margin-top: 20px; "> Conducteur : {{ user.user_metadata.firstname }}</h4>
+            <div class="q-pa-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px', 'text-align' : 'center' } : {'text-align' : 'left', 'padding-bottom' : '50px', 'padding-left' : '0px', 'padding-right' : '0px'}">
+      <div class="text-h6" style="padding-bottom: 10px">D'Click - Cargo</div>
+        <div class="row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'justify-content' : 'center' } : {'justify-content' : 'left'}">
+          <card-component
+            :titledef="'Kilométrage total'"
+            :data ="'300'"
+            :unitydef ="'km'"
+            :infodef ="'Kilométrage total du véhicule'"
+          >
+          </card-component>
+
+          <card-component
+            :titledef="'Kilométrage journalier'"
+            :data ="'300'"
+            :unitydef ="'km'"
+            :infodef ="'Kilométrage journalier du véhicule'"
+          >
+          </card-component>
+
+          <card-component
+            :titledef="'Autonomie restante'"
+            :datadef ="'2'"
+            :unitydef ="'h'"
+            :infodef ="'Autonomie restante avant recharge'"
+          >
+          </card-component>
+
+          <card-component
+            :titledef="'Consommation moyenne'"
+            :data ="'5'"
+            :unitydef ="'Wh/km'"
+            :infodef ="'Consommation moyenne du véhicule'"
+          >
+          </card-component>
+        </div>
+    </div>
           </q-item-section>
-          <q-item-section>
-            <div class="row" style="justify-content:  right;">
+          <q-item-section align="left">
+            <div class="row" style="justify-content:  left;">
             <!-- <q-card style="width: 250px; height: 123px; background-color: green" v-model="shape">
 
             </q-card> -->
-            <div class="column cardBorder" align="center" style="background-color: var(--q-dark);">
+
+            <div class="q-pa-md q-gutter-md" style="padding-top : 0px; width : 300px">
+              <div>
+                  <table-actu id="borderTable"
+                  :data3def="tabdata"
+                ></table-actu>
+              </div>
+            </div>
+
+            <div class="column cardBorder" align="center" style="background-color: var(--q-dark); height : 190px">
               <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 20px; padding-right: 13px"> Demande de maintenance </h6>
               <div class="q-pa-md" style="padding-top: 2px">
               <q-form @submit="onSubmit">
                 <div class="row" style="justify-content: center; padding-bottom: 10px">
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="statut" v-model="shape" val="vert" left-label label="RAS" id="radio" color="green"/>
+                      <q-radio keep-color name="status" v-model="shape" val="green" left-label label="RAS" id="radio" color="green"/>
                     </q-item-section>
                     <q-item-section class="items-center">
                       <q-icon name="mdi-check-bold" size="xs"></q-icon>
@@ -31,7 +77,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="statut"  v-model="shape" val="orange" left-label label="Réparation" id="radio" color="orange"/>
+                      <q-radio keep-color name="status"  v-model="shape" val="orange" left-label label="Réparation" id="radio" color="orange"/>
                     </q-item-section>
                     <q-item-section class="row q-gutter-sm items-center">
                       <q-icon name="mdi-wrench-clock" size="xs"></q-icon>
@@ -40,7 +86,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="statut" v-model="shape" val="rouge" left-label label="Panne" id="radio" color="red"/>
+                      <q-radio keep-color name="status" v-model="shape" val="red" left-label label="Panne" id="radio" color="red"/>
                     </q-item-section>
                     <q-item-section class="items-center">
                       <q-icon name="mdi-close-thick" size="xs"></q-icon>
@@ -52,7 +98,7 @@
                 </div>
               </q-form>
               <q-card v-if="submitResult.length > 0" flat>
-                <q-card-section v-if="showing">Le formulaire soumis contient les données suivantes :</q-card-section>
+                <q-card-section v-if="showing">Submitted form contains the following formData (key = value):</q-card-section>
                 <q-separator v-if="showing" />
                 <q-card-section class="row q-gutter-sm items-center" v-if="showing">
                   <div
@@ -66,11 +112,12 @@
             </div>
             </div>
           </q-item-section>
+
         </q-item>
       </div>
 
       <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}" v-if="$q.platform.is.mobile">
-        <div class="text-h4" style="padding-bottom:15px; padding-top: 10px" align="center">Midipile 03</div>
+        <div class="text-h4" style="padding-bottom:15px; padding-top: 10px" align="center">Midipile 01</div>
         <!-- <q-card class="my-card">
           <q-img src="/statics/images/M1.JPG"/>
         </q-card> -->
@@ -85,7 +132,7 @@
                 <div class="row" style="justify-content: center">
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section>
-                      <q-radio keep-color name="statut" v-model="shape" val="vert" id="radio" color="green"/>
+                      <q-radio keep-color name="status" v-model="shape" val="green" id="radio" color="green"/>
                     </q-item-section>
                     <q-item-section>
                       <q-icon name="mdi-check-bold" size="xs"></q-icon>
@@ -94,7 +141,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section>
-                      <q-radio keep-color name="statut"  v-model="shape" val="orange" id="radio" color="orange"/>
+                      <q-radio keep-color name="status"  v-model="shape" val="orange" id="radio" color="orange"/>
                     </q-item-section>
                     <q-item-section>
                       <q-icon name="mdi-wrench-clock" size="xs"></q-icon>
@@ -103,7 +150,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section>
-                      <q-radio keep-color name="statut" v-model="shape" val="rouge" id="radio" color="red"/>
+                      <q-radio keep-color name="status" v-model="shape" val="red" id="radio" color="red"/>
                     </q-item-section>
                     <q-item-section>
                       <q-icon name="mdi-close-thick" size="xs"></q-icon>
@@ -129,7 +176,7 @@
             </div>
             </div>
       </div>
-<div v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px', 'text-align' : 'center' } : {'text-align' : 'left', 'padding-bottom' : '50px'}">
+<div class="q-pa-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px', 'text-align' : 'center' } : {'text-align' : 'left', 'padding-bottom' : '50px'}" v-if="$q.platform.is.mobile">
       <div class="text-h6" style="padding-bottom: 10px">D'Click - Cargo</div>
         <div class="row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'justify-content' : 'center' } : {'justify-content' : 'left'}">
           <card-component
@@ -217,7 +264,7 @@
       </div>
     </div>
 
-    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
+    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}" v-if="$q.platform.is.mobile">
       <div class="col-xs-12 col-sm-6 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
                 <table-actu id="borderTable"
                 :data3def="tabdata"
@@ -229,14 +276,14 @@
       <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-top': '0px', 'margin-left': '0px' } : {}">
         <div class="text-h6" style="padding: 16px; padding-left: 0px" v-bind:style="$q.screen.lt.sm ? {'text-align' : 'center' } : {'text-align' : 'left'}">Distance hebdomadaire</div>
           <JSONApexColumnLabel id="borderTable" style="background-color: var(--q-dark);"
-            :filename="['midipile03_stat_semaine.json']"
+            :filename="['midipile01_stat_semaine.json']"
           ></JSONApexColumnLabel>
       </div>
 
       <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-top': '48px', 'margin-left': '0px' } : {}">
         <div class="text-h6" style="padding: 16px; padding-left: 0px" v-bind:style="$q.screen.lt.sm ? {'text-align' : 'center' } : {'text-align' : 'left'}">Suivi de consommation (W.h/km)</div>
           <JSONApexBasicLine id="borderTable" style="background-color: var(--q-dark);"
-            :filename="['midipile03_stat.json']"
+            :filename="['midipile01_stat.json']"
           ></JSONApexBasicLine>
       </div>
     </div>
@@ -349,8 +396,8 @@ setup () {
     return {
       user,
       tab: ref('kpi'),
-      // color: ref('vert'),
-      shape: ref('vert'),
+      // color: ref('green'),
+      shape: ref('green'),
       submitResult,
       showing: ref(false),
 
@@ -373,34 +420,34 @@ setup () {
     tabdatadef:{
       default: [
         {
-          name: 'Vincent',
-          des: '28 nov 2021 | 35,39 km | 1:28:11',
-          avatar: "statics/images/Vincent.JPG",
-          lien: "/3111128116_route02"
+          name: 'Sebastien',
+          des: '28 nov 2021 | 43,50 km | 1:46:11',
+          avatar: "statics/images/Sebastien.JPG",
+          lien: "/1111128116_route18"
         },
         {
-          name: 'Benoit',
-          des: '28 nov 2021 | 70,47 km | 2:51:12',
-          avatar: "statics/images/Benoit.JPG",
-          lien: "/3111128107_route05"
+          name: 'Ehouarn',
+          des: '28 nov 2021 | 53,96 km | 2:12:0',
+          avatar: "statics/images/Ehouarn.JPG",
+          lien: "/1111128107_route06"
         },
         {
           name: 'Sebastien',
-          des: '27 nov 2021 | 65,72 km | 2:39:12',
+          des: '27 nov 2021 | 79,52 km | 2:54:39',
           avatar: "statics/images/Sebastien.JPG",
-          lien: "/3111127117_route08"
-        },
-        {
-          name: 'Vincent',
-          des: '27 nov 2021 | 44,13 km | 1:49:9',
-          avatar: "statics/images/Vincent.JPG",
-          lien: "/3111127107_route18"
+          lien: "/1111127115_route15"
         },
         {
           name: 'Sebastien',
-          des: '26 nov 2021 | 46,4 km | 1:44:7',
+          des: '27 nov 2021 | 43,37 km | 1:43:20',
           avatar: "statics/images/Sebastien.JPG",
-          lien: "/3111126114_route12"
+          lien: "/1111127108_route18"
+        },
+        {
+          name: 'Sebastien',
+          des: '26 nov 2021 | 43,67 km | 1:50:19',
+          avatar: "statics/images/Sebastien.JPG",
+          lien: "/1111126116_route18"
         }
       ]
     },

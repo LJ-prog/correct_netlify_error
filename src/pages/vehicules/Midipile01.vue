@@ -1,7 +1,6 @@
 <template>
   <q-page>
     <div class="q-pa-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '60px', 'margin-bottom' : '0px' } : {}">
-
       <div class="col-xs-12 col-sm-5 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}" v-if="$q.platform.is.desktop">
         <!-- <q-card class="my-card">
           <q-img src="/statics/images/M1.JPG"/>
@@ -23,7 +22,7 @@
                 <div class="row" style="justify-content: center; padding-bottom: 10px">
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="status" v-model="shape" val="green" left-label label="RAS" id="radio" color="green"/>
+                      <q-radio keep-color name="statut" v-model="shape" val="vert" left-label label="RAS" id="radio" color="green"/>
                     </q-item-section>
                     <q-item-section class="items-center">
                       <q-icon name="mdi-check-bold" size="xs"></q-icon>
@@ -32,7 +31,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="status"  v-model="shape" val="orange" left-label label="Réparation" id="radio" color="orange"/>
+                      <q-radio keep-color name="statut"  v-model="shape" val="orange" left-label label="Réparation" id="radio" color="orange"/>
                     </q-item-section>
                     <q-item-section class="row q-gutter-sm items-center">
                       <q-icon name="mdi-wrench-clock" size="xs"></q-icon>
@@ -41,7 +40,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="status" v-model="shape" val="red" left-label label="Panne" id="radio" color="red"/>
+                      <q-radio keep-color name="statut" v-model="shape" val="rouge" left-label label="Panne" id="radio" color="red"/>
                     </q-item-section>
                     <q-item-section class="items-center">
                       <q-icon name="mdi-close-thick" size="xs"></q-icon>
@@ -53,7 +52,7 @@
                 </div>
               </q-form>
               <q-card v-if="submitResult.length > 0" flat>
-                <q-card-section v-if="showing">Submitted form contains the following formData (key = value):</q-card-section>
+                <q-card-section v-if="showing">Le formulaire soumis contient les données suivantes :</q-card-section>
                 <q-separator v-if="showing" />
                 <q-card-section class="row q-gutter-sm items-center" v-if="showing">
                   <div
@@ -86,7 +85,7 @@
                 <div class="row" style="justify-content: center">
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section>
-                      <q-radio keep-color name="status" v-model="shape" val="green" id="radio" color="green"/>
+                      <q-radio keep-color name="statut" v-model="shape" val="vert" id="radio" color="green"/>
                     </q-item-section>
                     <q-item-section>
                       <q-icon name="mdi-check-bold" size="xs"></q-icon>
@@ -95,7 +94,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section>
-                      <q-radio keep-color name="status"  v-model="shape" val="orange" id="radio" color="orange"/>
+                      <q-radio keep-color name="statut"  v-model="shape" val="orange" id="radio" color="orange"/>
                     </q-item-section>
                     <q-item-section>
                       <q-icon name="mdi-wrench-clock" size="xs"></q-icon>
@@ -104,7 +103,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section>
-                      <q-radio keep-color name="status" v-model="shape" val="red" id="radio" color="red"/>
+                      <q-radio keep-color name="statut" v-model="shape" val="rouge" id="radio" color="red"/>
                     </q-item-section>
                     <q-item-section>
                       <q-icon name="mdi-close-thick" size="xs"></q-icon>
@@ -112,7 +111,7 @@
                   </q-item>
                 </div>
                 <div align="center">
-                  <q-btn label="Submit" type="submit" color="primary" style="margin-bottom: 15px" @click="setShow"/>
+                  <q-btn label="Envoyer" type="submit" color="primary" style="margin-bottom: 15px" @click="setShow"/>
                 </div>
               </q-form>
               <q-card v-if="submitResult.length > 0">
@@ -130,34 +129,7 @@
             </div>
             </div>
       </div>
-
-
-    </div>
-
-
-
-      <!-- <div class="col-xs-12 col-sm-5 col-md-2" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
-            <battery-radial id="borderTable"
-              :batteryvalue=[85]
-              :batterylabel="['Mobility ECO Score']"
-              :colormin="['#1a7a30']"
-              :colormax="['#1a7a30']"
-              style="padding-bottom: 26px"
-            ></battery-radial>
-      </div>
-
-      <div class="col-xs-12 col-sm-5 col-md-2" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
-            <battery-radial id="borderTable"
-              :batteryvalue=[79]
-              :batterylabel="['Midipile Challenge']"
-              :colormin="['#103e47']"
-              :colormax="['#103e47']"
-              style="padding-bottom: 26px"
-            ></battery-radial>
-
-      </div> -->
-
-    <div class="q-pa-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px', 'text-align' : 'center' } : {'text-align' : 'left', 'padding-bottom' : '50px'}">
+<div v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px', 'text-align' : 'center' } : {'text-align' : 'left', 'padding-bottom' : '16px', 'padding-top' : '16px' }">
       <div class="text-h6" style="padding-bottom: 10px">D'Click - Cargo</div>
         <div class="row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'justify-content' : 'center' } : {'justify-content' : 'left'}">
           <card-component
@@ -194,10 +166,37 @@
         </div>
     </div>
 
+    </div>
+
+
+
+      <!-- <div class="col-xs-12 col-sm-5 col-md-2" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+            <battery-radial id="borderTable"
+              :batteryvalue=[85]
+              :batterylabel="['Mobility ECO Score']"
+              :colormin="['#1a7a30']"
+              :colormax="['#1a7a30']"
+              style="padding-bottom: 26px"
+            ></battery-radial>
+      </div>
+
+      <div class="col-xs-12 col-sm-5 col-md-2" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+            <battery-radial id="borderTable"
+              :batteryvalue=[79]
+              :batterylabel="['Midipile Challenge']"
+              :colormin="['#103e47']"
+              :colormax="['#103e47']"
+              style="padding-bottom: 26px"
+            ></battery-radial>
+
+      </div> -->
+
+
+
     <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
       <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
           <div class="text-h6" style="padding-bottom: 16px" v-bind:style="$q.screen.lt.sm ? {'text-align' : 'center' } : {'text-align' : 'left'}">Répartition d'auto-production</div>
-          <q-card flat >
+          <q-card flat>
             <q-card-section style="padding: 0px">
               <JSONSemiDonut id="borderTable"
 
@@ -229,14 +228,14 @@
     <div class="q-pa-md row q-gutter-md"  v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
       <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-top': '0px', 'margin-left': '0px' } : {}">
         <div class="text-h6" style="padding: 16px; padding-left: 0px" v-bind:style="$q.screen.lt.sm ? {'text-align' : 'center' } : {'text-align' : 'left'}">Distance hebdomadaire</div>
-          <JSONApexColumnLabel id="borderTable"
+          <JSONApexColumnLabel id="borderTable" style="background-color: var(--q-dark);"
             :filename="['midipile01_stat_semaine.json']"
           ></JSONApexColumnLabel>
       </div>
 
       <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-top': '48px', 'margin-left': '0px' } : {}">
         <div class="text-h6" style="padding: 16px; padding-left: 0px" v-bind:style="$q.screen.lt.sm ? {'text-align' : 'center' } : {'text-align' : 'left'}">Suivi de consommation (W.h/km)</div>
-          <JSONApexBasicLine id="borderTable"
+          <JSONApexBasicLine id="borderTable" style="background-color: var(--q-dark);"
             :filename="['midipile01_stat.json']"
           ></JSONApexBasicLine>
       </div>
@@ -350,8 +349,8 @@ setup () {
     return {
       user,
       tab: ref('kpi'),
-      // color: ref('green'),
-      shape: ref('green'),
+      // color: ref('vert'),
+      shape: ref('vert'),
       submitResult,
       showing: ref(false),
 
