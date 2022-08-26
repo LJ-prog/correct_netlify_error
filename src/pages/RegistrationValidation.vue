@@ -19,7 +19,7 @@
           <q-card-section>
             <div class="q-pt-lg" id="btwnImgTitle">
               <div class="row justify-center" v-if="user">
-                <h4 class="text-h4 text-uppercase q-my-none text-weight-regular" align="center" id="titleMdp">Bienvenue {{ user.user_metadata.name }} !</h4>
+                <h4 class="text-h4 text-uppercase q-my-none text-weight-regular" align="center" id="titleMdp">Bienvenue {{ user.user_metadata.username }} !</h4>
               </div>
             </div>
             <div>

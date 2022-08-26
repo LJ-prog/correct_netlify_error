@@ -28,17 +28,21 @@
             <q-form class="q-gutter-md" @submit.prevent="handleLogin">
               <q-input
                 label="Email"
+                label-color="white"
                 v-model="form.email"
                 lazy-rules
                 :rules="[val => (val && val.length > 0) || 'Email requis.']"
+                bottom-slots
                 >
               </q-input>
               <q-input
                 label="Mot de passe"
+                label-color="white"
                 :type="isPwd ? 'password' : 'text'"
                 v-model="form.password"
                 lazy-rules
                 :rules="[val => !!val || 'Mot de passe requis.', val => val.length >= 8 || 'Mot de passe de 8 caractères minimum requis.']"
+                bottom-slots
               >
                 <template v-slot:append>
                   <q-icon
@@ -178,7 +182,7 @@ setup () {
 
     onMounted(() => {
       if (isLoggedIn) {
-        router.push('/dashboardevol1')
+        router.push('dashboardevol1')
       }
     })
 
@@ -186,14 +190,14 @@ setup () {
       try {
         await login(form.value)
         notifySuccess('Connecté avec succès !')
-        router.push('/dashboardevol1')
+        router.push('dashboardevol1')
       } catch (error) {
       //   if(user) {
       //     notifyError("Confirmer votre email")
       //   }
       //   else {
       //   notifySuccess('Connecté avec succès !')
-      //   router.push('/dashboardevol1')
+      //   router.push('dashboardevol1')
       // }
       // notifyError()
         notifyError(error.message)

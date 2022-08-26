@@ -20,7 +20,8 @@ const routes = [
       { path: '/index', component: () => import('pages/Index.vue') },
       { path: '/mesvehiculestab', component: () => import('src/pages/mesvehiculesTab.vue') },
       { path: '/mesvehicules', component: () => import('src/pages/mesvehiculesCard.vue') },
-      { path: '/midipile01', component: () => import('pages/vehicules/Midipile01.vue') },
+      { path: '/midipile01', component: () => import('src/pages/vehicules/Midipile01.vue') },
+      { path: '/oldmidipile01', component: () => import('src/pages/vehicules/OldMidipile01.vue') },
       { path: '/midipile02', component: () => import('pages/vehicules/Midipile02.vue') },
       { path: '/midipile03', component: () => import('pages/vehicules/Midipile03.vue') },
       { path: '/midipile04', component: () => import('pages/vehicules/Midipile04.vue') },
@@ -56,7 +57,7 @@ const routes = [
       { path: '/dashboard2', component: () => import('pages/dashboards/Dashboard2.vue') },
       { path: '/dashboard3', component: () => import('pages/dashboards/Dashboard3.vue') },
       { path: '/dashboardjson', component: () => import('pages/dashboards/DashboardJSON.vue') },
-      { path: '/dashboardevol1', component: () => import('pages/dashboards/DashboardEvol1.vue') },
+      { path: 'dashboardevol1', component: () => import('pages/dashboards/DashboardEvol1.vue') },
 
       //Détail voyage
       { path: '/01trip001', component: () => import('pages/midipile01/trip001.vue') },

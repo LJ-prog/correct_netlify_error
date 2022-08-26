@@ -5,7 +5,7 @@
         <q-item class="responsive" style="padding-right:0px; padding-left:0px;" v-if="$q.platform.is.desktop">
           <q-item-section align="left">
             <h4>
-              Bonjour {{ user.user_metadata.name }} !
+              Bonjour {{ user.user_metadata.username }} !
             </h4>
           </q-item-section>
           <q-item-section class="cardBorder" id="boxParc">
@@ -40,7 +40,7 @@
         <div v-if="$q.platform.is.mobile">
           <div>
               <h4 style="text-align:center;">
-                Bonjour {{ user.user_metadata.name }} !
+                Bonjour {{ user.user_metadata.username }} !
               </h4>
           </div>
           <div class="row justify-center"> <!--style="max-width:20%;"-->
@@ -306,7 +306,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style>
 
 /* .noShadow {
   box-shadow: none;

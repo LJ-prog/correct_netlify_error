@@ -51,13 +51,13 @@ export default defineComponent({
   color: white;
 } */
 
-#containerBorder {
-  border: solid 1px #41403E;
-}
-
 #borderTable {
   border:solid 1px #41403E;
   border-radius: 4px;
+}
+
+::selection {
+  background: var(--q-primary); /*#3390FF; */
 }
 
 </style>

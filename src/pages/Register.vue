@@ -11,9 +11,21 @@
       <div class="col-md-4 col-sm-6 col-xs-10 q-gutter-y-md">
         <q-input
           label="Nom d'utilisateur"
-          v-model="form.name"
+          v-model="form.username"
           lazy-rules
           :rules="[val => (val && val.length > 0) || `Nom d'utilisateur requis.`]"
+        />
+        <q-input
+          label="Prénom"
+          v-model="form.firstname"
+          lazy-rules
+          :rules="[val => (val && val.length > 0) || `Prénom requis.`]"
+        />
+        <q-input
+          label="Nom"
+          v-model="form.lastname"
+          lazy-rules
+          :rules="[val => (val && val.length > 0) || `Nom de famille requis.`]"
         />
 
         <q-input
@@ -99,7 +111,9 @@ export default defineComponent({
     const { notifyError, notifySuccess } = useNotify()
 
     const form = ref({
-      name: '',
+      firstname: '',
+      lastname: '',
+      username: '',
       email: '',
       password: '',
       passwordConfirm: ''
@@ -111,10 +125,10 @@ export default defineComponent({
         notifySuccess()
         router.push({
           name: 'email-confirmation',
-          query: { email: form.value.email }
+          query: { email: form.value.email}
         })
       } catch (error) {
-        notifyError()
+        notifyError(error.message)
       }
     }
 

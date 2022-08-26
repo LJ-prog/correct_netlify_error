@@ -31,7 +31,7 @@
       </div>
 
       <div class="col-xs-10 col-sm-4 col-md-4">
-        <div class="text-h6 text-grey-8">Répartition d'auto-production</div>
+        <div class="text-h6">Répartition d'auto-production</div>
         <q-card flat >
           <q-card-section>
             <JSONSemiDonut

@@ -1,7 +1,7 @@
 <template>
   <q-card>
     <q-card-section>
-      <div class="text-h6">
+      <div class="text-h6" v-bind:style="$q.screen.lt.sm ? {'text-align': 'center'} : {'text-align': 'left'}">
         Flux d'actualités
       </div>
     </q-card-section>

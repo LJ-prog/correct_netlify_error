@@ -144,7 +144,8 @@
                       checked-icon="mdi-check"
                       color="green"
                       unchecked-icon="mdi-close"
-                      size="lg">
+                      size="lg"
+                      disable>
                       </q-toggle>
                   </q-td>
                   <q-td key="soc_fixe" :props="props">

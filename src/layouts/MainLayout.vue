@@ -17,14 +17,14 @@
         </q-item> -->
 
         <q-toolbar-title class="text-h4 text-white" id="link" v-if="$q.platform.is.desktop">
-          <a href="/dashboardevol1">
+          <a href="dashboardevol1">
           <!-- <q-btn class="text-h4 text-white" id="titleLink" to="/dashboardjson">Midipile Fleet Manager</q-btn> -->
             Midipile Fleet Manager
           </a>
         </q-toolbar-title>
 
         <q-toolbar-title class="ma-logo-mobile" id="linkLogo" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px; margin-right: 0px;" v-if="$q.platform.is.mobile">
-          <a href="/dashboardevol1">
+          <a href="dashboardevol1">
           <img src="~assets/logo3.svg" />
           </a>
         </q-toolbar-title>
@@ -602,7 +602,7 @@
             >
               Demo 2022
             </q-item-label> -->
-            <q-item to="/dashboardevol1" v-ripple>
+            <q-item to="dashboardevol1" v-ripple>
               <q-item-section avatar>
                 <q-icon name="dashboard"/>
               </q-item-section>
@@ -725,7 +725,7 @@
         class="bg-primary text-white shadow-2"
         id="tabs"
       >
-        <q-route-tab name="dashboard" label="Accueil" icon="dashboard" to="/dashboardevol1" />
+        <q-route-tab name="dashboard" label="Accueil" icon="dashboard" to="dashboardevol1" />
         <q-route-tab name="mesvehicules" label="Véhicules" icon="bike_scooter" to="/mesvehiculestab" />
         <q-route-tab name="admin" label="Admin" icon="manage_accounts" to="/Administration" />
         <q-route-tab name="evol" label="Switch" icon="mdi-swap-horizontal" to="/dashboardjson" />
