@@ -16,22 +16,22 @@
 
             </q-card> -->
             <div class="column cardBorder" align="center" style="background-color: var(--q-dark);">
-              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 20px; padding-right: 13px"> Demande de maintenance </h6>
+              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 20px; padding-right: 13px"> Gestion véhicule </h6>
               <div class="q-pa-md" style="padding-top: 2px">
               <q-form @submit="onSubmit">
                 <div class="row" style="justify-content: center; padding-bottom: 10px">
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="statut" v-model="shape" val="vert" left-label label="RAS" id="radio" color="green"/>
+                      <q-radio keep-color name="statut" v-model="shape" val="vert" left-label label="Normal" id="radio" color="green" style="margin-left: 30px; margin-right:10px"/>
                     </q-item-section>
-                    <q-item-section class="items-center">
+                    <q-item-section class="row q-gutter-sm items-center">
                       <q-icon name="mdi-check-bold" size="xs"></q-icon>
                     </q-item-section>
                   </q-item>
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="statut"  v-model="shape" val="orange" left-label label="Réparation" id="radio" color="orange"/>
+                      <q-radio keep-color name="statut"  v-model="shape" val="orange" left-label label="Vigilance" id="radio" color="orange"/>
                     </q-item-section>
                     <q-item-section class="row q-gutter-sm items-center">
                       <q-icon name="mdi-wrench-clock" size="xs"></q-icon>
@@ -40,9 +40,9 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="statut" v-model="shape" val="rouge" left-label label="Panne" id="radio" color="red"/>
+                      <q-radio keep-color name="statut" v-model="shape" val="rouge" left-label label="Intervention" id="radio" color="red"/>
                     </q-item-section>
-                    <q-item-section class="items-center">
+                    <q-item-section class="row q-gutter-sm items-center">
                       <q-icon name="mdi-close-thick" size="xs"></q-icon>
                     </q-item-section>
                   </q-item>
@@ -79,7 +79,7 @@
 
             </q-card> -->
             <div class="column cardBorder" align="center" style="background-color: var(--q-dark);">
-              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 10px"> Demande de maintenance </h6>
+              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 10px"> Gestion véhicule </h6>
               <div>
               <q-form @submit="onSubmit">
                 <div class="row" style="justify-content: center">
@@ -115,7 +115,7 @@
                 </div>
               </q-form>
               <q-card v-if="submitResult.length > 0">
-                <q-card-section v-if="showing">Submitted form contains the following formData (key = value):</q-card-section>
+                <q-card-section v-if="showing">Le formulaire soumis contient les données suivantes :</q-card-section>
                 <q-separator v-if="showing" />
                 <q-card-section class="row items-center" align="center" v-if="showing">
                   <div
@@ -134,33 +134,49 @@
         <div class="row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'justify-content' : 'center' } : {'justify-content' : 'left'}">
           <card-component
             :titledef="'Kilométrage total'"
-            :data ="'300'"
+            :data ="'782'"
             :unitydef ="'km'"
             :infodef ="'Kilométrage total du véhicule'"
           >
           </card-component>
 
           <card-component
-            :titledef="'Kilométrage journalier'"
-            :data ="'300'"
+            :titledef="'Distance journalière'"
+            :data ="'46'"
             :unitydef ="'km'"
-            :infodef ="'Kilométrage journalier du véhicule'"
-          >
-          </card-component>
-
-          <card-component
-            :titledef="'Autonomie restante'"
-            :datadef ="'2'"
-            :unitydef ="'h'"
-            :infodef ="'Autonomie restante avant recharge'"
+            :infodef ="'Distance journalière du véhicule'"
           >
           </card-component>
 
           <card-component
             :titledef="'Consommation moyenne'"
-            :data ="'5'"
-            :unitydef ="'Wh/km'"
+            :datadef ="'29'"
+            :unitydef ="'W.h/km'"
             :infodef ="'Consommation moyenne du véhicule'"
+          >
+          </card-component>
+
+          <card-component
+            :titledef="`Part d'auto-production`"
+            :data ="'8'"
+            :unitydef ="'%'"
+            :infodef ="`Part d'auto-production d'électricité du véhicule`"
+          >
+          </card-component>
+
+          <card-component
+            :titledef="`Autonomie moyenne`"
+            :data ="'146'"
+            :unitydef ="'km'"
+            :infodef ="`Autonomie moyenne du véhicule en charge complète`"
+          >
+          </card-component>
+
+          <card-component
+            :titledef="`Autonomie courante estimée`"
+            :data ="'64'"
+            :unitydef ="'km'"
+            :infodef ="`Autonomie restante avant recharge`"
           >
           </card-component>
         </div>
@@ -194,7 +210,7 @@
 
 
     <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
-      <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
+      <!-- <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
           <div class="text-h6" style="padding-bottom: 16px" v-bind:style="$q.screen.lt.sm ? {'text-align' : 'center' } : {'text-align' : 'left'}">Répartition d'auto-production</div>
           <q-card flat>
             <q-card-section style="padding: 0px">
@@ -203,7 +219,7 @@
               ></JSONSemiDonut>
             </q-card-section>
           </q-card>
-      </div>
+      </div> -->
 
       <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
           <div class="text-h6" style="padding-bottom: 16px" v-bind:style="$q.screen.lt.sm ? {'text-align' : 'center' } : {'text-align' : 'left'}">Répartition d'auto-production</div>
@@ -215,15 +231,21 @@
             </q-card-section>
           </q-card>
       </div>
-    </div>
 
-    <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
-      <div class="col-xs-12 col-sm-6 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+      <div class="col-xs-12 col-sm-6 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '72px', 'margin-left': '0px' } : {}">
                 <table-actu id="borderTable"
                 :data3def="tabdata"
               ></table-actu>
       </div>
     </div>
+
+    <!-- <div class="q-pa-md row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
+      <div class="col-xs-12 col-sm-6 col-md-3" v-bind:style="$q.screen.lt.sm ? {'margin-top': '16px', 'margin-left': '0px' } : {}">
+                <table-actu id="borderTable"
+                :data3def="tabdata"
+              ></table-actu>
+      </div>
+    </div> -->
 
     <div class="q-pa-md row q-gutter-md"  v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '16px', 'margin-bottom' : '0px' } : {}">
       <div class="col-xs-12 col-sm-5 col-md-5" v-bind:style="$q.screen.lt.sm ? {'margin-top': '0px', 'margin-left': '0px' } : {}">
@@ -240,7 +262,7 @@
           ></JSONApexBasicLine>
       </div>
     </div>
-    <div class="q-pa-md" style="justify-content: center" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '60px', 'margin-bottom' : '0px' } : {}">
+    <div class="q-pa-md" style="justify-content: center" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '42px', 'margin-bottom' : '0px'} : {}">
       <q-card class="containerBorder">
           <q-tabs
             v-model="tab"
@@ -250,62 +272,37 @@
             align="justify"
             narrow-indicator
           >
-            <q-tab name="kpi" label="Tab N°1" class="customTab"/>
-            <q-tab name="tab2" label="Tab N°2" class="customTab" />
-            <q-tab name="tab3" label="Tab N°3"/>
+            <q-tab name="kpi" label="Général" class="customTab"/>
+            <q-tab name="tab2" label="Statistiques d'usage" class="customTab" />
+            <q-tab name="tab3" label="Auto-production"/>
           </q-tabs>
 
           <q-separator />
 
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel name="kpi">
-              <div class="q-pa-md row q-gutter-md justify-center" id="width" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+              <div class="q-pa-md row q-gutter-md justify-center"  v-bind:style="$q.screen.lt.sm ? {} : {}">
                 <card-component
-                  :titledef="'Vitesse moyenne'"
-                  :datadef ="'45'"
-                  :unitydef ="'km/h'"
-                  :infodef ="'Vitesse moyenne de la flotte'"
+                  :titledef="'Kilométrage véhicule'"
+                  :datadef ="'782'"
+                  :unitydef ="'km'"
+                  :infodef ="'Vitesse moyenne du véhicule'"
                 ><!--v-for="n in 6" :key="n" -->
 
                 </card-component>
 
                 <card-component
-                  :titledef="'Vitesse max'"
-                  :datadef ="'90'"
-                  :unitydef ="'km/h'"
-                  :infodef ="'Vitesse maximale de la flotte'"
-                >
-                </card-component>
-
-                <card-component
-                  :titledef="'Recharge solaire'"
-                  :datadef ="'30'"
-                  :unitydef ="'%'"
-                  :infodef ="'Pourcentage de charge batterie via les panneaux solaires'"
-                >
-                </card-component>
-
-                <card-component
-                  :titledef="'Recharge GAP'"
-                  :datadef ="'50'"
-                  :unitydef ="'%'"
-                  :infodef ="'Pourcentage de charge batterie via la génératrice à pédales'"
-                >
-                </card-component>
-
-                <card-component
-                  :titledef="'Autonomie'"
-                  :datadef ="'3'"
-                  :unitydef ="'h'"
-                  :infodef ="'Autonomie restante avant recharge'"
-                >
-                </card-component>
-
-                <card-component
-                  :titledef="'Kilométrage'"
-                  :data ="'300'"
+                  :titledef="'Distance hebdomadaire'"
+                  :datadef ="'246'"
                   :unitydef ="'km'"
-                  :infodef ="'Kilométrage du véhicule'"
+                  :infodef ="'Distance hebdomadaire du véhicule'"
+                >
+                </card-component>
+
+                <card-component
+                  :titledef="`Utilisation quotidienne`"
+                  :datadef ="'4h16'"
+                  :infodef ="`Durée d'utilisation par véhicule`"
                 >
                 </card-component>
 
@@ -313,13 +310,65 @@
             </q-tab-panel>
 
             <q-tab-panel name="tab2">
-              <div class="text-h6">Tab N°2</div>
-                Pas de données pour le moment.
+              <div class="q-pa-md row q-gutter-md justify-center" v-bind:style="$q.screen.lt.sm ? {} : {}">
+                <card-component
+                  :titledef="'Vitesse moyenne'"
+                  :datadef ="'26'"
+                  :unitydef ="'km/h'"
+                  :infodef ="'Vitesse moyenne du véhicule'"
+                ><!--v-for="n in 6" :key="n" -->
+
+                </card-component>
+
+                <card-component
+                  :titledef="'Consommation moyenne'"
+                  :datadef ="'27'"
+                  :unitydef ="'W.h/km'"
+                  :infodef ="'Consommation moyenne du véhicule'"
+                >
+                </card-component>
+
+                <card-component
+                  :titledef="`Tendance de consommation`"
+                  :datadef ="'-5'"
+                  :unitydef ="'%'"
+                  :infodef ="`Tendance de consommation du véhicule`"
+                >
+                </card-component>
+
+              </div>
             </q-tab-panel>
 
             <q-tab-panel name="tab3">
-              <div class="text-h6">Tab N°3</div>
-                Pas de données pour le moment.
+              <!-- <div class="text-h6">Tab N°3</div>
+                Pas de données pour le moment. -->
+              <div class="q-pa-md row q-gutter-md justify-center" v-bind:style="$q.screen.lt.sm ? {} : {}">
+                <card-component
+                  :titledef="'Contribution pilote'"
+                  :datadef ="'48'"
+                  :unitydef ="'%'"
+                  :infodef ="'Effort fournis par la génératrice à pédale'"
+                ><!--v-for="n in 6" :key="n" -->
+
+                </card-component>
+
+                <card-component
+                  :titledef="'Contribution solaire'"
+                  :datadef ="'43'"
+                  :unitydef ="'%'"
+                  :infodef ="'Recharge par panneaux solaire'"
+                >
+                </card-component>
+
+                <card-component
+                  :titledef="`Régénération freinage`"
+                  :datadef ="'9'"
+                  :unitydef ="'%'"
+                  :infodef ="`Régénération lors du freinage`"
+                >
+                </card-component>
+
+              </div>
             </q-tab-panel>
           </q-tab-panels>
         </q-card>
@@ -374,30 +423,35 @@ setup () {
       default: [
         {
           name: 'Sebastien',
+          id: "001",
           des: '28 nov 2021 | 43,50 km | 1:46:11',
           avatar: "statics/images/Sebastien.JPG",
           lien: "/1111128116_route18"
         },
         {
           name: 'Ehouarn',
+          id: "002",
           des: '28 nov 2021 | 53,96 km | 2:12:0',
           avatar: "statics/images/Ehouarn.JPG",
           lien: "/1111128107_route06"
         },
         {
           name: 'Sebastien',
+          id: "003",
           des: '27 nov 2021 | 79,52 km | 2:54:39',
           avatar: "statics/images/Sebastien.JPG",
           lien: "/1111127115_route15"
         },
         {
           name: 'Sebastien',
+          id: "004",
           des: '27 nov 2021 | 43,37 km | 1:43:20',
           avatar: "statics/images/Sebastien.JPG",
           lien: "/1111127108_route18"
         },
         {
           name: 'Sebastien',
+          id: "005",
           des: '26 nov 2021 | 43,67 km | 1:50:19',
           avatar: "statics/images/Sebastien.JPG",
           lien: "/1111126116_route18"

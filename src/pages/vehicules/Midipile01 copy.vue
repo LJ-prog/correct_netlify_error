@@ -62,13 +62,13 @@
             </div>
 
             <div class="column cardBorder" align="center" style="background-color: var(--q-dark); height : 190px">
-              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 20px; padding-right: 13px"> Demande de maintenance </h6>
+              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 20px; padding-right: 13px"> Gestion véhicule </h6>
               <div class="q-pa-md" style="padding-top: 2px">
               <q-form @submit="onSubmit">
                 <div class="row" style="justify-content: center; padding-bottom: 10px">
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="status" v-model="shape" val="green" left-label label="RAS" id="radio" color="green"/>
+                      <q-radio keep-color name="status" v-model="shape" val="green" left-label label="Normal" id="radio" color="green"/>
                     </q-item-section>
                     <q-item-section class="items-center">
                       <q-icon name="mdi-check-bold" size="xs"></q-icon>
@@ -77,7 +77,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="status"  v-model="shape" val="orange" left-label label="Réparation" id="radio" color="orange"/>
+                      <q-radio keep-color name="status"  v-model="shape" val="orange" left-label label="Vigilance" id="radio" color="orange"/>
                     </q-item-section>
                     <q-item-section class="row q-gutter-sm items-center">
                       <q-icon name="mdi-wrench-clock" size="xs"></q-icon>
@@ -86,7 +86,7 @@
 
                   <q-item style="padding-right: 0px; padding-left: 0px">
                     <q-item-section class="items-center">
-                      <q-radio keep-color name="status" v-model="shape" val="red" left-label label="Panne" id="radio" color="red"/>
+                      <q-radio keep-color name="status" v-model="shape" val="red" left-label label="Intervention" id="radio" color="red"/>
                     </q-item-section>
                     <q-item-section class="items-center">
                       <q-icon name="mdi-close-thick" size="xs"></q-icon>
@@ -126,7 +126,7 @@
 
             </q-card> -->
             <div class="column cardBorder" align="center" style="background-color: var(--q-dark);">
-              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 10px"> Demande de maintenance </h6>
+              <h6 style="margin-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-top: 10px"> Gestion véhicule </h6>
               <div>
               <q-form @submit="onSubmit">
                 <div class="row" style="justify-content: center">

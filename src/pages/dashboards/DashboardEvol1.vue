@@ -22,13 +22,13 @@
 
               <card-stat-fleet style="margin-left: 15px; background-color: orange; font-size: 25px"
               :datadef="'1'"
-              :infodef ="'Problème technique'"
+              :infodef ="'Point de vigilance gestionnaire'"
               >
               </card-stat-fleet>
 
               <card-stat-fleet style="margin-left: 15px; background-color: red; font-size: 25px"
               :datadef="'1'"
-              :infodef ="'Véhicule en panne'"
+              :infodef ="'Maintenance requise'"
               >
               </card-stat-fleet>
             </div>
@@ -57,13 +57,13 @@
 
               <card-stat-fleet style="margin-left: 15px; background-color: orange; font-size: 20px"
               :datadef="'1'"
-              :infodef ="'Problème technique'"
+              :infodef ="'Point de vigilance gestionnaire'"
               >
               </card-stat-fleet>
 
               <card-stat-fleet style="margin-left: 15px; background-color: red; font-size: 20px; margin-right: 15px"
               :datadef="'1'"
-              :infodef ="'Véhicule en panne'"
+              :infodef ="'Maintenance requise'"
               >
               </card-stat-fleet>
             </div>
@@ -95,8 +95,8 @@
 
     </div>
 
-    <div class="q-pa-md">
-    <div class="q-gutter-y-md" id="width" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+    <div class="q-pa-md"> <!-- v-bind:style="$q.screen.lt.sm ? {} : {'max-width' : '900px'}" -->
+    <div class="q-gutter-y-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px'} : {}">
 
       <!-- <div class="col-xs-12 col-sm-12 col-md-7" id="borderTable" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
             <table-progress></table-progress>
@@ -121,42 +121,41 @@
           align="justify"
           narrow-indicator
         >
-          <q-tab name="kpi" label="Tab N°1" class="customTab"/>
-          <q-tab name="tab2" label="Tab N°2" class="customTab" />
-          <q-tab name="tab3" label="Tab N°3"/>
+          <q-tab name="kpi" label="Parc véhicule" class="customTab"/>
+          <q-tab name="tab2" label="Statistiques d'usage" class="customTab" />
+          <q-tab name="tab3" label="Auto-production"/>
         </q-tabs>
 
         <q-separator />
 
         <q-tab-panels v-model="tab" animated>
           <q-tab-panel name="kpi">
-            <div class="q-pa-md row q-gutter-md" id="width" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
+            <div class="q-pa-md row q-gutter-md" style="text-align: center; justify-content : center" v-bind:style="$q.screen.lt.sm ? {} : {}">
               <card-component
-                :titledef="'Vitesse moyenne'"
-                :datadef ="'45'"
-                :unitydef ="'km/h'"
-                :infodef ="'Vitesse moyenne de la flotte'"
+                :titledef="'Kilométrage total parc'"
+                :datadef ="'4 864'"
+                :unitydef ="'km'"
+                :infodef ="'Kilométrage total du parc'"
               ><!--v-for="n in 6" :key="n" -->
 
               </card-component>
 
               <card-component
-                :titledef="'Vitesse max'"
-                :datadef ="'90'"
-                :unitydef ="'km/h'"
-                :infodef ="'Vitesse maximale de la flotte'"
+                :titledef="'Distance hebdomadaire'"
+                :datadef ="'867'"
+                :unitydef ="'km'"
+                :infodef ="'Distance hebdomadaire du parc'"
               >
               </card-component>
 
               <card-component
-                :titledef="'Recharge solaire'"
-                :datadef ="'30'"
-                :unitydef ="'%'"
-                :infodef ="'Pourcentage de charge batterie via les panneaux solaires'"
+                :titledef="`Utilisation quotidienne`"
+                :datadef ="'4h33'"
+                :infodef ="`Durée d'utilisation par véhicule`"
               >
               </card-component>
 
-              <card-component
+              <!-- <card-component
                 :titledef="'Recharge GAP'"
                 :datadef ="'50'"
                 :unitydef ="'%'"
@@ -178,19 +177,65 @@
                 :unitydef ="'km'"
                 :infodef ="'Kilométrage du véhicule'"
               >
-              </card-component>
+              </card-component> -->
 
             </div>
           </q-tab-panel>
 
           <q-tab-panel name="tab2">
-            <div class="text-h6">Tab N°2</div>
-              Pas de données pour le moment.
+            <div class="q-pa-md row q-gutter-md" style="text-align: center; justify-content : center" v-bind:style="$q.screen.lt.sm ? {} : {}">
+              <card-component
+                :titledef="'Vitesse moyenne'"
+                :datadef ="'27'"
+                :unitydef ="'km/h'"
+                :infodef ="'Vitesse moyenne de la flotte'"
+              ><!--v-for="n in 6" :key="n" -->
+              </card-component>
+
+              <card-component
+                :titledef="'Consommation moyenne'"
+                :datadef ="'29'"
+                :unitydef ="'W.h/km'"
+                :infodef ="'Consommation moyenne de la flotte'"
+              >
+              </card-component>
+
+              <card-component
+                :titledef="'Tendance de consommation'"
+                :datadef ="'-3'"
+                :unitydef ="'%'"
+                :infodef ="'Pourcentage de consommation batterie'"
+              >
+              </card-component>
+            </div>
           </q-tab-panel>
 
           <q-tab-panel name="tab3">
-            <div class="text-h6">Tab N°3</div>
-              Pas de données pour le moment.
+            <div class="q-pa-md row q-gutter-md" style="text-align: center; justify-content : center" v-bind:style="$q.screen.lt.sm ? {} : {}">
+              <card-component
+                :titledef="'Contribution pilote'"
+                :datadef ="'48'"
+                :unitydef ="'%'"
+                :infodef ="'Contribution pilote de la flotte'"
+              ><!--v-for="n in 6" :key="n" -->
+              </card-component>
+
+              <card-component
+                :titledef="'Contribution solaire'"
+                :datadef ="'43'"
+                :unitydef ="'%'"
+                :infodef ="'Utilisation solaire de la flotte'"
+              >
+              </card-component>
+
+              <card-component
+                :titledef="'Régénération freinage'"
+                :datadef ="'9'"
+                :unitydef ="'%'"
+                :infodef ="'Régénération freinage de la flotte'"
+              >
+              </card-component>
+            </div>
           </q-tab-panel>
         </q-tab-panels>
       </q-card>

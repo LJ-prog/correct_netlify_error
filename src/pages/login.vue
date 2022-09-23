@@ -182,7 +182,7 @@ setup () {
 
     onMounted(() => {
       if (isLoggedIn) {
-        router.push('dashboardevol1')
+        router.push('/dashboardevol1')
       }
     })
 
@@ -190,14 +190,14 @@ setup () {
       try {
         await login(form.value)
         notifySuccess('Connecté avec succès !')
-        router.push('dashboardevol1')
+        router.push('/dashboardevol1')
       } catch (error) {
       //   if(user) {
       //     notifyError("Confirmer votre email")
       //   }
       //   else {
       //   notifySuccess('Connecté avec succès !')
-      //   router.push('dashboardevol1')
+      //   router.push('/dashboardevol1')
       // }
       // notifyError()
         notifyError(error.message)

@@ -164,6 +164,7 @@ export default {
   methods: {
     mapReady() {
       const map = this.$refs.map.leafletObject;
+      map.scrollWheelZoom.disable();
       const fullscreenControl = new L.Control.Fullscreen({position: "topright",});
       fullscreenControl.addTo(map);
     },

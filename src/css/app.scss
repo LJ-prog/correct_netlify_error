@@ -30,6 +30,16 @@
     opacity: 0.75
 }
 
+// .q-table__middle.q-virtual-scroll.q-virtual-scroll--vertical.scroll {
+//   overflow: hidden;
+// }
+
+// .q-table__middle.q-virtual-scroll.q-virtual-scroll--vertical.scroll:hover {
+//   overflow: visible;
+// }
+
+
+
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, .5);
     // background-color: #027be3;

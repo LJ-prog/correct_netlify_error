@@ -93,7 +93,7 @@
       </q-card-actions>
     </q-card> -->
 
-    <div id="q-app" style="padding-top: 2%; padding-bottom: 6%" v-bind:style="$q.screen.lt.sm ? {'padding-bottom': '0%'} : {'padding-top': '2%', 'padding-bottom': '6%'}">
+    <div id="q-app" style="padding-top: 2%; padding-bottom: 2%" v-bind:style="$q.screen.lt.sm ? {'padding-bottom': '0%'} : {'padding-top': '2%', 'padding-bottom': '2%'}">
         <div class="q-pa-sm q-gutter-sm">
           <q-table :rows="data" :columns="columns" row-key="name" selection="simple" v-model:selected="selected"  id="borderTable">
 
@@ -331,11 +331,11 @@ export default defineComponent({
 
     return {
       validate,
-      model: ref([]),
-      model2: ref([]),
-      model3: ref([]),
-      model4: ref([]),
-      model5: ref([]),
+      model: ref('Marche'),
+      model2: ref('Marche'),
+      model3: ref('Marche'),
+      model4: ref('Marche'),
+      model5: ref('Marche'),
       inputRef,
 
 

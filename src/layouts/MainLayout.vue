@@ -17,14 +17,14 @@
         </q-item> -->
 
         <q-toolbar-title class="text-h4 text-white" id="link" v-if="$q.platform.is.desktop">
-          <a href="dashboardevol1">
+          <a href="/dashboardevol1">
           <!-- <q-btn class="text-h4 text-white" id="titleLink" to="/dashboardjson">Midipile Fleet Manager</q-btn> -->
             Midipile Fleet Manager
           </a>
         </q-toolbar-title>
 
         <q-toolbar-title class="ma-logo-mobile" id="linkLogo" exact title = "DRIVING THE SHIFT" rel="home" style="padding-left: 0px; padding-top: 9px; margin-right: 0px;" v-if="$q.platform.is.mobile">
-          <a href="dashboardevol1">
+          <a href="/dashboardevol1">
           <img src="~assets/logo3.svg" />
           </a>
         </q-toolbar-title>
@@ -54,7 +54,7 @@
                         <q-item-section class="row justify-center">Tel</q-item-section>
                       </q-item>
                       <q-item clickable v-if="$q.platform.is.desktop" @click="pop = true">
-                        <q-item-section avatar style="padding-right: 0px; padding-left: 15px;">
+                        <q-item-section avatar style="padding-left: 15px;">
                           <q-icon color="primary" name="mdi-phone-in-talk" />
                           <!-- <q-avatar color="primary" text-color="white" icon="mdi-phone-in-talk" /> -->
                         </q-item-section>
@@ -63,7 +63,7 @@
 
                       <q-separator />
                       <q-item clickable href="mailto:contactsite@midipile.eu">
-                        <q-item-section avatar style="padding-right: 0px; padding-left: 15px;">
+                        <q-item-section avatar style="padding-left: 15px;"><!--padding-right: 0px; -->
                           <q-icon color="primary" name="mdi-email" />
                         </q-item-section>
                         <q-item-section class="row justify-center">Mail</q-item-section>
@@ -602,7 +602,7 @@
             >
               Demo 2022
             </q-item-label> -->
-            <q-item to="dashboardevol1" v-ripple>
+            <q-item to="/dashboardevol1" v-ripple>
               <q-item-section avatar>
                 <q-icon name="dashboard"/>
               </q-item-section>
@@ -667,17 +667,17 @@
               </q-item-section>
             </q-item>
 
-            <q-item to="/calendar" v-ripple>
+            <!-- <q-item to="/calendar" v-ripple>
               <q-item-section avatar>
                 <q-icon name="mdi-calendar"/>
               </q-item-section>
 
-              <q-item-section>
+              <q-item-section> // Pour plus tard
                 Calendrier
               </q-item-section>
-            </q-item>
+            </q-item> -->
 
-            <q-item to="/dashboardjson" v-ripple>
+            <!-- <q-item to="/dashboardjson" v-ripple>
               <q-item-section avatar>
                 <q-icon name="mdi-swap-horizontal"/>
               </q-item-section>
@@ -685,7 +685,7 @@
               <q-item-section>
                 Alternative
               </q-item-section>
-            </q-item>
+            </q-item> -->
 
             <!-- <q-separator />
 
@@ -718,10 +718,20 @@
     <!-- <q-footer style="display: none;"> -->
     <q-toolbar v-bind:style="$q.screen.lt.sm ? {'margin-bottom': '21.5%'} : {}">
       <q-toolbar-title align="center">
-            <div class="text-overline" id="footer" >MWS v0.1 - Copyright © 2022 - </div>
+            <div class="text-overline" id="footer">MWS v0.1 - Copyright © 2022 - </div>
+
             <a href="https://midipile.eu" target="_blank" id="footer">
               <img src="statics/logo_valide_paysage.svg" style="width:150px; height:50px;"/>
             </a>
+             <q-separator class="sepWidth"  />
+            <div class="line align-center justify-center" style="margin-top: 2px">
+                <q-btn class="modHover" flat round icon="fab fa-twitter" size="sm" href="https://twitter.com/midipilem" target="_blank"></q-btn>
+                <q-btn class="modHover" flat round icon="fab fa-facebook-f" size="sm" href="https://www.facebook.com/midipilemobility/" target="_blank"></q-btn>
+                <q-btn class="modHover" flat round icon="fab fa-instagram" size="sm" href="https://www.instagram.com/midipilemobility/" target="_blank"></q-btn>
+                <q-btn class="modHover" flat round icon="fab fa-linkedin-in" size="sm" href="https://fr.linkedin.com/company/midipile-mobility" target="_blank"></q-btn>
+            </div>
+
+
 
       </q-toolbar-title>
     </q-toolbar>
@@ -729,20 +739,20 @@
 
     <!-- </q-footer> -->
     <q-footer v-if="$q.platform.is.mobile">
-    <div>
-      <q-tabs
-        v-model="tab"
-        class="bg-primary text-white shadow-2"
-        id="tabs"
-      >
-        <q-route-tab name="dashboard" label="Accueil" icon="dashboard" to="dashboardevol1" />
-        <q-route-tab name="mesvehicules" label="Véhicules" icon="bike_scooter" to="/mesvehiculestab" />
-        <q-route-tab name="admin" label="Admin" icon="manage_accounts" to="/Administration" />
-        <q-route-tab name="calendar" label="Calendrier" icon="mdi-calendar" to="/calendar" />
-        <!-- <q-route-tab name="evol" label="Switch" icon="mdi-swap-horizontal" to="/dashboardjson" /> -->
+      <div>
+        <q-tabs
+          v-model="tab"
+          class="bg-primary text-white shadow-2"
+          id="tabs"
+        >
+          <q-route-tab name="dashboard" label="Accueil" icon="dashboard" to="/dashboardevol1" />
+          <q-route-tab name="mesvehicules" label="Véhicules" icon="bike_scooter" to="/mesvehiculestab" />
+          <q-route-tab name="admin" label="Admin" icon="manage_accounts" to="/Administration" />
+          <!-- <q-route-tab name="calendar" label="Calendrier" icon="mdi-calendar" to="/calendar" /> A continuer plus tard avoir version partagé calendrier ok -->
+          <!-- <q-route-tab name="evol" label="Switch" icon="mdi-swap-horizontal" to="/dashboardjson" /> -->
 
-      </q-tabs>
-    </div>
+        </q-tabs>
+      </div>
     </q-footer>
   </q-layout>
 </template>
@@ -1031,5 +1041,18 @@ body.body--dark .q-tab.relative-position.self-stretch.flex.flex-center.text-cent
   transform: translateY(-50%);
   text-align: center;
 } */
+
+.sepWidth {
+  width: 225px;
+  background-color: #41403E;
+}
+
+.modHover {
+  color:black;
+}
+
+.modHover:hover {
+  color: var(--q-primary);
+}
 
 </style>

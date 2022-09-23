@@ -1,5 +1,6 @@
 <template>
   <q-card style="width: 250px;">
+    <div v-bind:style="$q.screen.lt.sm ? {'padding-top': '5px'} : {'padding-top': '5px'}">
     <q-card-section style="padding-top: 8px; text-align: center;">
       {{$props.titledef}}
     </q-card-section>
@@ -19,7 +20,7 @@
       </q-tooltip>
     </q-icon> -->
 
-    <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px; justify-content: right" align="right" v-if="$q.platform.is.mobile" @click="setShow">
+    <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 10px; left: 217px; justify-content: right" align="right" v-if="$q.platform.is.mobile" @click="setShow">
       <div>
       <q-tooltip class="bg-primary" v-model="showing" style="max-width: 130px; font-size: 11px" align="center">
         <div style="max-width: 130px" >
@@ -29,14 +30,14 @@
       </div>
     </q-icon>
 
-    <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 217px" align="right" v-if="$q.platform.is.desktop">
+    <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 10px; left: 217px" align="right" v-if="$q.platform.is.desktop">
       <q-tooltip class="bg-primary" style="font-size: 13px">
         {{$props.infodef}}
         <!-- (<q-icon name="keyboard_arrow_down"/>) -->
       </q-tooltip>
 
     </q-icon>
-
+    </div>
   </q-card>
 
 </template>
@@ -60,7 +61,7 @@ export default defineComponent({
       default: 50
     },
     unitydef: {
-      default: 'km/h'
+      default: ''
     },
     infodef: {
       default: ''

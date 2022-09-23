@@ -61,7 +61,7 @@ const routes = [
       { path: '/dashboard2', component: () => import('pages/dashboards/Dashboard2.vue') },
       { path: '/dashboard3', component: () => import('pages/dashboards/Dashboard3.vue') },
       { path: '/dashboardjson', component: () => import('pages/dashboards/DashboardJSON.vue') },
-      { path: 'dashboardevol1', component: () => import('pages/dashboards/DashboardEvol1.vue') },
+      { path: '/dashboardevol1', component: () => import('pages/dashboards/DashboardEvol1.vue') },
 
       //Détail voyage
       { path: '/01trip001', component: () => import('pages/midipile01/trip001.vue') },

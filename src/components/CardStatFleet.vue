@@ -6,7 +6,7 @@
   </q-card-section>
   <q-icon class="absolute all-pointer-events" size="15px" name="info" style="top: 4px; left: 50px;" align="right" v-if="$q.platform.is.mobile" @click="setShow">
     <div>
-    <q-tooltip class="bg-primary" v-model="showing" style="max-width: 130px" align="center">
+    <q-tooltip class="bg-primary" v-model="showing" style="max-width: 130px; font-size: 11px" align="center">
       <div style="max-width: 130px">
       {{$props.infodef}}
       </div>
@@ -14,7 +14,7 @@
     </div>
   </q-icon>
   <q-icon class="absolute all-pointer-events" size="20px" name="info" style="top: 8px; left: 120px" align="right" v-if="$q.platform.is.desktop">
-    <q-tooltip class="bg-primary">
+    <q-tooltip class="bg-primary" style="font-size: 13px">
       {{$props.infodef}}
       <!-- (<q-icon name="keyboard_arrow_down"/>) -->
     </q-tooltip>
