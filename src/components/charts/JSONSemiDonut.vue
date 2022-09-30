@@ -113,4 +113,10 @@ export default {
   color: var(--q-textcolor) !important;
 }
 
+
+.apexcharts-tooltip {
+  color: var(--q-textcolor) !important;
+}
+
+
 </style>

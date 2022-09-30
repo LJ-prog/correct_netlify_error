@@ -2,12 +2,12 @@
   <q-page>
     <div class="q-pa-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px', 'margin-top': '60px', 'margin-bottom' : '0px' } : {}">
 
-        <q-item class="responsive" style="padding-right:0px; padding-left:0px;" v-if="$q.platform.is.desktop">
-          <q-item-section align="left">
+        <q-item class="responsive justify-center" style="padding-right:0px; padding-left:0px;" v-if="$q.platform.is.desktop">
+          <!-- <q-item-section align="left">
             <h4>
               Bonjour {{ user.user_metadata.username }} !
             </h4>
-          </q-item-section>
+          </q-item-section> -->
           <q-item-section class="cardBorder" id="boxParc">
           <q-card class="justify-left" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
             <div class="text-h6" style="margin-left: 29px; padding-top: 2px; padding-bottom: 2px" id="darkMode"> Etat du parc</div>
@@ -38,14 +38,14 @@
         </q-item>
 
         <div v-if="$q.platform.is.mobile">
-          <div>
+          <!-- <div>
               <h4 style="text-align:center;">
                 Bonjour {{ user.user_metadata.username }} !
               </h4>
-          </div>
-          <div class="row justify-center"> <!--style="max-width:20%;"-->
+          </div> -->
+          <div class="row justify-center" v-bind:style="$q.screen.lt.sm ? {'margin-top': '22px' } : {}"> <!--style="max-width:20%;"-->
             <q-card class="justify-center" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px' } : {}">
-            <div class="text-h6" style="margin-left: 29px; padding-top: 2px; padding-bottom: 2px" id="darkMode"> Etat du parc</div>
+            <div class="text-h6" v-bind:style="$q.screen.lt.sm ? {'margin-left' : '0px', 'text-align' : 'center' } : {'margin-left' : '29px', 'padding-top' : '2px', 'padding-bottom' : '2px'}" id="darkMode"> Etat du parc</div>
             <q-separator />
             <div class="q-pa-sm row q-gutter-md" v-bind:style="$q.screen.lt.sm ? {'margin-left': '0px'} : {'margin-left': '0px' }">
 
